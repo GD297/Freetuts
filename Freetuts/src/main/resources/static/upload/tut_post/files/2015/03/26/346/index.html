@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2015/03/26/346/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 07:44:46 GMT -->
+<head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../../../../../../../../code.jquery.com/jquery-1.10.2.js"></script>
+        <style>
+            .red{
+                color: red;
+            }
+            .blue{
+                color:blue;
+            }
+            .pink{
+                color:pink;
+            }
+        </style>
+        <script language="javascript">
+            $(document).ready(function()
+            {
+                // Hàm hiển thị danh sách hàng task
+                function display_html(num)
+                {
+                    var html = '';
+ 
+                    html += '<table border="1" cellpadding="5">';
+                        html += '<tr>';
+                            html += '<td>Num</td>';
+                            html += '<td>Status</td>';
+                        html += '</tr>';
+ 
+                    for (var i = 0; i < num; i++){
+                        html += '<tr>';
+                            html += '<td>'+(i+1)+'</td>';
+                            html += '<td id="waitting'+i+'" class="pink">Waitting...</td>';
+                        html += '</tr>';
+                    }
+                    html += '</table>'
+ 
+                    $('#results').html(html);
+                }
+                
+                // Hàm gửi ajax
+                function send_ajax(num, index)
+                {
+                    // Kiểm tra xem task đã hết chưa, nếu hết thì dừng
+                    if (index > (num - 1)){
+                        return false;
+                    }
+ 
+                    // Chuyển trang thái từ waitting san sendding
+                    $('#waitting'+index).removeClass('pink').addClass('red').html('Sending...');
+ 
+                    // Gửi ajax
+                    $.ajax({
+                        url : 'sleep.php',
+                        type : 'post',
+                        dataType : 'text',
+                        success : function()
+                        {
+                            // Sau khi thành công thì chuyển trạng thái sang finished
+                            $('#waitting'+index).removeClass('red').addClass('blue');
+                            $('#waitting'+index).html('Finished');
+                        }
+                    })
+                    .always(function(){
+                        // Xử lý task tiếp theo
+                        send_ajax(num, ++index);
+                    });
+                }
+                 
+                // Khi click gửi request
+                $('#send-request').click(function()
+                {   
+                    // Lấy số lượng task từ user nhập vào
+                    var num = parseInt($('#num-thread').val());
+ 
+                    // Ẩn textbox và button
+                    $(this).remove();
+                    $('#num-thread').remove();
+ 
+                    // Hiển thị table danh sách task
+                    display_html(num);
+ 
+                    // gửi ajax cho lần đầu tiên (task = 1)
+                    send_ajax(num, 0);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input type="text" id="num-thread" value="10"/>
+        <input type="button" id="send-request" value="Send"/>
+        <div id="results"></div>
+    </body>
+
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2015/03/26/346/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 07:44:47 GMT -->
+</html>

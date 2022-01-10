@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+<title>Review điện thoại - Freetuts</title>
+</head>
+
+<body id="product"
+	class=" page page-template-default right-sidebar singular fade-imgs-in-appear time_in_twelve_format one-side-wide both-sidebars wpb-js-composer js-comp-ver-4.9 vc_responsive no-js"
+	itemtype="http://schema.org/WebPage">
+	<div class="boxed-wrap clearfix">
+		<div class="boxed-content-wrapper clearfix" layout:fragment="content">
+			<div class="inner" style="margin-bottom: 20px">
+				<ins class="adsbygoogle" style="display: block"
+					data-ad-client="ca-pub-7868243767329230" data-ad-slot="9555707034"
+					data-ad-format="auto" data-full-width-responsive="true"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+
+			<div class="inner">
+
+
+				<div class=""
+					style="line-height: 30px; margin-bottom: 10px; font-size: 15px">
+					<div itemscope itemtype="https://schema.org/BreadcrumbList">
+
+						<span itemprop="itemListElement" itemscope
+							itemtype="https://schema.org/ListItem"> <a itemprop="item"
+							th:href="@{../index}" title="Trang chủ"> <span
+								itemprop="name">Home</span>
+								<meta itemprop="position" content="1" />
+						</a>
+						</span> > <span itemprop="itemListElement" itemscope
+							itemtype="https://schema.org/ListItem"> <a itemprop="item"
+							th:href="@{../review}" title="Review"> <span itemprop="name">Review</span>
+
+								<meta itemprop="position" content="2" />
+						</a>
+						</span> > <span itemprop="name">Điện thoại</span>
+
+					</div>
+				</div>
+
+
+			</div>
+			<div class="inner ">
+				<nav class="second_navigation">
+					<div>
+
+						<ul>
+							<li class='active'><a th:href="@{dien-thoai}"
+								title="Điện thoại">Điện thoại</a></li>
+							<li><a th:href="@{may-tinh}" title="Máy tính">Máy tính</a></li>
+							<li><a th:href="@{ky-thuat-so}" title="Kỹ Thuật Số">Kỹ
+									Thuật Số</a></li>
+							<li><a th:href="@{game}" title="Game">Game</a></li>
+							<li><a th:href="@{xe}" title="Xe Hay">Xe Hay</a></li>
+						</ul>
+					</div>
+					<span class="more_item"><i class="momizat-icon-arrow-down"></i></span>
+				</nav>
+			</div>
+			<div class="inner" style="margin-top: 20px;">
+
+				<div class="main_container">
+					<div class="main-col" id="main_container">
+						<div class="base-box" itemtype="http://schema.org/Article">
+							<h1 id="main_title" class="post-tile entry-title"
+								itemprop="headline">Review điện thoại</h1>
+
+							<div class="entry-content">
+								<p>Chuyên mục Review điện thoại, tại đây bạn sẽ tìm thấy
+									những chia sẻ đánh giá các sản phẩm Điện thoại nên sử dụng và
+									tốt nhất.</p>
+								<div class="review-cate">
+									<div class="item">
+										<a th:href="@{dien-thoai/dien-thoai-apple}"
+											title="Đánh giá các dòng điện thoại Apple"> <img
+											alt="Đánh giá các dòng điện thoại Apple"
+											src="../upload/product_cate/images/2020/04/06/141/apple-phone_1.jpg" />
+
+											Apple
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{dien-thoai/dien-thoai-samsung}"
+											title="Đánh giá các dòng điện thoại Samsung"> <img
+											alt="Đánh giá các dòng điện thoại Samsung"
+											src="../upload/product_cate/images/2020/04/06/142/samsung-phone.jpg" />
+
+											Samsung
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{dien-thoai/dien-thoai-xiaomi}"
+											title="Đánh giá điện thoại Xiaomi"> <img
+											alt="Đánh giá điện thoại Xiaomi"
+											src="../upload/product_cate/images/2020/04/06/143/xiaomi.jpg" />
+
+											Xiaomi
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{dien-thoai/dien-thoai-oppo}"
+											title="Đánh giá điện thoại Oppo"> <img
+											alt="Đánh giá điện thoại Oppo"
+											src="../upload/product_cate/images/2020/04/06/144/oppo.jpg" />
+
+											Oppo
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{dien-thoai/dien-thoai-nokia}"
+											title="Đánh giá điện thoại Nokia"> <img
+											alt="Đánh giá điện thoại Nokia"
+											src="../upload/product_cate/images/2020/04/06/145/dien-thoai-nokia.jpg" />
+
+											Nokia
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{dien-thoai/dien-thoai-huawei}"
+											title="Đánh giá điện thoại Huawei"> <img
+											alt="Đánh giá điện thoại Huawei"
+											src="../upload/product_cate/images/2020/04/06/146/dien-thoai-huawei.jpg" />
+
+											Huawei
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{dien-thoai/phu-kien-phone}"
+											title="Đánh giá phụ kiện điện thoại"> <img
+											alt="Đánh giá phụ kiện điện thoại"
+											src="../upload/product_cate/images/2020/04/15/164/phu-kien-dien-thoai.jpg" />
+
+											Phụ kiện
+										</a>
+									</div>
+								</div>
+
+								<div class="clearboth"></div>
+							</div>
+						</div>
+
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a
+											th:href="@{mua-day-sac-va-day-cap-dien-thoai-o-dau-gia-tot-nhat-68}"
+											title="Mua dây Sạc và dây cáp điện thoại ở đâu giá tốt nhất?">
+											Mua dây Sạc và dây cáp điện thoại ở đâu giá tốt nhất?</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a
+											th:href="@{mua-day-sac-va-day-cap-dien-thoai-o-dau-gia-tot-nhat-68}"
+											title="Mua dây Sạc và dây cáp điện thoại ở đâu giá tốt nhất?">
+											<img
+											src="../upload/product_post/images/2019/04/05/33/cap-sac-dien-thoai.jpg"
+											width="220" height="140"
+											alt="Mua dây Sạc và dây cáp điện thoại ở đâu giá tốt nhất?">
+										</a>
+									</div>
+									<P>Hiện nay cùng với sự phát triển không ngừng của công
+										nghệ nhất là điện thoại thì các hãng linh&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{samsung-galaxy-fold-362}"
+											title="Đánh giá Galaxy Fold: Giá bán bao nhiêu? Thiết kế độc đáo, camera siêu khủng">
+											Đánh giá Galaxy Fold: Giá bán bao nhiêu? Thiết kế độc đáo,
+											camera siêu khủng</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{samsung-galaxy-fold-362}"
+											title="Đánh giá Galaxy Fold: Giá bán bao nhiêu? Thiết kế độc đáo, camera siêu khủng">
+											<img
+											src="../upload/product_post/images/2020/04/17/362/samsung-galaxy-fold.jpg"
+											width="220" height="140"
+											alt="Đánh giá Galaxy Fold: Giá bán bao nhiêu? Thiết kế độc đáo, camera siêu khủng">
+										</a>
+									</div>
+									<P>Được mệnh danh là một "siêu phẩm màn hình uốn dẻo",
+										Samsung Galaxy Fold đang trở thành tâm điểm chú&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{iphone-12-voi-iphone-11-442}"
+											title="iPhone 12 với iPhone 11: Tất cả những khác biệt lớn và liệu bạn có nên nâng cấp?">
+											iPhone 12 với iPhone 11: Tất cả những khác biệt lớn và liệu
+											bạn có nên nâng cấp?</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{iphone-12-voi-iphone-11-442}"
+											title="iPhone 12 với iPhone 11: Tất cả những khác biệt lớn và liệu bạn có nên nâng cấp?">
+											<img
+											src="../upload/product_series/images/2020/12/04/1184/iphone-11-vs-iphone-12.jpg"
+											width="220" height="140"
+											alt="iPhone 12 với iPhone 11: Tất cả những khác biệt lớn và liệu bạn có nên nâng cấp?">
+										</a>
+									</div>
+									<P>iPhone 12 của Apple hiện là một trong những điện thoại
+										được đánh giá cao nhất trên các diễn đàn&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a
+											th:href="@{so-sanh-iphone-11-pro-max-va-samsung-galaxy-note-10%2b-214}"
+											title="So sánh iPhone 11 Pro Max và Samsung Galaxy Note 10+">
+											So sánh iPhone 11 Pro Max và Samsung Galaxy Note 10+</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a
+											th:href="@{so-sanh-iphone-11-pro-max-va-samsung-galaxy-note-10%2b-214}"
+											title="So sánh iPhone 11 Pro Max và Samsung Galaxy Note 10+">
+											<img
+											src="../upload/product_series/images/2019/11/25/305/sangsung-note-10-vs-iphone-11-pro-max.gif"
+											width="220" height="140"
+											alt="So sánh iPhone 11 Pro Max và Samsung Galaxy Note 10+">
+										</a>
+									</div>
+									<P>Cho đến thời điểm hiện tại, khó có thể phủ nhận được sự
+										yêu thích của rất nhiều người dành&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-vivo-iqoo-z1x-423}"
+											title="Vivo iQOO Z1x – Smartphone tầm trung sở hữu màn hình lên đến 120Hz">
+											Vivo iQOO Z1x – Smartphone tầm trung sở hữu màn hình lên đến
+											120Hz</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-vivo-iqoo-z1x-423}"
+											title="Vivo iQOO Z1x – Smartphone tầm trung sở hữu màn hình lên đến 120Hz">
+											<img
+											src="../upload/product_post/images/2020/08/11/423/danh-gia-vivo-iqoo-z1x.jpg"
+											width="220" height="140"
+											alt="Vivo iQOO Z1x – Smartphone tầm trung sở hữu màn hình lên đến 120Hz">
+										</a>
+									</div>
+									<P>[Vivo] được biết đến là một thương hiệu smartphone có
+										khả năng chụp hình tuyệt đẹp ...</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a
+											th:href="@{vsmart-lux-se-co-camera-an-duoi-man-hinh-va-chip-snapdragon-768g-425}"
+											title="Vsmart Lux sẽ có camera ẩn dưới màn hình và chip Snapdragon 768G">
+											Vsmart Lux sẽ có camera ẩn dưới màn hình và chip Snapdragon
+											768G</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a
+											th:href="@{vsmart-lux-se-co-camera-an-duoi-man-hinh-va-chip-snapdragon-768g-425}"
+											title="Vsmart Lux sẽ có camera ẩn dưới màn hình và chip Snapdragon 768G">
+											<img
+											src="../upload/product_key/images/2020/08/10/372/vsmart-lux-se-co-camera.jpg"
+											width="220" height="140"
+											alt="Vsmart Lux sẽ có camera ẩn dưới màn hình và chip Snapdragon 768G">
+										</a>
+									</div>
+									<P>Vsmart là một hãng điện thoại do người Việt sản xuất
+										chuyên cung cấp các dòng smartphone ..</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{huawei-mate-40-pro-se-ra-mat-vao-thang-10-426}"
+											title="Rò rỉ tin đồn Huawei Mate 40 Pro sẽ ra mắt vào tháng 10 năm nay">
+											Rò rỉ tin đồn Huawei Mate 40 Pro sẽ ra mắt vào tháng 10 năm
+											nay</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{huawei-mate-40-pro-se-ra-mat-vao-thang-10-426}"
+											title="Rò rỉ tin đồn Huawei Mate 40 Pro sẽ ra mắt vào tháng 10 năm nay">
+											<img
+											src="../upload/product_key/images/2020/08/06/371/huawei-mate-40-pro-se-ra-mat-vao-thang-10.jpg"
+											width="220" height="140"
+											alt="Rò rỉ tin đồn Huawei Mate 40 Pro sẽ ra mắt vào tháng 10 năm nay">
+										</a>
+									</div>
+									<P>Hầu hết những chiếc smartphone sắp ra mắt của Huawei đều
+										nhận được rất nhiều sự quan tâm từ ..</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{google-pixel-5-se-ra-mat-vao-thang-10-427}"
+											title="Google Pixel 5 sẽ ra mắt vào tháng 10, giá bán hơn 20 triệu VNĐ">
+											Google Pixel 5 sẽ ra mắt vào tháng 10, giá bán hơn 20 triệu
+											VNĐ</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{google-pixel-5-se-ra-mat-vao-thang-10-427}"
+											title="Google Pixel 5 sẽ ra mắt vào tháng 10, giá bán hơn 20 triệu VNĐ">
+											<img
+											src="../upload/product_key/images/2020/07/29/370/google-pixel-5-se-ra-mat-vao-thang-10-nam-nay.jpg"
+											width="220" height="140"
+											alt="Google Pixel 5 sẽ ra mắt vào tháng 10, giá bán hơn 20 triệu VNĐ">
+										</a>
+									</div>
+									<P>Sau sự xuất hiện không mấy thành công của [Google Pixel
+										4] thì các fan của ...</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-oneplus-8-pro-420}"
+											title="Đánh giá OnePlus 8 Pro: Thiết kế hiện đại - hiệu suất tuyệt vời">
+											Đánh giá OnePlus 8 Pro: Thiết kế hiện đại - hiệu suất tuyệt
+											vời</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-oneplus-8-pro-420}"
+											title="Đánh giá OnePlus 8 Pro: Thiết kế hiện đại - hiệu suất tuyệt vời">
+											<img
+											src="../upload/product_post/images/2020/08/01/420/danh-gia-oneplus-8-pro.jpg"
+											width="220" height="140"
+											alt="Đánh giá OnePlus 8 Pro: Thiết kế hiện đại - hiệu suất tuyệt vời">
+										</a>
+									</div>
+									<P>Đây là chiếc smartphone gây ấn tượng với màn hình có tốc
+										độ làm tươi 120Hz</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{smartphone-gaming-asus-rog-phone-3-419}"
+											title="Đánh giá Asus ROG Phone 3: Điện thoại chơi game gần 30 triệu (PIN khủng)">
+											Đánh giá Asus ROG Phone 3: Điện thoại chơi game gần 30 triệu
+											(PIN khủng)</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{smartphone-gaming-asus-rog-phone-3-419}"
+											title="Đánh giá Asus ROG Phone 3: Điện thoại chơi game gần 30 triệu (PIN khủng)">
+											<img
+											src="../upload/product_post/images/2020/07/31/419/smartphone-gaming-asus-rog-phone-3.jpg"
+											width="220" height="140"
+											alt="Đánh giá Asus ROG Phone 3: Điện thoại chơi game gần 30 triệu (PIN khủng)">
+										</a>
+									</div>
+									<P>Hiểu được nhu cầu chơi game trên điện thoại ngày càng
+										cao nên Asus đang tập trung vào ..</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-realme-x3-superzoom-418}"
+											title="Đánh giá Realme X3 SuperZoom: Giá dưới 13 triệu /  không hỗ trợ 5G">
+											Đánh giá Realme X3 SuperZoom: Giá dưới 13 triệu / không hỗ
+											trợ 5G</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-realme-x3-superzoom-418}"
+											title="Đánh giá Realme X3 SuperZoom: Giá dưới 13 triệu /  không hỗ trợ 5G">
+											<img
+											src="../upload/product_post/images/2020/07/29/418/danh-gia-realme-x3-superzoom.jpg"
+											width="220" height="140"
+											alt="Đánh giá Realme X3 SuperZoom: Giá dưới 13 triệu /  không hỗ trợ 5G">
+										</a>
+									</div>
+									<P>Sau nhiều tin đồn rò rỉ thì cuối cùng [Realme] đã chính
+										thức trình làng mẫu smartphone tầm trung X3&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a
+											th:href="@{samsung-galaxy-a41-co-kha-nang-khong-ve-viet-nam-428}"
+											title="Samsung Galaxy A41 có khả năng không về Việt Nam">
+											Samsung Galaxy A41 có khả năng không về Việt Nam</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a
+											th:href="@{samsung-galaxy-a41-co-kha-nang-khong-ve-viet-nam-428}"
+											title="Samsung Galaxy A41 có khả năng không về Việt Nam">
+											<img
+											src="../upload/product_key/images/2020/07/28/369/samsung-galaxy-a41.jpg"
+											width="220" height="140"
+											alt="Samsung Galaxy A41 có khả năng không về Việt Nam">
+										</a>
+									</div>
+									<P>Hiện tại, dòng Galaxy A của Samsung đang dần chiếm lĩnh
+										thị trường smartphone</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-huawei-p40-pro-plus-417}"
+											title="Đánh giá Huawei P40 Pro Plus - flagship hàng đầu 2020">
+											Đánh giá Huawei P40 Pro Plus - flagship hàng đầu 2020</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-huawei-p40-pro-plus-417}"
+											title="Đánh giá Huawei P40 Pro Plus - flagship hàng đầu 2020">
+											<img
+											src="../upload/product_post/images/2020/07/29/417/danh-gia-huawei-p40-pro-plus.jpg"
+											width="220" height="140"
+											alt="Đánh giá Huawei P40 Pro Plus - flagship hàng đầu 2020">
+										</a>
+									</div>
+									<P>[Huawei] vừa tung ra thị trường dòng smartphone được
+										mong đợi nhất năm 2020</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-oppo-a12-415}"
+											title="Đánh giá Oppo A12: Camera và cấu hình bình thường nhưng PIN khủng">
+											Đánh giá Oppo A12: Camera và cấu hình bình thường nhưng PIN
+											khủng</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-oppo-a12-415}"
+											title="Đánh giá Oppo A12: Camera và cấu hình bình thường nhưng PIN khủng">
+											<img
+											src="../upload/product_post/images/2020/06/04/415/danh-gia-oppo-a12.jpg"
+											width="220" height="140"
+											alt="Đánh giá Oppo A12: Camera và cấu hình bình thường nhưng PIN khủng">
+										</a>
+									</div>
+									<P>Nhằm mở rộng thị trường và nối tiếp sự thành công của
+										các smartphone giá rẻ thế hệ trước, tháng&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-vivo-v19-414}"
+											title="Đánh giá Vivo V19: Nổi bật màn hình - giá bán gần 9 triệu đồng">
+											Đánh giá Vivo V19: Nổi bật màn hình - giá bán gần 9 triệu
+											đồng</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-vivo-v19-414}"
+											title="Đánh giá Vivo V19: Nổi bật màn hình - giá bán gần 9 triệu đồng">
+											<img
+											src="../upload/product_post/images/2020/06/04/414/danh-gia-vivo-v19.jpg"
+											width="220" height="140"
+											alt="Đánh giá Vivo V19: Nổi bật màn hình - giá bán gần 9 triệu đồng">
+										</a>
+									</div>
+									<P>Vào ngày 25/4 vừa qua, [Vivo] đã cho ra mắt một sản phẩm
+										mới thuộc phân khúc tầm trung ...</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="pagination">
+							<ul>
+								<li><span>1</span></li>
+								<li><a th:href="@{dien-thoai/page/2}" title="2">2</a></li>
+								<li><a th:href="@{dien-thoai/page/3}" title="3">3</a></li>
+								<li><a th:href="@{dien-thoai/page/4}" title="4">4</a></li>
+								<li><a th:href="@{dien-thoai/page/2}" title="2">&gt;</a></li>
+								<li><a th:href="@{dien-thoai/page/4}" title="4">&gt;&gt;</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="sidebar main-sidebar" id="right_sidebar"
+					style="position: relative">
+					<div class="widget">
+						<div class="mom-posts-widget">
+							<script type="text/javascript"
+								src="../../js.genieessp.com/t/488/394/a1488394.js"></script>
+						</div>
+					</div>
+					<div class="weather-widget blog widget weather-categories ">
+						<div class="widget-head">
+							<h3 class="widget-title">
+								<span>THỦ THUẬT</span>
+							</h3>
+						</div>
+						<div class="next-days" style="margin-bottom: 5px">
+							<ol>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/op-lung-silicon-la-gi-chon-op-lung-silicon-dep-53t}"
+												title="Ốp lưng Silicon là gì? Một số mẫu ốp lưng điện thoại silicon đẹp">Ốp
+												lưng Silicon là gì? Một số mẫu ốp lưng điện thoại silicon
+												đẹp</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/op-lung-tpu-la-gi-op-lung-vien-tpu-la-gi-62t}"
+												title="Ốp lưng TPU là gì? Mẫu ốp lưng điện thoại TPU đẹp">Ốp
+												lưng TPU là gì? Mẫu ốp lưng điện thoại TPU đẹp</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/op-lung-nillkin-la-gi-63t}"
+												title="Ốp lưng Nillkin có tốt không? Cách phân biệt hàng thật và giả">Ốp
+												lưng Nillkin có tốt không? Cách phân biệt hàng thật và giả</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/op-lung-dien-thoai-la-gi-64t}"
+												title="Ốp lưng điện thoại là gì? Các loại ốp lưng phổ biến">Ốp
+												lưng điện thoại là gì? Các loại ốp lưng phổ biến</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/op-lung-nettacase-la-gi-65t}"
+												title="Ốp lưng Nettacase là gì? Mẫu nào được ưa chuộng nhất hiện nay?">Ốp
+												lưng Nettacase là gì? Mẫu nào được ưa chuộng nhất hiện nay?</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/op-lung-skin-la-gi-66t}"
+												title="Ốp lưng Skin là gì? Nên sử dụng ốp lưng skin hay ốp lưng thông thường">Ốp
+												lưng Skin là gì? Nên sử dụng ốp lưng skin hay ốp lưng thông
+												thường</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/op-lung-uag-la-gi-67t}"
+												title="Ốp lưng UAG là gì? Một số mẫu ốp UAG đẹp nhất hiện nay">Ốp
+												lưng UAG là gì? Một số mẫu ốp UAG đẹp nhất hiện nay</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/op-lung-5d-la-gi-69t}"
+												title="Ốp lưng 5D là gì? Một số mẫu ốp lưng 3D đẹp">Ốp
+												lưng 5D là gì? Một số mẫu ốp lưng 3D đẹp</a>
+										</div>
+									</div>
+								</li>
+								<li style="text-align: center"><a th:href="@{../thu-thuat}"
+									title="Thủ thuật hay">Xem thêm</a></li>
+							</ol>
+						</div>
+					</div>
+					<div id="f_right_sidebar">
+
+
+						<div class="widget " style="border: none">
+							<div class="mom-posts-widget" style="padding: 0px">
+								<table style="margin-bottom: 0px">
+									<tr>
+										<td colspan="3"
+											style="background: #2f6e91; color: #fff; text-align: center; font-weight: bold; font-size: 14px; padding: 2px 10px">MÃ
+											GIẢM GIÁ</td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>Unica</td>
+										<td>50%</td>
+										<td><a
+											href="://unica.vn/?aff=2560&amp;src=ft.sidebar.coupon"
+											class="coupon" rel="nofollow" title="freetuts50"
+											style="margin-bottom: 0px; border-radius: 20px;"
+											target="_blank">Lấy Mã</a></td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>TinoHost</td>
+										<td>30%</td>
+										<td><a href="://tinohost.com/?php=213" class="coupon"
+											rel="nofollow" title="TINO30_2020"
+											style="margin-bottom: 0px; border-radius: 20px;"
+											target="_blank">Lấy Mã</a></td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>INET</td>
+										<td>30%</td>
+										<td><a href="://inet.vn/?aff=158288" class="coupon"
+											rel="nofollow" title="INET30UP"
+											style="margin-bottom: 0px; border-radius: 20px;">Lấy Mã</a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<div class="widget momizat-reviews">
+							<div class="mom-posts-widget">
+
+
+								<!-- freetuts_fixed_sidebar  -->
+								<ins class="adsbygoogle"
+									style="display: inline-block; width: 300px; height: 600px"
+									data-ad-client="ca-pub-7868243767329230"
+									data-ad-slot="2428876116"></ins>
+								<script>
+									(adsbygoogle = window.adsbygoogle || [])
+											.push({});
+								</script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+
+</body>
+
+</html>

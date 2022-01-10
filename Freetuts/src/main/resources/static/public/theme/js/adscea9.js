@@ -1,0 +1,1 @@
+var ads_test = true;

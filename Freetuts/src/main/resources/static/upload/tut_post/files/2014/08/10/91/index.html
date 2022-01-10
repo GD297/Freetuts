@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2014/08/10/91/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 07:44:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="javascript" src="../../../../../../../../code.jquery.com/jquery-2.0.0.min.js"></script>
+        <script language="javascript">
+            function load_ajax(){
+                $.ajax({
+                    url : "result.php",
+                    type : "post",
+                    dateType:"json",
+                    data : {
+                         
+                    },
+                    success : function (result){
+                        $('#result').html(result);
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="result">
+            Nội dung ajax sẽ được load ở đây
+        </div>
+        <input type="button" name="clickme" id="clickme" onclick="load_ajax()" value="Click Me"/>
+    </body>
+
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2014/08/10/91/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 07:44:37 GMT -->
+</html>

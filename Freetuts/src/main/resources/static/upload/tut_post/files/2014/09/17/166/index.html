@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2014/09/17/166/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 07:44:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <title>Delay the keyup event for jquery ajax</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="robots" content="noindex,nofollow"/>
+        <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+        <script language="javascript">
+        // Delay the keyup event for jquery ajax
+        $(document).ready(function()
+        {
+            // Khai báo đối tượng timeout để dùng cho hàm
+            // clearTimeout
+            var timeout = null;
+
+            // Sự kiện keyup
+            $('#title').keyup(function()
+            {
+                // Xóa đi những gì ta đã thiết lập ở sự kiện 
+                // keyup của ký tự trước (nếu có)
+                clearTimeout(timeout);
+
+                // Sau khi xóa thì thiết lập lại timeout
+                timeout = setTimeout(function ()
+                {
+                    // Lấy nội dung search
+                    var data = {
+                        title : $('#title').val()
+                    };
+
+                    // Gửi ajax search
+                    $.ajax({
+                        type : 'get',
+                        dataType : 'text',
+                        data : data,
+                        url : 'result.php',
+                        success : function (result){
+                            $('#result').html(result);
+                        }
+                    });
+                }, 500);
+            });
+        });
+        
+        </script>
+    </head>
+    <body>
+        <a href="http://freetuts.net/" title="Học lập trình online">Về trang chủ</a> <br/> <hr/>
+        <input type="text" id="title" value=""/>
+        <hr/>
+        <div id="result"></div>
+    </body>
+
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2014/09/17/166/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 07:44:44 GMT -->
+</html>

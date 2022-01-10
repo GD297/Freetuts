@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+<title>Học MySQL - Học lập trình MySQL - Freetuts</title>
+</head>
+
+<body id="tut_cate"
+	class=" page page-template-default right-sidebar singular fade-imgs-in-appear time_in_twelve_format one-side-wide both-sidebars wpb-js-composer js-comp-ver-4.9 vc_responsive no-js"
+	itemtype="http://schema.org/WebPage">
+	<div class="boxed-wrap clearfix">
+		<div class="boxed-content-wrapper clearfix" layout:fragment="content">
+			<div class="inner" style="margin-bottom: 20px">
+				<ins class="adsbygoogle" style="display: block"
+					data-ad-client="ca-pub-7868243767329230" data-ad-slot="9555707034"
+					data-ad-format="auto" data-full-width-responsive="true"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+
+			<div class="inner">
+
+
+				<div class=""
+					style="line-height: 30px; margin-bottom: 10px; font-size: 15px">
+					<div itemscope itemtype="https://schema.org/BreadcrumbList">
+
+						<span itemprop="itemListElement" itemscope
+							itemtype="https://schema.org/ListItem"> <a itemprop="item"
+							href="index.html" title="Trang chủ"> <span itemprop="name">Home</span>
+								<meta itemprop="position" content="1" />
+						</a>
+						</span> > <span itemprop="itemListElement" itemscope
+							itemtype="https://schema.org/ListItem"> <a itemprop="item"
+							href="database.html" title="Database"> <span itemprop="name">Database</span>
+
+								<meta itemprop="position" content="2" />
+						</a>
+						</span> > <span itemprop="name">Học MySQL</span>
+
+					</div>
+				</div>
+
+
+			</div>
+			<div class="inner" style="margin-top: 20px;">
+
+				<div class="main_container">
+					<div class="main-col" id="main_container">
+
+						<div class="base-box single-box about-the-author"
+							itemtype="http://schema.org/Article">
+							<h1 id="main_title" class="post-tile entry-title"
+								itemprop="headline">Học MySQL</h1>
+							<!--<div style="margin-bottom: 20px">
+<div class="sharethis-inline-share-buttons"></div>
+</div>-->
+							<div class="mom-post-meta single-post-meta">
+								<span class="author vcard">Đăng bởi: <span class="fn">
+										Administrator </span>
+							</div>
+							<div class="entry-content">
+
+								<p>Chuyên mục tổng hợp các chủ đề học mysql miễn phí, bạn có
+									thể tham khảo và sử dụng tài liệu học mysql mà tại đây.</p>
+								<p>Mình sẽ liên tục cập nhật các bài viết liên tục, bạn hãy
+									chọn một series phù hợp với mình nhé. Hoặc có thể bắt đầu bằng
+									series đầu tiên.</p>
+
+
+
+								<div class="review-cate two-column">
+									<div class="item">
+										<a href="hoc-mysql/mysql-can-ban.html" title="MySQL căn bản">
+
+											<img alt="MySQL căn bản"
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif" />
+
+											MySQL căn bản
+										</a>
+									</div>
+									<div class="item">
+										<a href="hoc-mysql/mysql-nang-cao.html" title="MySQL nâng cao">
+
+											<img alt="MySQL nâng cao"
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif" />
+
+											MySQL nâng cao
+										</a>
+									</div>
+									<div class="item">
+										<a
+											href="https://www.youtube.com/watch?v=1pZ-bmLC9-E&amp;list=PL4lg6HckXvaG_jJxJIyJBgv7We_VjJ2z_"
+											title="Video MySQL" target="_blank"
+											rel="noopener noreferrer nofollow external"> <img
+											alt="Video MySQL"
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif" />
+
+											Video MySQL
+										</a>
+									</div>
+									<div class="item">
+										<a href="mysql-function.html" title="MySQL Function"> <img
+											alt="MySQL Function" src="public/logo/main-logo.png" />
+
+											MySQL Function
+										</a>
+									</div>
+								</div>
+								<br />
+
+								<p>Đi song song với ngôn ngữ lập trình PHP là hệ quản trị
+									CSDL MySQL, đây là một cặp đôi thường được dùng để xây dựng các
+									ứng dụng website. MySQL có nhiệm vụ lưu trữ dữ liệu và PHP có
+									nhiệm vụ lập trình phía Server, tiếp nhận và xử lý yêu cầu của
+									người dùng, sau đó lấy dữ liệu tương ứng và trả kết quả về cho
+									client.</p>
+
+								<p>Để học MySQL thì bạn sẽ phải có một chút kiến thức về
+									phân tích hệ thống, phân tích CSDL. Nghĩa là từ các yêu cầu của
+									người dùng sẽ phân tích thiết kế một mô hình dữ liệu để lưu trữ
+									các yêu cầu đó. Ví dụ khi bạn làm một website bán hàng thì bạn
+									phải phân tích những đối tượng cần được lưu trữ, sau đó thiết
+									kế thành các table và các mối quan hệ giữa các table đó.</p>
+
+								<p>
+									Và trong chuyên mục này mình sẽ giới thiệu một số chuyên đề như
+									<strong>học MySQL</strong> căn bản, cách sử dụng View, trigger,
+									procedure trong MySQL để từ đó các bạn có thể vận dụng trong
+									project của các bạn. Điểm quan trọng nhất trong quá trình học
+									MySQL là bạn phải siêng năng, chịu khó làm theo các ví dụ, tự
+									nghĩ ra các câu truy vấn đề thực hành hoặc tìm những bài tập
+									tương tự để thực hành. Quan trọng hơn nữa là bạn phải đặt câu
+									hỏi nếu gặp khó khăn trong quá trình học MySQL.
+								</p>
+
+								<p>Hiện nay mình chưa quay được nhiều video về MySQL nhưng
+									trong tương lai mình sẽ cố gắng hoàn&nbsp;thành các video để
+									các bạn dễ theo dõi hơn. Vì blog mới thành lập và tác giả viết
+									bài còn hạn chế nên đành phải lấy thời gian để hứa với các bạn
+									vậy. Cuối cùng chúc các bạn học MySQL tốt và hy vọng đây sẽ là
+									nơi học lý tưởng cho các bạn.</p>
+
+								<p>
+									<strong>Các khóa học online</strong>:
+								</p>
+
+								<p>
+								<ul style="list-style: none; padding-left: 5px">
+									<li><i style="color: red" class="fa-icon-hand-right"></i>
+										<a href="#"
+										onclick="window.open('https://unica.vn/xay-dung-website-hoan-chinh-voi-laravel-php-framework?aff=2560&amp;src=freetuts.admin&amp;coupon=freetuts50', '_blank'); return false;"
+										rel="nofollow" title=" ">Xây dựng website hoàn chỉnh với
+											Laravel PHP Framework (<span style="color: red">399k</span>)
+									</a></li>
+									<li><i style="color: red" class="fa-icon-hand-right"></i>
+										<a href="#"
+										onclick="window.open('https://unica.vn/lap-trinh-backend-cho-website-bang-php-mysql-theo-mo-hinh-mvc?aff=2560&amp;src=freetuts.admin&amp;coupon=freetuts50', '_blank'); return false;"
+										rel="nofollow" title=" ">Lập trình Backend cho website
+											bằng PHP/Mysql theo mô hình MVC (<span style="color: red">349k</span>)
+									</a></li>
+									<li><i style="color: red" class="fa-icon-hand-right"></i>
+										<a href="#"
+										onclick="window.open('https://unica.vn/lap-trinh-fullstack-voi-angular-php-mysql?aff=2560&amp;src=freetuts.admin&amp;coupon=freetuts50', '_blank'); return false;"
+										rel="nofollow" title=" ">Lập trình FULLSTACK với ANGULAR -
+											PHP - MYSQL (<span style="color: red">399k</span>)
+									</a></li>
+								</ul>
+								</p>
+
+
+							</div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="random-record-trong-mysql-2896.html"
+											title="Lấy bài viết ngẫu nhiên trong MySQL (Random Records)">Lấy
+											bài viết ngẫu nhiên trong MySQL (Random Records)</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="random-record-trong-mysql-2896.html"
+											title="Lấy bài viết ngẫu nhiên trong MySQL (Random Records)">
+											<img
+											src="upload/tut_series/images/2015/12/14/22/mysql-tutorials.jpg"
+											width="220" height="140"
+											alt="Lấy bài viết ngẫu nhiên trong MySQL (Random Records)">
+										</a>
+									</div>
+									<P>MySQL không tích hợp bất kỳ câu lệnh nào để chọn các
+										record ngẫu nhiên từ một bảng</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a
+											href="cach-fix-loi-missing-index-for-constraint-trong-mysql-2797.html"
+											title="Cách fix lỗi missing index for constraint trong MySQL">Cách
+											fix lỗi missing index for constraint trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a
+											href="cach-fix-loi-missing-index-for-constraint-trong-mysql-2797.html"
+											title="Cách fix lỗi missing index for constraint trong MySQL">
+											<img
+											src="upload/tut_series/images/2015/12/14/22/mysql-tutorials.jpg"
+											width="220" height="140"
+											alt="Cách fix lỗi missing index for constraint trong MySQL">
+										</a>
+									</div>
+									<P>Nếu dịch ra tiếng Anh thì nó rất rõ nghĩa, đây là lỗi bị
+										thiếu chỉ mục cho ràng buộc&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="after-delete-trigger-trong-mysql-2785.html"
+											title="After Delete Trigger trong MySQL">After Delete
+											Trigger trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="after-delete-trigger-trong-mysql-2785.html"
+											title="After Delete Trigger trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif"
+											width="220" height="140"
+											alt="After Delete Trigger trong MySQL">
+										</a>
+									</div>
+									<P>Về công dụng thì nó giống như Before Delete, điểm khác
+										duy ..</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="before-delete-trigger-trong-mysql-2784.html"
+											title="Before Delete Trigger trong MySQL">Before Delete
+											Trigger trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="before-delete-trigger-trong-mysql-2784.html"
+											title="Before Delete Trigger trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif"
+											width="220" height="140"
+											alt="Before Delete Trigger trong MySQL">
+										</a>
+									</div>
+									<P>Nếu bạn đã đọc những bài trước thì bài này quá đơn giản,
+										bởi bản chất hoạt động của trigger&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="cach-lay-record-thu-n-trong-mysql-2787.html"
+											title="Cách lấy record thứ n trong MySQL">Cách lấy record
+											thứ n trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="cach-lay-record-thu-n-trong-mysql-2787.html"
+											title="Cách lấy record thứ n trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/22/mysql-tutorials.jpg"
+											width="220" height="140"
+											alt="Cách lấy record thứ n trong MySQL">
+										</a>
+									</div>
+									<P>Như bạn biết, thật dễ dàng để lấy dữ liệu mới nhất hoặc
+										cũ nhất bằng cách sử dụng lệnh&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="cach-lay-ngay-hien-tai-trong-mysql-2786.html"
+											title="Cách lấy ngày hiện tại trong MySQL">Cách lấy ngày
+											hiện tại trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="cach-lay-ngay-hien-tai-trong-mysql-2786.html"
+											title="Cách lấy ngày hiện tại trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/22/mysql-tutorials.jpg"
+											width="220" height="140"
+											alt="Cách lấy ngày hiện tại trong MySQL">
+										</a>
+									</div>
+									<P>Thỉnh thoảng bạn muốn lấy ngày giờ hiện tại trong MySQL
+										để phục vụ cho mội tính năng nào đó&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="after-update-trigger-trong-mysql-2783.html"
+											title="After Update Trigger trong MySQL">After Update
+											Trigger trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="after-update-trigger-trong-mysql-2783.html"
+											title="After Update Trigger trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif"
+											width="220" height="140"
+											alt="After Update Trigger trong MySQL">
+										</a>
+									</div>
+									<P>Về cách hoạt động thì không khác gì lệnh After Insert</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="before-update-trigger-trong-mysql-2782.html"
+											title="Before Update Trigger trong MySQL">Before Update
+											Trigger trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="before-update-trigger-trong-mysql-2782.html"
+											title="Before Update Trigger trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif"
+											width="220" height="140"
+											alt="Before Update Trigger trong MySQL">
+										</a>
+									</div>
+									<P>MySQL BEFORE UPDATE Trigger sẽ được tự động gọi khi bạn
+										thực hiện một hành động update các row trong&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="after-insert-trigger-trong-mysql-2781.html"
+											title="After Insert Trigger trong MySQL">After Insert
+											Trigger trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="after-insert-trigger-trong-mysql-2781.html"
+											title="After Insert Trigger trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif"
+											width="220" height="140"
+											alt="After Insert Trigger trong MySQL">
+										</a>
+									</div>
+									<P>Như thường lệ, chúng ta sẽ học cú pháp của nó trước, sau
+										đó sẽ làm một vài ví dụ&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="before-insert-trigger-trong-mysql-2780.html"
+											title="Before Insert Trigger trong MySQL">Before Insert
+											Trigger trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="before-insert-trigger-trong-mysql-2780.html"
+											title="Before Insert Trigger trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif"
+											width="220" height="140"
+											alt="Before Insert Trigger trong MySQL">
+										</a>
+									</div>
+									<P>Trong bài này mình ta sẽ tìm hiểu Before Insert Trigger
+										trong MySQL, thông qua đó bạn sẽ nắm rõ&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="drop-trigger-trong-mysql-2779.html"
+											title="Lệnh Drop Trigger trong MySQL">Lệnh Drop Trigger
+											trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="drop-trigger-trong-mysql-2779.html"
+											title="Lệnh Drop Trigger trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif"
+											width="220" height="140" alt="Lệnh Drop Trigger trong MySQL">
+										</a>
+									</div>
+									<P>Lệnh Drop Trigger khá đơn giản, bạn chỉ việc sử dụng
+										theo cú pháp sau: ..</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="create-trigger-trong-mysql-2778.html"
+											title="Lệnh Create Trigger trong MySQL">Lệnh Create
+											Trigger trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="create-trigger-trong-mysql-2778.html"
+											title="Lệnh Create Trigger trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif"
+											width="220" height="140"
+											alt="Lệnh Create Trigger trong MySQL">
+										</a>
+									</div>
+									<P>Nếu bạn chưa biết khái niệm Trigger là gì thì mình có
+										thể nói sơ lược như sau: Trigger là&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="invisible-index-trong-mysql-2777.html"
+											title="Invisible Index trong MySQL">Invisible Index trong
+											MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="invisible-index-trong-mysql-2777.html"
+											title="Invisible Index trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif"
+											width="220" height="140" alt="Invisible Index trong MySQL">
+										</a>
+									</div>
+									<P>Invisible Index là trạng thái chỉ mục ẩn, tức là những
+										chỉ mục nào được thiết lập trạng thái này&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="descending-index-trong-mysql-2776.html"
+											title="Descending Index trong MySQL">Descending Index
+											trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="descending-index-trong-mysql-2776.html"
+											title="Descending Index trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif"
+											width="220" height="140" alt="Descending Index trong MySQL">
+										</a>
+									</div>
+									<P>Thông thường bạn hay sắp xếp tăng dần và giảm dần theo
+										ID kiểu integer</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="tao-index-cho-nhieu-cot-trong-mysql-2775.html"
+											title="Tạo Index cho nhiều cột trong MySQL">Tạo Index cho
+											nhiều cột trong MySQL</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="tao-index-cho-nhieu-cot-trong-mysql-2775.html"
+											title="Tạo Index cho nhiều cột trong MySQL"> <img
+											src="upload/tut_series/images/2015/12/14/18/mysql-can-ban.gif"
+											width="220" height="140"
+											alt="Tạo Index cho nhiều cột trong MySQL">
+										</a>
+									</div>
+									<P>Tùy vào từng câu truy vấn và nhu cầu của bài toán mà ta
+										sẽ chọn chỉ mục và số&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="sidebar main-sidebar" id="right_sidebar"
+					style="position: relative">
+					<div class="widget">
+						<div class="mom-posts-widget">
+							<script type="text/javascript"
+								src="../js.genieessp.com/t/488/394/a1488394.js"></script>
+						</div>
+					</div>
+					<div id="f_right_sidebar">
+
+
+						<div class="widget " style="border: none">
+							<div class="mom-posts-widget" style="padding: 0px">
+								<table style="margin-bottom: 0px">
+									<tr>
+										<td colspan="3"
+											style="background: #2f6e91; color: #fff; text-align: center; font-weight: bold; font-size: 14px; padding: 2px 10px">MÃ
+											GIẢM GIÁ</td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>Unica</td>
+										<td>50%</td>
+										<td><a
+											href="https://unica.vn/?aff=2560&amp;src=ft.sidebar.coupon"
+											class="coupon" rel="nofollow" title="freetuts50"
+											style="margin-bottom: 0px; border-radius: 20px;"
+											target="_blank">Lấy Mã</a></td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>TinoHost</td>
+										<td>30%</td>
+										<td><a href="https://tinohost.com/?php=213"
+											class="coupon" rel="nofollow" title="TINO30_2020"
+											style="margin-bottom: 0px; border-radius: 20px;"
+											target="_blank">Lấy Mã</a></td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>INET</td>
+										<td>30%</td>
+										<td><a href="https://inet.vn/?aff=158288" class="coupon"
+											rel="nofollow" title="INET30UP"
+											style="margin-bottom: 0px; border-radius: 20px;">Lấy Mã</a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<div class="widget momizat-reviews">
+							<div class="mom-posts-widget">
+
+
+								<!-- freetuts_fixed_sidebar  -->
+								<ins class="adsbygoogle"
+									style="display: inline-block; width: 300px; height: 600px"
+									data-ad-client="ca-pub-7868243767329230"
+									data-ad-slot="2428876116"></ins>
+								<script>
+									(adsbygoogle = window.adsbygoogle || [])
+											.push({});
+								</script>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

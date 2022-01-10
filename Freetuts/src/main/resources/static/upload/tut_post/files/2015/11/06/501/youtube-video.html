@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2015/11/06/501/youtube-video.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 08:30:12 GMT -->
+<head>
+        <title>Video YOUTUBE Latest</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../../../../../../../index.html" ></script>
+        <script language="javascript">
+            $(document).ready(function()
+            {
+                var chanel_id = 'UCg9QhTft6SFstWk67JlJiEA';
+                var api_key  = 'AIzaSyBdJxvaeQKFaQoqcc36mJmqTv_J_BMCMFE';
+                
+                // Get Youtube Video Upload ID
+                $.get("https://www.googleapis.com/youtube/v3/channels", {
+                        part : "contentDetails",
+                        id : chanel_id,
+                        key : api_key
+                    },
+                    function(data)
+                    {
+                        $.each(data.items, function(i, item)
+                        {
+                            // Upload ID
+                            var id = item.contentDetails.relatedPlaylists.uploads;
+
+                            $.get("https://www.googleapis.com/youtube/v3/playlistItems", {
+                                    part : "snippet",
+                                    maxResults : "50",
+                                    playlistId  : id,
+                                    key : api_key
+                                },
+                                function(result){
+                                    var output = '';
+                                    $.each(result.items, function(i, result_item){
+                                        output += '<div>';
+                                            var title = result_item.snippet.title;
+                                            var href = result_item.snippet.resourceId.videoId;
+                                            var img = result_item.snippet.thumbnails.default.url;
+                                            output += '<img src="'+img+'" />';
+                                            output += '<div><a href="https://www.youtube.com/watch?v='+href+'" title="'+title+'">'+title+'</a></div>';
+                                        output +='</div>';
+                                    });
+                                    // Gán danh sách video vào body
+                                    $('body').html(output);
+                                }
+                            );
+                        });
+                    }
+                );
+            });
+        </script>
+    </head>
+    <body>
+        
+    </body>
+
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2015/11/06/501/youtube-video.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 08:30:12 GMT -->
+</html>

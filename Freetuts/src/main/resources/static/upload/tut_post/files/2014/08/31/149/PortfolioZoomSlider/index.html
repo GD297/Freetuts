@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2014/08/31/149/PortfolioZoomSlider/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 07:51:00 GMT -->
+<head>
+        <title>Demo Portfolio Zoom Slider Với jQuery</title>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Portfolio Zoom Slider with jQuery" />
+        <meta name="keywords" content="jquery, plugin, slider, zoom, portfolio, cloud-zoom"/>
+        
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="cloud-zoom/cloud-zoom.css" />
+<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" />
+
+<!-- PLUGIN JQUERY -->
+<script type="text/javascript" src="../../../../../../../../../code.jquery.com/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="fancybox/jquery.easing-1.3.pack.js"></script>
+<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.js"></script>
+<script type="text/javascript" src="cloud-zoom/cloud-zoom.1.0.2.js"></script>
+        
+    </head>
+    <body>
+    <div class="wrapper">
+        <div id="content" class="content">
+            <div class="item">
+                <div class="thumb_wrapper">
+                    <div class="thumb">
+                        <ul>
+                            <li><a rev="group1" rel="zoomHeight:200, zoomWidth:400, adjustX: 10, adjustY:-4, position:'body'" class='cloud-zoom' href="images/formstack1.jpg"><img src="images/thumbs/formstack1.jpg" alt="Formstack 1"/></a></li>
+                            <li><a rev="group1" rel="zoomHeight:200, zoomWidth:400, adjustX: 10, adjustY:-4, position:'body'" class='cloud-zoom' href="images/formstack2.jpg"><img src="images/thumbs/formstack2.jpg" alt="Formstack 2"/></a></li>
+                            <li><a rev="group1" rel="zoomHeight:200, zoomWidth:400, adjustX: 10, adjustY:-4, position:'body'" class='cloud-zoom' href="images/formstack3.jpg"><img src="images/thumbs/formstack3.jpg" alt="Formstack 3"/></a></li>
+                        </ul>
+                    </div>
+                    <a class="prev" href="#"></a>
+                    <a class="next" href="#"></a>
+                    <span>Hover to zoom, click to view</span>
+                </div>
+                <div class="description">
+                    <h2>Tiêu đề 1</h2>
+                    <p>Việc đọc file pdf online rất quan trọng với những trang chuyên về tại liệu nên để sưu tầm lại kiến thức mình tìm kiếm để sau này dễ xem lại và cũng là chia sẽ với những bạn chưa biết, hy vọng sẽ giúp được các bạn phần nào.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="thumb_wrapper">
+                    <div class="thumb">
+                        <ul>
+                            <li><a rev="group2" rel="zoomHeight:200, zoomWidth:400, adjustX: 10, adjustY:-4, position:'body'" class='cloud-zoom' href="images/knowapp1.jpg"><img src="images/thumbs/knowapp1.jpg" alt="Knowapp 1"/></a></li>
+                            <li><a rev="group2" rel="zoomHeight:200, zoomWidth:400, adjustX: 10, adjustY:-4, position:'body'" class='cloud-zoom' href="images/knowapp2.jpg"><img src="images/thumbs/knowapp2.jpg" alt="Knowapp 2"/></a></li>
+                            <li><a rev="group2" rel="zoomHeight:200, zoomWidth:400, adjustX: 10, adjustY:-4, position:'body'" class='cloud-zoom' href="images/knowapp3.jpg"><img src="images/thumbs/knowapp3.jpg" alt="Knowapp 3"/></a></li>
+                        </ul>
+                    </div>
+                    <a class="prev" href="#"></a>
+                    <a class="next" href="#"></a>
+                    <span>Hover to zoom, click to view</span>
+                </div>
+                <div class="description">
+                    <h2>Tiêu đề 2</h2>
+                    <p>Việc đọc file pdf online rất quan trọng với những trang chuyên về tại liệu nên để sưu tầm lại kiến thức mình tìm kiếm để sau này dễ xem lại và cũng là chia sẽ với những bạn chưa biết, hy vọng sẽ giúp được các bạn phần nào.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <script type="text/javascript">
+$(function() 
+{
+    // Tạo fancybox popup
+    $("#content .cloud-zoom").fancybox({
+        'transitionIn': 'elastic',
+        'transitionOut': 'none',
+        'speedIn': 600,
+        'speedOut': 200,
+        'overlayShow': true,
+        'overlayColor': '#000',
+        'cyclic': true,
+        'easingIn': 'easeInOutExpo'
+    });
+
+    /*
+     Bởi vì plugin zoom tạo thẻ bên trên hình nên
+     muốn gán sự kiến click vào thẻ a thì ta phải 
+     gọi nó thông qua sự kiện click lên thẻ mà zoom tạo ra
+     */
+    $("#content .mousetrap").live('click', function() {
+        $(this).prev().trigger('click');
+    });
+
+    // Div Wrapper
+    var $content = $('#content');
+
+    // Div list thumb
+    var $thumb_list = $content.find('.thumb > ul');
+
+    // Lặp qua từng thumb và xử lý
+    $thumb_list.each(function() 
+    {
+        var $this_list = $(this),
+                total_w = 0,
+                loaded = 0,
+                //preload all the images first
+                $images = $this_list.find('img'),
+                total_images = $images.length;
+
+        // Lặp qua từng hình
+        $images.each(function() 
+        {
+            var $img = $(this);
+            $('<img/>').load(function() {
+                ++loaded;
+                if (loaded == total_images) {
+                    $this_list.data('current', 0).children().each(function() {
+                        total_w += $(this).width();
+                    });
+                    $this_list.css('width', total_w + 'px');
+
+                    //next / prev events
+                    $this_list.parent()
+                            .siblings('.next')
+                            .bind('click', function(e) {
+                        var current = $this_list.data('current');
+                        if (current == $this_list.children().length - 1)
+                            return false;
+                        var next = ++current,
+                                ml = -next * $this_list.children(':first').width();
+
+                        $this_list.data('current', next)
+                                .stop()
+                                .animate({
+                            'marginLeft': ml + 'px'
+                        }, 400);
+                        e.preventDefault();
+                    })
+                            .end()
+                            .siblings('.prev')
+                            .bind('click', function(e) {
+                        var current = $this_list.data('current');
+                        if (current == 0)
+                            return false;
+                        var prev = --current,
+                                ml = -prev * $this_list.children(':first').width();
+
+                        $this_list.data('current', prev)
+                                .stop()
+                                .animate({
+                            'marginLeft': ml + 'px'
+                        }, 400);
+                        e.preventDefault();
+                    });
+                }
+            }).attr('src', $img.attr('src'));
+        });
+    });
+});
+        </script>
+    </body>
+
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2014/08/31/149/PortfolioZoomSlider/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 07:51:04 GMT -->
+</html>

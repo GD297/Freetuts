@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script th:src="@{https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js}"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#commentform").submit(function(e) {
+
+			e.preventDefault(); // avoid to execute the actual submit of the form.
+
+			var form = $(this);
+			var url = form.attr('action');
+			$.ajax({
+				type : "POST",
+				url : "/post-comment",
+				data : form.serialize(), // serializes the form's elements.
+				success : function(data) {
+					if(data === "SUCCESS"){
+						let cm_name = $('#cm_name').val();
+						let cm_email = $('#cm_email').val();
+						let cm_data = $('#cm_data_comment').val();
+						var today= new Date();
+			            var date = today.toJSON().slice(0, 10);
+			            var nDate = date.slice(8, 10) + '/' 
+			                       + date.slice(5, 7) + '/' 
+			                       + date.slice(0, 4);
+			           	$('#main_comment_list').append('<li class="comment even thread-even depth-1 single-comment"'
+			           			+'id="li-comment-1192">'
+								+'<div id="comment-1192" class="comment-wrap base-box">'
+								+'<div class="commentnumber">'
+									+'<a href="#" rel="nofollow" class="push-top" data-id="1192"'
+											+'data-status="false" title=" ">Like</a>: <span>3</span>'
+											+'</div>'
+									+'<img src="/public/logo/main-logo.png"'
+										+'class="avatar user-65-avatar avatar-60 photo" width="60"'
+											+'height="60" alt="main logo png">'
+									+'<div class="comment-content">'
+									+'<h4 class="comment-author fn">'+cm_name+'</h4>'
+										+'<span class="comment-meta commentmetadata "> '+nDate+' </span>'
+										+'<div class="comment-text">'
+										+'<p>'+cm_data+'</p>'
+											+'</div>'
+										+'<a rel="nofollow" data-parent-id="1192"'
+											+'class="comment-reply-link" href="#comment-1192"'
+												+'aria-label="Phản hồi" title=" comment 1192">Phản hồi</a>'
+											+'</div>'
+									+'</div>'
+								+'<ol class="children">'
+								+'</ol>'
+							+'</li>');
+			        	$('#cm_name').val("");
+						$('#cm_email').val("");
+						$('#cm_data_comment').val("");
+			           	
+					}
+				},
+				failed : function(xhr, textStatus, nDate) {
+					alert(data)
+				}
+			});
+
+		});
+	});
+</script>
+
+</head>
+<body>
+	<div style="margin-top: 10px; margin-bottom: 20px">
+		<div>
+			<div id="main_comment_wrapper">
+				<div id="respond" class="comment-respond">
+					<form id="commentform" class="comment-form"
+						th:object="${commentNe}">
+
+						<a style="display: none" id="cancel-comment-reply-link" href="#">THOÁT
+							FORM</a>
+						<p class="comment-notes">
+							<span id="email-notes"><strong>ĐĂNG BÌNH LUẬN</strong>:
+								Thông tin của bạn sẽ được giữ bí mật.</span> <br> <span
+								style="display: block; margin-top: 10px"><strong>Lưu
+									ý:</strong>: Sử dụng <span style="color: red">{Code}</span> để đăng
+								code, và bình luận của bạn sẽ được kiểm duyệt cẩn thận.</span>
+						</p>
+						<p class="comment-form-comment">
+							<textarea placeholder="Comment..." name="editor" cols="45" id="cm_data_comment" rows="8" th:field="*{content}"></textarea>
+							<script>
+								CKEDITOR.replace('editor');
+							</script>
+						</p>
+						<input id="cm_name" class="append-fullname" type="text"
+							placeholder="Name (required)" value="" size="30" required=""
+							th:field="*{name}"> 
+						<input id="cm_email" class="append-email" type="email" placeholder="Email (required)"
+							value="" size="30" required="required" th:field="*{email}">
+						 <input type="hidden" id="blogID" name="ID"
+							th:value="${BLOG_DETAILS.blogID}">
+
+						<div style="clear: both; height: 10px"></div>
+						<center>
+							<input name="submit" type="submit" id="submit-comment"
+								class="submit" value="Đăng bình luận">
+						</center>
+						<p></p>
+					</form>
+				</div>
+
+				<div id="main_comment_list">
+
+					<li  th:each="list : ${BLOG_DETAILS.comments}" class="comment even thread-even depth-1 single-comment"
+						id="li-comment-1192">
+						<div id="comment-1192" class="comment-wrap base-box">
+							<div class="commentnumber">
+								<a href="#" rel="nofollow" class="push-top" data-id="1192"
+									data-status="false" title=" ">Like</a>: <span>3</span>
+							</div>
+							<img src="https://freetuts.net/public/logo/main-logo.png"
+								class="avatar user-65-avatar avatar-60 photo" width="60"
+								height="60" alt="main logo png">
+							<div class="comment-content">
+								<h4 class="comment-author fn">[[${list.name}]]</h4>
+								<span class="comment-meta commentmetadata "> [[${list.time}]] -
+									[[${list.name}]] </span>
+								<div class="comment-text">
+									<p>[[${list.content}]]</p>
+								</div>
+								<a rel="nofollow" data-parent-id="1192"
+									class="comment-reply-link" href="#comment-1192"
+									aria-label="Phản hồi" title=" comment 1192">Phản hồi</a>
+							</div>
+						</div>
+
+						<ol class="children">
+						</ol>
+					</li>
+
+					<script language="javascript">
+						jQuery(document).ready(function() {
+							var current_page = 1;
+							var total_page = 1;
+
+							if (current_page == total_page) {
+								jQuery('#load_more_comment_wrapper').hide();
+							} else {
+								jQuery('#load_more_comment_wrapper').show();
+								comments.current_page++;
+							}
+						});
+					</script>
+				</div>
+				<div style="text-align: center; display: none;"
+					id="load_more_comment_wrapper">
+					<span class="mom_button_wrap" id="load_more_comment_btn"><a
+						class="button mom_button blue_bt big_bt" href="#"
+						style="margin: 0px;" title=" ">Tải Thêm Comment</a></span>
+				</div>
+				</ol>
+			</div>
+			<input type="hidden" id="add_comment" name="add_comment"
+				value="8930660c415147acc23dad72389eaa9c"><input
+				type="hidden" id="load_comment" name="load_comment"
+				value="2daa846ebe79fac6344f871fdae504db"><input
+				type="hidden" id="push_comment" name="push_comment"
+				value="b40b3f58498236151e8045a70a246a93">
+
+			<script language="javascript">
+				comments.comment_ref_id = '3475';
+				comments.comment_type = 'tut_post';
+				comments.base_url = 'https://freetuts.net/';
+				comments.avatar = 'https://freetuts.net/public/logo/main-logo.png';
+			</script>
+		</div>
+
+		<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+	</div>
+</body>
+</html>

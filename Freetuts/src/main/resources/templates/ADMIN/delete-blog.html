@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="ADMIN/layout/default">
+
+
+<!-- Mirrored from www.radixtouch.in/templates/logicswave/jiva/source/light/blank.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Mar 2021 02:43:23 GMT -->
+<head>
+<title>Jiva - Admin Dashboard Template</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" th:inline="javascript" >
+	function confirmDelete(id, author) {
+		console.log(id)
+		  swal({
+		    title: 'Are you sure?',
+		    text: 'You can restore this blog by edit blog!\n Are you sure about this?',
+		    icon: 'warning',
+		    buttons: true,
+		    dangerMode: true,
+		  })
+		    .then((willDelete) => {
+		      if (willDelete) {
+		    	  $.ajax({
+		    	        url: "/login/delete-blog",
+		    	        data: {
+		    	            BlogID: id
+		    	            ,authorRecord:author
+		    	        },
+		    	        type: "POST",
+		    	        success: function (result) {
+		    	        	if(result === "SUCCESS"){
+			    		        swal('Delete Complete!', {
+			    			          icon: 'success',
+			    			        });   
+			    		        $('#'+id+" div.badge").text("DELETED");
+			    		        document.querySelector('#'+id+" div.badge").className = "badge badge-danger";
+			    		        $('#'+id+' button.btn.btn-danger').remove();
+		    	        	}else if(result ==="FAILED"){
+		    	        		$("#swal-5").click(function () {
+			    	        		  swal('Failed', 'Error happened cannot delete', 'error');
+			    	        		});
+		    	        	}
+		    	        },
+		    	        fail: function (xhr, textStatus, errorThrown) {
+		    	        	$("#swal-5").click(function () {
+		    	        		  swal('Failed', 'Failed request', 'error');
+		    	        		});
+		    	        }
+		    	    });
+		      } else {
+		    	swal('Warning', 'Cancel delete Blog', 'warning');
+		      }
+		    });
+		}
+	
+	</script>
+</head>
+
+<body>
+
+
+	<!-- Main Content -->
+	<div class="main-content" layout:fragment="content">
+		<section class="section">
+			<ul class="breadcrumb breadcrumb-style ">
+				<li class="breadcrumb-item">
+					<h4 class="page-title m-b-0">Delete Blog</h4>
+				</li>
+				<li class="breadcrumb-item"><a th:href="@{/dashboard}"> <i
+						data-feather="home"></i></a></li>
+				<li class="breadcrumb-item">Blog</li>
+			</ul>
+			<div class="section-body">
+				
+									<div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Delete Blog</h4>
+                    <div class="card-header-form">
+                      <form>
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Search">
+                          <div class="input-group-btn">
+                            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <tbody><tr>
+                          <th>NO</th>
+                          <th>Blog</th>
+                          <th>Create Date</th>
+                          <th>Author</th>
+                          <th>Status</th>
+                          <th>Action</th>
+                        </tr>
+                        <th:block th:each="blog, iter : ${LIST_BLOG}" > 
+                        <tr th:id="${blog.blogID}">
+                          
+	                          	<td th:text="${iter.index +1}">
+									0
+								</td>
+								<td th:text="${blog.title}">
+								</td>
+                          <td class="align-middle" th:text="${blog.createDate}">
+                          </td>
+                          <td th:text="${blog.author}">
+                            </td>
+                          <td>
+                          	<div th:class="${blog.status == 'ACTIVE'} ? 'badge badge-success':'badge badge-danger'" th:text="${blog.status}">Active</div>
+                          </td>
+                          <td><button class="btn btn-danger"  th:onclick="confirmDelete([[${blog.blogID}]],[[${#request.userPrincipal.principal.username}]])" th:if="${blog.status != 'DELETED'}">Delete </button></td>
+                        </tr>
+                         </th:block>
+                      </tbody></table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            			<div class="card">
+                  <div class="card-body">
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination">
+                      <li th:if="${CURRENT_PAGE > 1}" class="page-item">
+                      		<a class="page-link" th:href="@{'/deleteblog/page/' + ${CURRENT_PAGE - 1}}">
+                      			Previous
+                      		</a>
+                      	</li>
+                      	<li th:unless="${CURRENT_PAGE > 1}" class="page-item disabled">
+                      		<a class="page-link" th:href="@{#}">
+                      			Previous
+                      		</a>
+                      	</li>
+                      <th:block th:each="i: ${#numbers.sequence(CURRENT_PAGE, CURRENT_PAGE+10)}" >
+	                      <li class="page-item">
+	                      	<a th:if="${CURRENT_PAGE != i}" 
+	                      		th:href="@{'/deleteblog/page/' + ${i}}"
+	                      		class="page-link">[[${i}]]</a>
+	                      </li>
+	                      <li class="page-item disabled">
+	                      	<a th:unless="${CURRENT_PAGE != i}" 
+	                      		th:href="@{#}"
+	                      		class="page-link">[[${i}]]</a>
+	                      </li>
+                      </th:block>
+                      	<li th:if="${CURRENT_PAGE < TOTAL_PAGE}" class="page-item">
+                      		<a class="page-link" th:href="@{'/deleteblog/page/' + ${CURRENT_PAGE + 1}}">
+                      			Next
+                      		</a>
+                      	</li>
+                      	<li th:unless="${CURRENT_PAGE < TOTAL_PAGE}" class="page-item disabled">
+                      		<a class="page-link" th:href="@{#}">
+                      			Next
+                      		</a>
+                      	</li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+			</div>
+
+		</section>
+		<div class="settingSidebar">
+			<a href="javascript:void(0)" class="settingPanelToggle"> <i
+				class="fa fa-spin fa-cog"></i>
+			</a>
+			<div class="settingSidebar-body ps-container ps-theme-default">
+				<div class=" fade show active">
+					<div class="setting-panel-header">Setting Panel</div>
+					<div class="p-15 border-bottom">
+						<h6 class="font-medium m-b-10">Select Layout</h6>
+						<div class="selectgroup layout-color w-50">
+							<label class="selectgroup-item"> <input type="radio"
+								name="value" value="1"
+								class="selectgroup-input-radio select-layout" checked> <span
+								class="selectgroup-button">Light</span>
+							</label> <label class="selectgroup-item"> <input type="radio"
+								name="value" value="2"
+								class="selectgroup-input-radio select-layout"> <span
+								class="selectgroup-button">Dark</span>
+							</label>
+						</div>
+					</div>
+					<div class="p-15 border-bottom">
+						<h6 class="font-medium m-b-10">Sidebar Color</h6>
+						<div class="selectgroup selectgroup-pills sidebar-color">
+							<label class="selectgroup-item"> <input type="radio"
+								name="icon-input" value="1"
+								class="selectgroup-input select-sidebar"> <span
+								class="selectgroup-button selectgroup-button-icon"
+								data-toggle="tooltip" data-original-title="Light Sidebar"><i
+									class="fas fa-sun"></i></span>
+							</label> <label class="selectgroup-item"> <input type="radio"
+								name="icon-input" value="2"
+								class="selectgroup-input select-sidebar" checked> <span
+								class="selectgroup-button selectgroup-button-icon"
+								data-toggle="tooltip" data-original-title="Dark Sidebar"><i
+									class="fas fa-moon"></i></span>
+							</label>
+						</div>
+					</div>
+					<div class="p-15 border-bottom">
+						<h6 class="font-medium m-b-10">Color Theme</h6>
+						<div class="theme-setting-options">
+							<ul class="choose-theme list-unstyled mb-0">
+								<li title="white" class="active">
+									<div class="white"></div>
+								</li>
+								<li title="cyan">
+									<div class="cyan"></div>
+								</li>
+								<li title="black">
+									<div class="black"></div>
+								</li>
+								<li title="purple">
+									<div class="purple"></div>
+								</li>
+								<li title="orange">
+									<div class="orange"></div>
+								</li>
+								<li title="green">
+									<div class="green"></div>
+								</li>
+								<li title="red">
+									<div class="red"></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="p-15 border-bottom">
+						<div class="theme-setting-options">
+							<label class="m-b-0"> <input type="checkbox"
+								name="custom-switch-checkbox" class="custom-switch-input"
+								id="mini_sidebar_setting"> <span
+								class="custom-switch-indicator"></span> <span
+								class="control-label p-l-10">Mini Sidebar</span>
+							</label>
+						</div>
+					</div>
+					<div class="p-15 border-bottom">
+						<div class="theme-setting-options">
+							<label class="m-b-0"> <input type="checkbox"
+								name="custom-switch-checkbox" class="custom-switch-input"
+								id="sticky_header_setting"> <span
+								class="custom-switch-indicator"></span> <span
+								class="control-label p-l-10">Sticky Header</span>
+							</label>
+						</div>
+					</div>
+					<div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
+						<a href="#"
+							class="btn btn-icon icon-left btn-primary btn-restore-theme">
+							<i class="fas fa-undo"></i> Restore Default
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+                      		
+                      		
+                      		
+	
+	<footer class="main-footer">
+		<div class="footer-left">
+			Copyright &copy; 2020
+			<div class="bullet"></div>
+			Design By <a href="#">Logicswave</a>
+		</div>
+		<div class="footer-right"></div>
+	</footer>
+	<!-- General JS Scripts -->
+	<script src="assets/js/app.min.js"></script>
+	<!-- JS Libraies -->
+	<!-- Page Specific JS File -->
+	<!-- Template JS File -->
+	<script src="assets/js/scripts.js"></script>
+	<!-- Custom JS File -->
+	<script src="assets/js/custom.js"></script>
+</body>
+
+
+<!-- Mirrored from www.radixtouch.in/templates/logicswave/jiva/source/light/blank.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Mar 2021 02:43:23 GMT -->
+</html>

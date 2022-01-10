@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+<title>Học Laravel - Học lập trình web - Freetuts</title>
+</head>
+
+<body id="tut_cate"
+	class=" page page-template-default right-sidebar singular fade-imgs-in-appear time_in_twelve_format one-side-wide both-sidebars wpb-js-composer js-comp-ver-4.9 vc_responsive no-js"
+	itemtype="http://schema.org/WebPage">
+	<div class="boxed-wrap clearfix">
+		<div class="boxed-content-wrapper clearfix" layout:fragment="content">
+			<div class="inner" style="margin-bottom: 20px">
+				<ins class="adsbygoogle" style="display: block"
+					data-ad-client="ca-pub-7868243767329230" data-ad-slot="9555707034"
+					data-ad-format="auto" data-full-width-responsive="true"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+
+			<div class="inner">
+
+
+				<div class=""
+					style="line-height: 30px; margin-bottom: 10px; font-size: 15px">
+					<div itemscope itemtype="https://schema.org/BreadcrumbList">
+
+						<span itemprop="itemListElement" itemscope
+							itemtype="https://schema.org/ListItem"> <a itemprop="item"
+							href="index.html" title="Trang chủ"> <span itemprop="name">Home</span>
+								<meta itemprop="position" content="1" />
+						</a>
+						</span> > <span itemprop="itemListElement" itemscope
+							itemtype="https://schema.org/ListItem"> <a itemprop="item"
+							href="web-backend.html" title="Web Backend"> <span
+								itemprop="name">Web Backend</span>
+
+								<meta itemprop="position" content="2" />
+						</a>
+						</span> > <span itemprop="name">Laravel</span>
+
+					</div>
+				</div>
+
+
+			</div>
+			<div class="inner" style="margin-top: 20px;">
+
+				<div class="main_container">
+					<div class="main-col" id="main_container">
+
+						<div class="base-box single-box about-the-author"
+							itemtype="http://schema.org/Article">
+							<h1 id="main_title" class="post-tile entry-title"
+								itemprop="headline">Học Laravel</h1>
+							<!--<div style="margin-bottom: 20px">
+<div class="sharethis-inline-share-buttons"></div>
+</div>-->
+							<div class="mom-post-meta single-post-meta">
+								<span class="author vcard">Đăng bởi: <span class="fn">
+										Administrator </span>
+							</div>
+							<div class="entry-content">
+
+								<p>Chuyên mục tổng hợp các chủ đề học laravel miễn phí, bạn
+									có thể tham khảo và sử dụng tài liệu học laravel mà tại đây.</p>
+								<p>Mình sẽ liên tục cập nhật các bài viết liên tục, bạn hãy
+									chọn một series phù hợp với mình nhé. Hoặc có thể bắt đầu bằng
+									series đầu tiên.</p>
+
+
+
+								<div class="review-cate two-column">
+									<div class="item">
+										<a href="hoc-laravel/laravel-5x-can-ban.html"
+											title="Laravel 5.x căn bản"> <img
+											alt="Laravel 5.x căn bản"
+											src="upload/tut_series/images/2016/08/07/95/laravel-5x-can-ban.gif" />
+
+											Laravel 5.x căn bản
+										</a>
+									</div>
+									<div class="item">
+										<a href="hoc-laravel/laravel-4x-can-ban.html"
+											title="Laravel 4x căn bản"> <img alt="Laravel 4x căn bản"
+											src="public/logo/main-logo.png" /> Laravel 4x căn bản
+										</a>
+									</div>
+									<div class="item">
+										<a href="hoc-laravel/laravel-tutorials.html"
+											title="Laravel tutorials"> <img alt="Laravel tutorials"
+											src="public/logo/main-logo.png" /> Laravel tutorials
+										</a>
+									</div>
+								</div>
+								<br />
+
+								<p>Laravel là một Open source PHP Framework miễn phí được
+									phát triển bởi Taylor Otwell ra mắt lần đầu vào tháng 6 năm
+									2011. Phiên bản tại thời điểm mình viết bài này là 5.2 và đang
+									chuẩn bị ra mắt phiên bản 5.3 trong vài tuần sắp tới.</p>
+
+								<p>Hiện tại, Laravel là PHP Framework được sử dụng phổ biến
+									nhất trên thế giới vì những ưu điểm vượt trội tận dụng các kỹ
+									thuật Design Pattern, các công nghệ mới nhất của PHP và rất dễ
+									dàng tiếp cận và sử dụng nó. Điểm yếu của Laravel là không hỗ
+									trợ các phiên bản PHP cũ vì thế các website có nền tảng PHP
+									version thấp hơn khá là khó khi có ý định chuyển sang Laravel
+									và phải luôn cập nhật các thông tin mới nhất về PHP để áp dụng
+									vào Laravel. Phiên bản của Laravel hiện tại chỉ hỗ trợ phiên
+									bản 5.5.9 trở lên.</p>
+
+								<p>
+									Trong chuyên đề này, mình sẽ hướng dẫn cho các bạn về các kiến
+									thức căn bản nhất về Laravel để có thể xây dựng một hệ thống
+									nào đó đơn giản từ Framework này. Chúc các bạn tự <strong>học
+										Laravel</strong> hiệu quả.
+								</p>
+
+								<p>
+									<strong>Các khóa học online</strong>:
+								</p>
+
+								<p>
+								<ul style="list-style: none; padding-left: 5px">
+									<li><i style="color: red" class="fa-icon-hand-right"></i>
+										<a href="#"
+										onclick="window.open('https://unica.vn/xay-dung-website-hoan-chinh-voi-laravel-php-framework?aff=2560&amp;src=freetuts.admin&amp;coupon=freetuts50', '_blank'); return false;"
+										rel="nofollow" title=" ">Xây dựng website hoàn chỉnh với
+											Laravel PHP Framework (<span style="color: red">399k</span>)
+									</a></li>
+									<li><i style="color: red" class="fa-icon-hand-right"></i>
+										<a href="#"
+										onclick="window.open('https://unica.vn/lap-trinh-fullstack-voi-angular-php-mysql?aff=2560&amp;src=freetuts.admin&amp;coupon=freetuts50', '_blank'); return false;"
+										rel="nofollow" title=" ">Lập trình FULLSTACK với ANGULAR -
+											PHP - MYSQL (<span style="color: red">399k</span>)
+									</a></li>
+								</ul>
+								</p>
+
+
+							</div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="huong-dan-cai-dat-laravel-3373.html"
+											title="Bài 1: Laravel là gì? hướng dẫn cài đặt laravel bằng Composer">Bài
+											1: Laravel là gì? hướng dẫn cài đặt laravel bằng Composer</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="huong-dan-cai-dat-laravel-3373.html"
+											title="Bài 1: Laravel là gì? hướng dẫn cài đặt laravel bằng Composer">
+											<img
+											src="upload/tut_cate/images/2015/12/14/3/hoc-laravel.gif"
+											width="220" height="140"
+											alt="Bài 1: Laravel là gì? hướng dẫn cài đặt laravel bằng Composer">
+										</a>
+									</div>
+									<P>Trong bài này mình sẽ hướng dẫn các bạn cách cài đặt
+										Laravel, sau đó chúng ta sẽ đi tìm&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="tim-hieu-cau-truc-cua-laravel-5x-715.html"
+											title="Bài 04: Tìm hiểu cấu trúc của Laravel 5.x">Bài 04:
+											Tìm hiểu cấu trúc của Laravel 5.x</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="tim-hieu-cau-truc-cua-laravel-5x-715.html"
+											title="Bài 04: Tìm hiểu cấu trúc của Laravel 5.x"> <img
+											src="upload/tut_post/images/2016/08/14/715/tim-hieu-cau-truc-laravel.jpg"
+											width="220" height="140"
+											alt="Bài 04: Tìm hiểu cấu trúc của Laravel 5.x">
+										</a>
+									</div>
+									<P>Và trong bài này, chúng ta sẽ tìm hiểu cấu trúc của
+										Laravel để có thể hiểu được vai trò&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="huong-dan-cai-dat-laravel-5x-703.html"
+											title="Bài 03: Hướng dẫn cài đặt Laravel 5.x">Bài 03:
+											Hướng dẫn cài đặt Laravel 5.x</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="huong-dan-cai-dat-laravel-5x-703.html"
+											title="Bài 03: Hướng dẫn cài đặt Laravel 5.x"> <img
+											src="upload/tut_post/images/2016/08/08/703/cai-dat-laravel.jpg"
+											width="220" height="140"
+											alt="Bài 03: Hướng dẫn cài đặt Laravel 5.x">
+										</a>
+									</div>
+									<P>Để bắt đầu series tự học Laravel 5x thì công việc đầu
+										tiên là bạn phải cài đặt Laravel đã.&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="huong-dan-su-dung-composer-php-699.html"
+											title="Bài 02: Hướng dẫn sử dụng Composer PHP">Bài 02:
+											Hướng dẫn sử dụng Composer PHP</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="huong-dan-su-dung-composer-php-699.html"
+											title="Bài 02: Hướng dẫn sử dụng Composer PHP"> <img
+											src="upload/tut_post/images/2016/08/07/699/su-dung-composer.png"
+											width="220" height="140"
+											alt="Bài 02: Hướng dẫn sử dụng Composer PHP">
+										</a>
+									</div>
+									<P>Composer là một công cụ tuyệt vời cho tín đồ PHP và
+										trong bài này, chúng ta sẽ tìm hiểu&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="su-dung-query-builder-model-trong-laravel-326.html"
+											title="Bài 11: Sử dụng Query Builder (Model) trong laravel">Bài
+											11: Sử dụng Query Builder (Model) trong laravel</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="su-dung-query-builder-model-trong-laravel-326.html"
+											title="Bài 11: Sử dụng Query Builder (Model) trong laravel">
+											<img
+											src="upload/tut_post/images/2015/03/13/326/su-dung-query-builder-model-trong-laravel.gif"
+											width="220" height="140"
+											alt="Bài 11: Sử dụng Query Builder (Model) trong laravel">
+										</a>
+									</div>
+									<P>Model trong mô mình MVC dùng để tương tác với cơ sở dữ
+										liệu và trả kết quả về cho&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="su-dung-blade-template-engine-trong-laravel-304.html"
+											title="Bài 10: Sử dụng Blade template engine trong Laravel">Bài
+											10: Sử dụng Blade template engine trong Laravel</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="su-dung-blade-template-engine-trong-laravel-304.html"
+											title="Bài 10: Sử dụng Blade template engine trong Laravel">
+											<img
+											src="upload/tut_post/images/2015/02/01/304/su-dung-blade-template-engine-trong-laravel.gif"
+											width="220" height="140"
+											alt="Bài 10: Sử dụng Blade template engine trong Laravel">
+										</a>
+									</div>
+									<P>Template engine có tác dụng giúp sạch đi những đoạn code
+										PHP nằm trong View nên tách biệt hoàn toàn&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="su-dung-view-trong-laravel-303.html"
+											title="Bài 4: Sử dụng View trong laravel">Bài 4: Sử dụng
+											View trong laravel</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="su-dung-view-trong-laravel-303.html"
+											title="Bài 4: Sử dụng View trong laravel"> <img
+											src="upload/tut_post/images/2015/01/25/303/su-dung-view-trong-laravel.gif"
+											width="220" height="140"
+											alt="Bài 4: Sử dụng View trong laravel">
+										</a>
+									</div>
+									<P>Trong bài này chúng ta sẽ tìm hiểu đến View, một thành
+										phần khá quan trọng trong mô hình MVC.&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="su-dung-controller-trong-laravel-300.html"
+											title="Bài 3: Sử dụng Controller trong laravel">Bài 3: Sử
+											dụng Controller trong laravel</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="su-dung-controller-trong-laravel-300.html"
+											title="Bài 3: Sử dụng Controller trong laravel"> <img
+											src="upload/tut_post/images/2015/01/19/300/su-dung-controller-trong-laravel.gif"
+											width="220" height="140"
+											alt="Bài 3: Sử dụng Controller trong laravel">
+										</a>
+									</div>
+									<P>Sau khi route nhận được request thì sẽ chuyển hướng
+										request đến cho controller và giao cho controller này
+										xử&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a
+											href="su-dung-route-filter-va-route-group-trong-laravel-298.html"
+											title="Bài 07: Sử dụng Route::filter và Route::group trong laravel">Bài
+											07: Sử dụng Route::filter và Route::group trong laravel</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a
+											href="su-dung-route-filter-va-route-group-trong-laravel-298.html"
+											title="Bài 07: Sử dụng Route::filter và Route::group trong laravel">
+											<img
+											src="upload/tut_post/images/2015/01/17/298/su-dung-route-filter-va-route-group-trong-laravel.gif"
+											width="220" height="140"
+											alt="Bài 07: Sử dụng Route::filter và Route::group trong laravel">
+										</a>
+									</div>
+									<P>Giới thiệu về 2 loại route rất quan trọng trong việc xử
+										lý logic và làm gọn route hơn là&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a
+											href="su-dung-route-controller-va-route-resource-trong-laravel-294.html"
+											title="Bài 06: Sử dụng Route::controller và Route::resource trong laravel">Bài
+											06: Sử dụng Route::controller và Route::resource trong
+											laravel</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a
+											href="su-dung-route-controller-va-route-resource-trong-laravel-294.html"
+											title="Bài 06: Sử dụng Route::controller và Route::resource trong laravel">
+											<img
+											src="upload/tut_post/images/2015/01/15/294/su-dung-route-controller-va-route-resource-trong-laravel.gif"
+											width="220" height="140"
+											alt="Bài 06: Sử dụng Route::controller và Route::resource trong laravel">
+										</a>
+									</div>
+									<P>Ở bài trước mình có giới thiệu tổng quan về rout trong
+										Laravel và việc sử dụng các route post,&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="tong-quan-ve-route-trong-laravel-290.html"
+											title="Bài 02: Tổng quan về route trong laravel">Bài 02:
+											Tổng quan về route trong laravel</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="tong-quan-ve-route-trong-laravel-290.html"
+											title="Bài 02: Tổng quan về route trong laravel"> <img
+											src="upload/tut_post/images/2015/01/13/290/tong-quan-ve-route-trong-laravel.gif"
+											width="220" height="140"
+											alt="Bài 02: Tổng quan về route trong laravel">
+										</a>
+									</div>
+									<P>Trong khuôn khổ bài viết này, mình sẽ giới thiệu đến bạn
+										route trong laravel là gì, và cách sử&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="nhung-cong-cu-tot-nhat-ho-tro-hoc-laravel-287.html"
+											title="Bài 04: Những công cụ tốt nhất hỗ trợ học laravel">Bài
+											04: Những công cụ tốt nhất hỗ trợ học laravel</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="nhung-cong-cu-tot-nhat-ho-tro-hoc-laravel-287.html"
+											title="Bài 04: Những công cụ tốt nhất hỗ trợ học laravel">
+											<img
+											src="upload/tut_post/images/2015/01/12/287/nhung-cong-cu-tot-nhat-ho-tro-hoc-laravel.gif"
+											width="220" height="140"
+											alt="Bài 04: Những công cụ tốt nhất hỗ trợ học laravel">
+										</a>
+									</div>
+									<P>Trước hết, ai khi học php đều chọn cho mình 1 IDE hoặc
+										text editor phù hợp với bản thân&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="cau-truc-thu-muc-co-ban-cua-laravel-282.html"
+											title="Bài 02: Cấu trúc thư mục cơ bản của Laravel">Bài
+											02: Cấu trúc thư mục cơ bản của Laravel</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="cau-truc-thu-muc-co-ban-cua-laravel-282.html"
+											title="Bài 02: Cấu trúc thư mục cơ bản của Laravel"> <img
+											src="upload/tut_post/images/2015/01/12/282/cau-truc-thu-muc-co-ban-cua-laravel.gif"
+											width="220" height="140"
+											alt="Bài 02: Cấu trúc thư mục cơ bản của Laravel">
+										</a>
+									</div>
+									<P>Bất kì một Framework nào cũng đưa ra một mô hình các cấu
+										trúc thư mục chuẩn để giúp các&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a
+											href="cai-dat-openserver-va-tao-domain-ao-tren-localhost-281.html"
+											title="Bài 03: Cài đặt Openserver và tạo domain ảo trên localhost">Bài
+											03: Cài đặt Openserver và tạo domain ảo trên localhost</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a
+											href="cai-dat-openserver-va-tao-domain-ao-tren-localhost-281.html"
+											title="Bài 03: Cài đặt Openserver và tạo domain ảo trên localhost">
+											<img
+											src="upload/tut_post/images/2015/01/12/281/cai-dat-openserver-va-tao-domain-ao-tren-localhost.gif"
+											width="220" height="140"
+											alt="Bài 03: Cài đặt Openserver và tạo domain ảo trên localhost">
+										</a>
+									</div>
+									<P>Trong bài 3 này mình sẽ giới thiệu các bạn cách tạo tên
+										miền ảo (virtual domain) bằng phần mềm&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a href="composer-la-gi-695.html"
+											title="Bài 01: Composer là gì?">Bài 01: Composer là gì?</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a href="composer-la-gi-695.html"
+											title="Bài 01: Composer là gì?"> <img
+											src="upload/tut_post/images/2016/08/06/695/composer-la-gi.png"
+											width="220" height="140" alt="Bài 01: Composer là gì?">
+										</a>
+									</div>
+									<P>Composer là một công cụ quản lý các thư viện trong PHP
+										(Dependency Management), công cụ này giúp ta tiết&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="sidebar main-sidebar" id="right_sidebar"
+					style="position: relative">
+					<div class="widget">
+						<div class="mom-posts-widget">
+							<script type="text/javascript"
+								src="../js.genieessp.com/t/488/394/a1488394.js"></script>
+						</div>
+					</div>
+					<div id="f_right_sidebar">
+
+
+						<div class="widget " style="border: none">
+							<div class="mom-posts-widget" style="padding: 0px">
+								<table style="margin-bottom: 0px">
+									<tr>
+										<td colspan="3"
+											style="background: #2f6e91; color: #fff; text-align: center; font-weight: bold; font-size: 14px; padding: 2px 10px">MÃ
+											GIẢM GIÁ</td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>Unica</td>
+										<td>50%</td>
+										<td><a
+											href="https://unica.vn/?aff=2560&amp;src=ft.sidebar.coupon"
+											class="coupon" rel="nofollow" title="freetuts50"
+											style="margin-bottom: 0px; border-radius: 20px;"
+											target="_blank">Lấy Mã</a></td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>TinoHost</td>
+										<td>30%</td>
+										<td><a href="https://tinohost.com/?php=213"
+											class="coupon" rel="nofollow" title="TINO30_2020"
+											style="margin-bottom: 0px; border-radius: 20px;"
+											target="_blank">Lấy Mã</a></td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>INET</td>
+										<td>30%</td>
+										<td><a href="https://inet.vn/?aff=158288" class="coupon"
+											rel="nofollow" title="INET30UP"
+											style="margin-bottom: 0px; border-radius: 20px;">Lấy Mã</a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<div class="widget momizat-reviews">
+							<div class="mom-posts-widget">
+
+
+								<!-- freetuts_fixed_sidebar  -->
+								<ins class="adsbygoogle"
+									style="display: inline-block; width: 300px; height: 600px"
+									data-ad-client="ca-pub-7868243767329230"
+									data-ad-slot="2428876116"></ins>
+								<script>
+									(adsbygoogle = window.adsbygoogle || [])
+											.push({});
+								</script>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

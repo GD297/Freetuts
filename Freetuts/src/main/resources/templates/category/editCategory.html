@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form th:action="@{/edit-category}" method="post" th:object="${enti}">
+
+		<label>CateID</label> <input type="text" th:field="*{cateID}" readonly="readonly" class="form-control" /> 
+			
+		<label>Title</label> <input type="text" th:field="*{title}" class="form-control" />
+			
+   	    <label>Link</label> <input type="text" th:field="*{linkCate}" />
+		
+		<label>Nav name</label>
+		<select th:field="*{navID}">
+			<option th:each = "list : ${listNav}" th:value = "${list.navID}" th:text = "${list.title}"></option>
+		</select>
+
+		<button type="submit" class="btn btn-success">Lưu lại</button>
+
+	</form>
+
+</body>
+</html>

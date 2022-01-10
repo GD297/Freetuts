@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Học lập trình online miễn phí - Freetuts - Freetuts</title>
+</head>
+
+<body>
+	<div th:each="blog : ${BLOG_LIST}">
+		<p th:text="${blog}"/>
+	</div>
+</body>
+</html>

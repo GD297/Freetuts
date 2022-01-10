@@ -1,0 +1,168 @@
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" th:inline="javascript">
+	function loadNotiAuto() {
+		this.source = null;
+		this.start = function() {
+			let listNoti = document.getElementById("notiLine1");
+
+			this.source = new EventSource("/updateListRecord");
+			this.source
+					.addEventListener(
+							"message",
+							function(event) {								
+								// These events are JSON, so parsing.
+								let noti = JSON.parse(event.data);
+								$('#notiLine1').append('<a class="dropdown-item" id="'+noti.notiID+'"> <span class="dropdown-item-desc"> <span class="message-user">'
+									+ noti.author
+									+ ' </span> <span class="time messege-text">'
+									+ noti.message
+									+ '</span> <span class="time">'
+									+ noti.time
+									+ '</span></span></a>');
+							});
+
+			this.source.onerror = function() {
+				this.close();
+			};
+		};
+
+		this.stop = function() {
+			this.source.close();
+		};
+	}
+
+	loadNoti = new loadNotiAuto();
+
+	/*
+	 * Register callbacks for starting and stopping the SSE controller.
+	 */
+	window.onload = function() {
+		loadNoti.start();
+	};
+
+	window.onbeforeunload = function() {
+		loadNoti.stop();
+	}
+</script> -->
+<nav class="navbar navbar-expand-lg main-navbar sticky"
+	xmlns:th="http://www.thymeleaf.org">
+	<div class="form-inline mr-auto">
+		<ul class="navbar-nav mr-3">
+			<li><a href="#" data-toggle="sidebar"
+				class="nav-link nav-link-lg
+									collapse-btn"> <i
+					data-feather="menu"></i></a></li>
+			<li>
+				<form class="form-inline mr-auto">
+					<div class="search-element">
+						<input class="form-control" type="search" placeholder="Search"
+							aria-label="Search" data-width="200">
+						<button class="btn" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+				</form>
+			</li>
+		</ul>
+	</div>
+	<ul class="navbar-nav navbar-right">
+		<li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
+				<i data-feather="maximize"></i>
+		</a></li>
+
+		<li class="dropdown dropdown-list-toggle" id="notiButton"><a
+			href="#" data-toggle="dropdown"
+			class="nav-link nav-link-lg message-toggle"><i
+				data-feather="mail" class="mailAnim"></i> <span
+				class="badge headerBadge1"> </span> </a>
+			<div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+				<div class="dropdown-header">
+					Messages
+					<div class="float-right">
+						<a href="#">Mark All	 As Read</a>
+					</div>
+				</div>
+				<div class="dropdown-list-content dropdown-list-message"
+					id="notiLine1">
+
+					<!-- Noti list -->
+
+				</div>
+				<div class="dropdown-footer text-center">
+					<a href="#">View All <i class="fas fa-chevron-right"></i></a>
+				</div>
+			</div></li>
+		<li class="dropdown dropdown-list-toggle"><a href="#"
+			data-toggle="dropdown"
+			class="nav-link notification-toggle nav-link-lg"><i
+				data-feather="bell"></i> </a>
+			<div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+				<div class="dropdown-header">
+					Notifications
+					<div class="float-right">
+						<a href="#">Mark All As Read</a>
+					</div>
+				</div>
+				<div class="dropdown-list-content dropdown-list-icons">
+					<a href="#" class="dropdown-item dropdown-item-unread"> <span
+						class="dropdown-item-icon l-bg-orange text-white"> <i
+							class="far fa-envelope"></i>
+					</span> <span class="dropdown-item-desc"> You got new mail, please
+							check. <span class="time">2 Min Ago</span>
+					</span>
+					</a> <a href="#" class="dropdown-item"> <span
+						class="dropdown-item-icon l-bg-purple text-white"> <i
+							class="fas fa-bell"></i>
+					</span> <span class="dropdown-item-desc"> Meeting with <b>John
+								Deo</b> and <b>Sarah Smith </b> at 10:30 am <span class="time">10
+								Hours Ago</span>
+					</span>
+					</a> <a href="#" class="dropdown-item"> <span
+						class="dropdown-item-icon l-bg-green text-white"> <i
+							class="far fa-check-circle"></i>
+					</span> <span class="dropdown-item-desc"> Sidebar Bug is fixed by
+							Kevin <span class="time">12 Hours Ago</span>
+					</span>
+					</a> <a href="#" class="dropdown-item"> <span
+						class="dropdown-item-icon bg-danger text-white"> <i
+							class="fas fa-exclamation-triangle"></i>
+					</span> <span class="dropdown-item-desc"> Low disk space error!!!.
+							<span class="time">17 Hours Ago</span>
+					</span>
+					</a> <a href="#" class="dropdown-item"> <span
+						class="dropdown-item-icon bg-info text-white"> <i
+							class="fas
+												fa-bell"></i>
+					</span> <span class="dropdown-item-desc"> Welcome to Jiva template!
+							<span class="time">Yesterday</span>
+					</span>
+					</a>
+				</div>
+				<div class="dropdown-footer text-center">
+					<a href="#">View All <i class="fas fa-chevron-right"></i></a>
+				</div>
+			</div></li>
+		<li class="dropdown"><a href="#" data-toggle="dropdown"
+			class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img
+				alt="image"
+				th:src="@{'/upload/'+${#request.userPrincipal.principal.image}}"
+				class="user-img-radious-style"> <span
+				class="d-sm-none d-lg-inline-block"></span></a>
+			<div class="dropdown-menu dropdown-menu-right pullDown">
+				<div class="dropdown-title">Hello [[${#request.userPrincipal.name}]]</div>
+				<a th:href="@{/profile}" class="dropdown-item has-icon"> <i
+					class="far
+										fa-user"></i> Profile
+				</a> <a href="timeline.html" class="dropdown-item has-icon"> <i
+					class="fas fa-bolt"></i> Activities
+				</a> <a href="#" class="dropdown-item has-icon"> <i
+					class="fas fa-cog"></i> Settings
+				</a>
+				<div class="dropdown-divider"></div>
+				<a th:href="@{/logout}" class="dropdown-item has-icon text-danger">
+					<i class="fas fa-sign-out-alt"></i> Logout
+				</a>
+			</div></li>
+	</ul>
+</nav>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/default">
+
+<head>
+	<title>Học lập trình online miễn phí - Freetuts - Freetuts</title>
+</head>
+
+<body id="home" class=" page page-template-default right-sidebar singular fade-imgs-in-appear time_in_twelve_format one-side-wide both-sidebars wpb-js-composer js-comp-ver-4.9 vc_responsive no-js" itemtype="http://schema.org/WebPage">
+	<!-- CONTENT -->
+	<div class="boxed-content-wrapper clearfix" layout:fragment="content">
+		<div class="inner" style="margin-bottom: 20px">
+			<ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-7868243767329230" data-ad-slot="9555707034" data-ad-format="auto" data-full-width-responsive="true"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+		<div class="inner"></div>
+		<div class="inner" style="margin-top: 20px;">
+			<div class="main_container">   <!-- DONE -->
+				<div class="main-col" id="main_container">
+					<div class="news-box  base-box scrolling-box-wrap">
+						<header class="nb-header">
+							<h3 class="nb-title">
+								<a href="/giam-gia" title="Mã giảm giá">Coupon giảm giá</a>
+							</h3>
+						</header>
+						<div class="nb-content">
+							<div class="scrolling-box">
+								<div class="sb-content mom-carousel giam-gia-slide" data-item="3">
+									<th:block th:each="coupon : ${COUPON}">
+										<div class="sb-item post type-post status-publish format-audio has-post-thumbnail category-life category-world tag-momizat tag-templates tag-themes tag-tutorial tag-wordpress post_format-post-format-audio">
+											<div class="sb-item-img">
+												<a th:href="@{/template(id=${coupon.blogID})}" th:title="${coupon.title}" >
+													<img th:src="${coupon.linkImage}" th:alt="${coupon.title}" style="height: 165px ; width: 236px"/>
+												</a>
+											</div>
+											<h3>
+												<a th:href="@{/template(id=${coupon.blogID})}" th:title="${coupon.title}" th:text="${coupon.title}"></a>
+											</h3>
+										</div>
+									</th:block>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="news-box  base-box nb-style3">
+						<header class="nb-header">
+							<h2 class="nb-title">
+								<span>Lập trình</span>
+							</h2>
+						</header>
+						<div class="nb-content">
+							<div class="recent-news">
+								<article th:with="blog=${PROGRAMMING}" class="post-198 post type-post status-publish format-standard has-post-thumbnail category-sports category-world tag-design tag-momizat tag-templates tag-themes tag-productorial tag-wordpress" title="no title">
+									<div class="news-image">
+										<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}">
+											<img th:src="${blog[0].linkImage}" th:alt="${blog[0].title}"/>
+										</a>
+									</div>
+									<div class="news-summary">
+										<h3>
+											<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}" th:text="${blog[0].title}"></a>
+										</h3>
+										<p th:text="${#strings.abbreviate(blog[0].content,100)}"></p>
+									</div>
+								</article>
+							</div>
+							<div class="older-articles">
+								<ul>
+									<li th:each="blog:${PROGRAMMING}" th:if="${blogStat.index} != 0">
+										<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}">
+											<img th:src="${blog.linkImage}" th:alt="${blog.title}" />
+										</a>
+										<div class="details has-feature-image">
+											<h4>
+												<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}" th:text="${blog.title}"></a>
+											</h4>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="news-box  base-box nb-style3">
+						<header class="nb-header">
+							<h2 class="nb-title">
+								<span>Web miễn phí</span>
+							</h2>
+						</header>
+						<div class="nb-content">
+							<div class="recent-news">
+								<article th:with="blog=${FREEWEB}" class="post-198 post type-post status-publish format-standard has-post-thumbnail category-sports category-world tag-design tag-momizat tag-templates tag-themes tag-productorial tag-wordpress" title="no title">
+									<div class="news-image">
+										<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}">
+											<img th:src="${blog[0].linkImage}" th:alt="${blog[0].title}"/>
+										</a>
+									</div>
+									<div class="news-summary">
+										<h3>
+											<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}" th:text="${blog[0].title}"></a>
+										</h3>
+										<p th:text="${#strings.abbreviate(blog[0].content,100)}"></p>
+									</div>
+								</article>
+							</div>
+							<div class="older-articles">
+								<ul>
+									<li th:each="blog:${FREEWEB}" th:if="${blogStat.index} != 0">
+										<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}">
+											<img th:src="${blog.linkImage}" th:alt="${blog.title}" />
+										</a>
+										<div class="details has-feature-image">
+											<h4>
+												<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}" th:text="${blog.title}"></a>
+											</h4>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<footer class="nb-footer">
+							<a th:href="@{/web-mien-phi}" class="show-more-ajax" title="Web miễn phí">Xem thêm<i class="fa-icon-long-arrow-right"></i></a>
+						</footer>
+					</div>
+					<div class="news-box  base-box nb-style3">
+						<header class="nb-header">
+							<h2 class="nb-title">
+								<span>Quản trị Web</span>
+							</h2>
+						</header>
+						<div class="nb-content">
+							<div class="recent-news">
+								<article th:with="blog=${WEBMASTER}" class="post-198 post type-post status-publish format-standard has-post-thumbnail category-sports category-world tag-design tag-momizat tag-templates tag-themes tag-productorial tag-wordpress" title="no title">
+									<div class="news-image">
+										<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}">
+											<img th:src="${blog[0].linkImage}" th:alt="${blog[0].title}"/>
+										</a>
+									</div>
+									<div class="news-summary">
+										<h3>
+											<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}" th:text="${blog[0].title}"></a>
+										</h3>
+										<p th:text="${#strings.abbreviate(blog[0].content,100)}"></p>
+									</div>
+								</article>
+							</div>
+							<div class="older-articles">
+								<ul>
+									<li th:each="blog:${WEBMASTER}" th:if="${blogStat.index} != 0">
+										<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}">
+											<img th:src="${blog.linkImage}" th:alt="${blog.title}" />
+										</a>
+										<div class="details has-feature-image">
+											<h4>
+												<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}" th:text="${blog.title}"></a>
+											</h4>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<footer class="nb-footer">
+							<a th:href="@{/webmaster}" class="show-more-ajax" title="Quản trị Web">Xem thêm<i class="fa-icon-long-arrow-right"></i></a>
+						</footer>
+					</div>
+					<div class="news-box  base-box nb-style3">
+						<header class="nb-header">
+							<h2 class="nb-title">
+								<span>Tin học</span>
+							</h2>
+						</header>
+						<div class="nb-content">
+							<div class="recent-news">
+								<article th:with="blog=${COMPUTING}" class="post-198 post type-post status-publish format-standard has-post-thumbnail category-sports category-world tag-design tag-momizat tag-templates tag-themes tag-productorial tag-wordpress" title="no title">
+									<div class="news-image">
+										<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}">
+											<img th:src="${blog[0].linkImage}" th:alt="${blog[0].title}"/>
+										</a>
+									</div>
+									<div class="news-summary">
+										<h3>
+											<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}" th:text="${blog[0].title}"></a>
+										</h3>
+										<p th:text="${#strings.abbreviate(blog[0].content,88)}"></p>
+									</div>
+								</article>
+							</div>
+							<div class="older-articles">
+								<ul>
+									<li th:each="blog:${COMPUTING}" th:if="${blogStat.index} != 0">
+										<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}">
+											<img th:src="${blog.linkImage}" th:alt="${blog.title}" />
+										</a>
+										<div class="details has-feature-image">
+											<h4>
+												<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}" th:text="${blog.title}"></a>
+											</h4>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<footer class="nb-footer">
+							<a th:href="@{/tin-hoc}" class="show-more-ajax" title="Tin học">Xem thêm<i class="fa-icon-long-arrow-right"></i></a>
+						</footer>
+					</div>
+					<div class="news-box  base-box nb-style3">
+						<header class="nb-header">
+							<h2 class="nb-title">
+								<span>Thủ thuật</span>
+							</h2>
+						</header>
+						<div class="nb-content">
+							<div class="recent-news">
+								<article th:with="blog=${TIPS}" class="post-198 post type-post status-publish format-standard has-post-thumbnail category-sports category-world tag-design tag-momizat tag-templates tag-themes tag-productorial tag-wordpress" title="no title">
+									<div class="news-image">
+										<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}">
+											<img th:src="${blog[0].linkImage}" th:alt="${blog[0].title}"/>
+										</a>
+									</div>
+									<div class="news-summary">
+										<h3>
+											<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}" th:text="${blog[0].title}"></a>
+										</h3>
+										<p th:text="${#strings.abbreviate(blog[0].content,88)}"></p>
+									</div>
+								</article>
+							</div>
+							<div class="older-articles">
+								<ul>
+									<li th:each="blog:${TIPS}" th:if="${blogStat.index} != 0">
+										<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}">
+											<img th:src="${blog.linkImage}" th:alt="${blog.title}" />
+										</a>
+										<div class="details has-feature-image">
+											<h4>
+												<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}" th:text="${blog.title}"></a>
+											</h4>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<footer class="nb-footer">
+							<a th:href="@{/thu-thuat}" class="show-more-ajax" title="Thủ thuật">Xem thêm<i class="fa-icon-long-arrow-right"></i></a>
+						</footer>
+					</div>
+					<div class="news-box  base-box nb-style3">
+						<header class="nb-header">
+							<h2 class="nb-title">
+								<span>Download</span>
+							</h2>
+						</header>
+						<div class="nb-content">
+							<div class="recent-news">
+								<article th:with="blog=${DOWNLOAD}" class="post-198 post type-post status-publish format-standard has-post-thumbnail category-sports category-world tag-design tag-momizat tag-templates tag-themes tag-productorial tag-wordpress" title="no title">
+									<div class="news-image">
+										<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}">
+											<img th:src="${blog[0].linkImage}" th:alt="${blog[0].title}"/>
+										</a>
+									</div>
+									<div class="news-summary">
+										<h3>
+											<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}" th:text="${blog[0].title}"></a>
+										</h3>
+										<p th:text="${#strings.abbreviate(blog[0].content,88)}"></p>
+									</div>
+								</article>
+							</div>
+							<div class="older-articles">
+								<ul>
+									<li th:each="blog:${DOWNLOAD}" th:if="${blogStat.index} != 0">
+										<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}">
+											<img th:src="${blog.linkImage}" th:alt="${blog.title}" />
+										</a>
+										<div class="details has-feature-image">
+											<h4>
+												<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}" th:text="${blog.title}"></a>
+											</h4>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<footer class="nb-footer">
+							<a th:href="@{/tai-ve}" class="show-more-ajax" title="Tải về">Xem thêm<i class="fa-icon-long-arrow-right"></i></a>
+						</footer>
+					</div>
+					<div class="news-box  base-box nb-style3">
+						<header class="nb-header">
+							<h2 class="nb-title">
+								<span>Marketing</span>
+							</h2>
+						</header>
+						<div class="nb-content">
+							<div class="recent-news">
+								<article th:with="blog=${MARKETING}" class="post-198 post type-post status-publish format-standard has-post-thumbnail category-sports category-world tag-design tag-momizat tag-templates tag-themes tag-productorial tag-wordpress" title="no title">
+									<div class="news-image">
+										<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}">
+											<img th:src="${blog[0].linkImage}" th:alt="${blog[0].title}"/>
+										</a>
+									</div>
+									<div class="news-summary">
+										<h3>
+											<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}" th:text="${blog[0].title}"></a>
+										</h3>
+										<p th:text="${#strings.abbreviate(blog[0].content,88)}"></p>
+									</div>
+								</article>
+							</div>
+							<div class="older-articles">
+								<ul>
+									<li th:each="blog:${MARKETING}" th:if="${blogStat.index} != 0">
+										<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}">
+											<img th:src="${blog.linkImage}" th:alt="${blog.title}" />
+										</a>
+										<div class="details has-feature-image">
+											<h4>
+												<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}" th:text="${blog.title}"></a>
+											</h4>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<footer class="nb-footer">
+							<a th:href="@{/marketing}" class="show-more-ajax" title="Marketing">Xem thêm<i class="fa-icon-long-arrow-right"></i></a>
+						</footer>
+					</div>
+					<div class="news-box  base-box nb-style3">
+						<header class="nb-header">
+							<h2 class="nb-title">
+								<span>Khám phá</span>
+							</h2>
+						</header>
+						<div class="nb-content">
+							<div class="recent-news">
+								<article th:with="blog=${EXPLORE}" class="post-198 post type-post status-publish format-standard has-post-thumbnail category-sports category-world tag-design tag-momizat tag-templates tag-themes tag-productorial tag-wordpress" title="no title">
+									<div class="news-image">
+										<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}">
+											<img th:src="${blog[0].linkImage}" th:alt="${blog[0].title}"/>
+										</a>
+									</div>
+									<div class="news-summary">
+										<h3>
+											<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}" th:text="${blog[0].title}"></a>
+										</h3>
+										<p th:text="${#strings.abbreviate(blog[0].content,88)}"></p>
+									</div>
+								</article>
+							</div>
+							<div class="older-articles">
+								<ul>
+									<li th:each="blog:${EXPLORE}" th:if="${blogStat.index} != 0">
+										<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}">
+											<img th:src="${blog.linkImage}" th:alt="${blog.title}" />
+										</a>
+										<div class="details has-feature-image">
+											<h4>
+												<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}" th:text="${blog.title}"></a>
+											</h4>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<footer class="nb-footer">
+							<a th:href="@{/kham-pha}" class="show-more-ajax" title="Khám phá">Xem thêm<i class="fa-icon-long-arrow-right"></i></a>
+						</footer>
+					</div>
+					<div class="news-box  base-box nb-style3">
+						<header class="nb-header">
+							<h2 class="nb-title">
+								<span>Môn học</span>
+							</h2>
+						</header>
+						<div class="nb-content">
+							<div class="recent-news">
+								<article th:with="blog=${SUBJECT}" class="post-198 post type-post status-publish format-standard has-post-thumbnail category-sports category-world tag-design tag-momizat tag-templates tag-themes tag-productorial tag-wordpress" title="no title">
+									<div class="news-image">
+										<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}">
+											<img th:src="${blog[0].linkImage}" th:alt="${blog[0].title}"/>
+										</a>
+									</div>
+									<div class="news-summary">
+										<h3>
+											<a th:href="@{/template(id=${blog[0].blogID})}" th:title="${blog[0].title}" th:text="${blog[0].title}"></a>
+										</h3>
+										<p th:text="${#strings.abbreviate(blog[0].content,88)}"></p>
+									</div>
+								</article>
+							</div>
+							<div class="older-articles">
+								<ul>
+									<li th:each="blog:${SUBJECT}" th:if="${blogStat.index} != 0">
+										<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}">
+											<img th:src="${blog.linkImage}" th:alt="${blog.title}" />
+										</a>
+										<div class="details has-feature-image">
+											<h4>
+												<a th:href="@{/template(id=${blog.blogID})}" th:title="${blog.title}" th:text="${blog.title}"></a>
+											</h4>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<footer class="nb-footer">
+							<a th:href="@{/mon-hoc}" class="show-more-ajax" title="Môn học">Xem thêm<i class="fa-icon-long-arrow-right"></i></a>
+						</footer>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<div class="sidebar main-sidebar" id="right_sidebar" style="position: relative">
+				<!-- <div class="widget">
+					<div class="mom-posts-widget">
+						<script type="text/javascript" src="https://js.genieessp.com/t/488/394/a1488394.js"></script>
+					</div>
+				</div> -->
+				
+				<div class="widget momizat-reviews" id="blog_latest">  <!-- DONE -->
+					<div class="widget-head">
+						<h3 class="widget-title">
+							<span>REVIEW KHÓA HỌC</span>
+						</h3>
+					</div>
+					<div class="mom-posts-widget">
+						<div th:each="course : ${REVIEW_COURSE}" class="mpw-post">
+							<div class="post-img main-sidebar-element">
+								<a th:href="@{/template(id=${course.blogID})}" th:title="${course.title}">
+									<img th:src="${course.linkImage}" th:alt="${course.title}" width="90" height="60"/>
+								</a>
+							</div>
+							<div class="details has-feature-image">
+								<h4>
+									<a th:href="@{/template(id=${course.blogID})}" th:title="${course.title}" th:text="${course.title}"></a>
+								</h4>
+							</div>
+						</div>
+						<div class="mpw-post" style="text-align: right">
+							<a th:href="@{/khoa-hoc}" title="khóa học">Xem tất cả</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="weather-widget blog widget weather-categories ">
+					<div class="widget-head">
+						<h3 class="widget-title">
+							<span>BÀI TẬP</span>
+						</h3>
+					</div>
+					<div class="next-days" style="margin-bottom: 5px; max-height: 450px; overflow-y: scroll">
+						<ol>
+							<li th:each="exercise : ${EXERCISE}">
+								<div class="day-summary">
+									<div class="d-decs" style="padding-left: 10px">
+										<a style="margin-left: 0px" th:href="@{/template(id=${exercise.blogID})}" th:title="${exercise.title}" th:text="${exercise.title}"></a>
+									</div>
+								</div>
+							</li>
+						</ol>
+					</div>
+				</div>
+				<div id="f_right_sidebar">
+
+
+					<div class="widget " style="border: none">
+						<div class="mom-posts-widget" style="padding: 0px">
+							<table style="margin-bottom: 0px">
+								<tr>
+									<td colspan="3"
+										style="background: #2f6e91; color: #fff; text-align: center; font-weight: bold; font-size: 14px; padding: 2px 10px">MÃ
+										GIẢM GIÁ</td>
+								</tr>
+								<tr style="font-size: 14px !important">
+									<td>Unica</td>
+									<td>50%</td>
+									<td><a
+										href="https://unica.vn/?aff=2560&src=ft.sidebar.coupon"
+										class="coupon" rel="nofollow" title="freetuts50"
+										style="margin-bottom: 0px; border-radius: 20px;"
+										target="_blank">Lấy Mã</a></td>
+								</tr>
+								<tr style="font-size: 14px !important">
+									<td>TinoHost</td>
+									<td>30%</td>
+									<td><a href="https://tinohost.com/?php=213" class="coupon"
+										rel="nofollow" title="TINO30_2020"
+										style="margin-bottom: 0px; border-radius: 20px;"
+										target="_blank">Lấy Mã</a></td>
+								</tr>
+								<tr style="font-size: 14px !important">
+									<td>INET</td>
+									<td>30%</td>
+									<td><a href="/recommended/inet" class="coupon"
+										rel="nofollow" title="INET30UP"
+										style="margin-bottom: 0px; border-radius: 20px;">Lấy Mã</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="widget momizat-reviews">
+						<div class="mom-posts-widget">
+
+
+							<!-- freetuts_fixed_sidebar  -->
+							<ins class="adsbygoogle"
+								style="display: inline-block; width: 300px; height: 600px"
+								data-ad-client="ca-pub-7868243767329230"
+								data-ad-slot="2428876116"></ins>
+							<script>
+								(adsbygoogle = window.adsbygoogle || [])
+										.push({});
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+
+</body>
+
+</html>

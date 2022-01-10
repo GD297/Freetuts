@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+<title>Review Laptop / PC - Freetuts</title>
+</head>
+
+<body id="product"
+	class=" page page-template-default right-sidebar singular fade-imgs-in-appear time_in_twelve_format one-side-wide both-sidebars wpb-js-composer js-comp-ver-4.9 vc_responsive no-js"
+	itemtype="http://schema.org/WebPage">
+	<div class="boxed-wrap clearfix">
+		<div class="boxed-content-wrapper clearfix" layout:fragment="content">
+			<div class="inner" style="margin-bottom: 20px">
+				<ins class="adsbygoogle" style="display: block"
+					data-ad-client="ca-pub-7868243767329230" data-ad-slot="9555707034"
+					data-ad-format="auto" data-full-width-responsive="true"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+
+			<div class="inner">
+
+
+				<div class=""
+					style="line-height: 30px; margin-bottom: 10px; font-size: 15px">
+					<div itemscope itemtype="https://schema.org/BreadcrumbList">
+
+						<span itemprop="itemListElement" itemscope
+							itemtype="https://schema.org/ListItem"> <a itemprop="item"
+							th:href="@{../index}" title="Trang chủ"> <span
+								itemprop="name">Home</span>
+								<meta itemprop="position" content="1" />
+						</a>
+						</span> > <span itemprop="itemListElement" itemscope
+							itemtype="https://schema.org/ListItem"> <a itemprop="item"
+							th:href="@{../review}" title="Review"> <span itemprop="name">Review</span>
+
+								<meta itemprop="position" content="2" />
+						</a>
+						</span> > <span itemprop="name">Máy tính</span>
+
+					</div>
+				</div>
+
+
+			</div>
+			<div class="inner ">
+				<nav class="second_navigation">
+					<div>
+
+						<ul>
+							<li><a th:href="@{dien-thoai}" title="Điện thoại">Điện
+									thoại</a></li>
+							<li class='active'><a th:href="@{may-tinh}" title="Máy tính">Máy
+									tính</a></li>
+							<li><a th:href="@{ky-thuat-so}" title="Kỹ Thuật Số">Kỹ
+									Thuật Số</a></li>
+							<li><a th:href="@{game}" title="Game">Game</a></li>
+							<li><a th:href="@{xe}" title="Xe Hay">Xe Hay</a></li>
+						</ul>
+					</div>
+					<span class="more_item"><i class="momizat-icon-arrow-down"></i></span>
+				</nav>
+			</div>
+			<div class="inner" style="margin-top: 20px;">
+
+				<div class="main_container">
+					<div class="main-col" id="main_container">
+						<div class="base-box" itemtype="http://schema.org/Article">
+							<h1 id="main_title" class="post-tile entry-title"
+								itemprop="headline">Review Laptop / PC</h1>
+
+							<div class="entry-content">
+								<p>Chuyên mục Review Laptop / PC, tại đây bạn sẽ tìm thấy
+									những chia sẻ đánh giá các sản phẩm Máy tính nên sử dụng và tốt
+									nhất.</p>
+								<div class="review-cate">
+									<div class="item">
+										<a th:href="@{may-tinh/may-tinh-ban-pc}"
+											title="Đánh giá máy tính bàn PC"> <img
+											alt="Đánh giá máy tính bàn PC"
+											src="../upload/product_cate/images/2020/04/06/147/computer-icon.jpg" />
+
+											Desktop
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{may-tinh/danh-gia-laptop}"
+											title="Đánh giá Laptop"> <img alt="Đánh giá Laptop"
+											src="../upload/product_cate/images/2020/04/06/148/laptop-icon.jpg" />
+
+											Laptop
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{may-tinh/may-tinh-macbook}"
+											title="Đánh giá máy tính macbook"> <img
+											alt="Đánh giá máy tính macbook"
+											src="../upload/product_cate/images/2020/04/06/149/macbook-icon.jpg" />
+
+											Macbook
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{may-tinh/mouse-keyboard}"
+											title="Đánh giá chuột & bàn phím máy tính"> <img
+											alt="Đánh giá chuột & bàn phím máy tính"
+											src="../upload/product_cate/images/2020/04/06/151/keyboard-icon.jpg" />
+
+											Chuột & Bàn phím
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{may-tinh/man-hinh}"
+											title="Đánh giá màn hình máy tính"> <img
+											alt="Đánh giá màn hình máy tính"
+											src="../upload/product_cate/images/2020/04/15/158/screen-computer.jpg" />
+
+											Màn hình
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{may-tinh/card-do-hoa}"
+											title="Đánh giá card đồ họa"> <img
+											alt="Đánh giá card đồ họa"
+											src="../upload/product_cate/images/2020/04/15/159/graphic-card-icon.jpg" />
+
+											Card đồ họa
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{may-tinh/mainboard-cpu}"
+											title="Đánh giá mainboard & CPU"> <img
+											alt="Đánh giá mainboard & CPU"
+											src="../upload/product_cate/images/2020/04/15/160/mainboard-icon.jpg" />
+
+											Main & CPU
+										</a>
+									</div>
+									<div class="item">
+										<a th:href="@{may-tinh/phu-kien-may-tinh-khac}"
+											title="đánh giá Phụ kiện máy tính khác"> <img
+											alt="đánh giá Phụ kiện máy tính khác"
+											src="../upload/product_cate/images/2020/04/15/163/computer-best.jpg" />
+
+											Phụ kiện khác
+										</a>
+									</div>
+								</div>
+
+								<div class="clearboth"></div>
+							</div>
+						</div>
+
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{so-sanh-huawei-nova-7-va-huawei-nova-se-379}"
+											title="So sánh Huawei Nova 7 và Huawei Nova SE"> So sánh
+											Huawei Nova 7 và Huawei Nova SE</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{so-sanh-huawei-nova-7-va-huawei-nova-se-379}"
+											title="So sánh Huawei Nova 7 và Huawei Nova SE"> <img
+											src="../public/logo/loi-bai-hat.gif" width="220" height="140"
+											alt="So sánh Huawei Nova 7 và Huawei Nova SE">
+										</a>
+									</div>
+									<P></P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-huawei-y6p-416}"
+											title="Đánh giá Huawei Y6p"> Đánh giá Huawei Y6p</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-huawei-y6p-416}"
+											title="Đánh giá Huawei Y6p"> <img
+											src="../public/logo/loi-bai-hat.gif" width="220" height="140"
+											alt="Đánh giá Huawei Y6p">
+										</a>
+									</div>
+									<P></P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-samsung-galaxy-tab-s7%2b-424}"
+											title="Đánh giá Samsung Galaxy Tab S7+"> Đánh giá Samsung
+											Galaxy Tab S7+</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-samsung-galaxy-tab-s7%2b-424}"
+											title="Đánh giá Samsung Galaxy Tab S7+"> <img
+											src="../public/logo/loi-bai-hat.gif" width="220" height="140"
+											alt="Đánh giá Samsung Galaxy Tab S7+">
+										</a>
+									</div>
+									<P></P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{thinkpad-x1-fold-se-ra-mat-vao-quy-3-2020-430}"
+											title="Lenovo Thinkpad X1 Fold sẽ ra mắt vào quý 3 / 2020 - giá hơn 50tr">
+											Lenovo Thinkpad X1 Fold sẽ ra mắt vào quý 3 / 2020 - giá hơn
+											50tr</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{thinkpad-x1-fold-se-ra-mat-vao-quy-3-2020-430}"
+											title="Lenovo Thinkpad X1 Fold sẽ ra mắt vào quý 3 / 2020 - giá hơn 50tr">
+											<img
+											src="../upload/product_key/images/2020/05/27/367/thinkpad-x1-fold-se-ra-mat-vao-quy-3-2020.jpg"
+											width="220" height="140"
+											alt="Lenovo Thinkpad X1 Fold sẽ ra mắt vào quý 3 / 2020 - giá hơn 50tr">
+										</a>
+									</div>
+									<P>Một trong những chiếc laptop gây được sự quan tâm, chú ý
+										đặc biệt của giới công nghệ hiện nay&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a
+											th:href="@{top-5-dong-ho-thong-minh-mau-hong-gia-re-nhat-220}"
+											title="TOP 5 đồng hồ thông minh màu hồng giá rẻ nhất">
+											TOP 5 đồng hồ thông minh màu hồng giá rẻ nhất</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a
+											th:href="@{top-5-dong-ho-thong-minh-mau-hong-gia-re-nhat-220}"
+											title="TOP 5 đồng hồ thông minh màu hồng giá rẻ nhất"> <img
+											src="../public/logo/loi-bai-hat.gif" width="220" height="140"
+											alt="TOP 5 đồng hồ thông minh màu hồng giá rẻ nhất">
+										</a>
+									</div>
+									<P>Hiện nay, những mẫu đồng hồ thông minh màu hồng được rất
+										nhiều bạn nữ yêu thích và chọn lựa.&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a
+											th:href="@{loa-keo-gia-tu-3-den-7-trieu-dung-co-tot-khong-226}"
+											title="Loa kéo giá từ 3 đến 7 triệu dùng có tốt không?">
+											Loa kéo giá từ 3 đến 7 triệu dùng có tốt không?</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a
+											th:href="@{loa-keo-gia-tu-3-den-7-trieu-dung-co-tot-khong-226}"
+											title="Loa kéo giá từ 3 đến 7 triệu dùng có tốt không?">
+											<img src="../public/logo/loi-bai-hat.gif" width="220"
+											height="140"
+											alt="Loa kéo giá từ 3 đến 7 triệu dùng có tốt không?">
+										</a>
+									</div>
+									<P></P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{tren-7-trieu-nen-mua-loa-keo-nao-227}"
+											title="Trên 7 triệu nên mua loa kéo nào?"> Trên 7 triệu
+											nên mua loa kéo nào?</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{tren-7-trieu-nen-mua-loa-keo-nao-227}"
+											title="Trên 7 triệu nên mua loa kéo nào?"> <img
+											src="../public/logo/loi-bai-hat.gif" width="220" height="140"
+											alt="Trên 7 triệu nên mua loa kéo nào?">
+										</a>
+									</div>
+									<P></P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{laptop-choi-game-229}"
+											title="Cách chọn Laptop chơi game chuẩn nhất 2020 - Cấu hình chuẩn nhất">
+											Cách chọn Laptop chơi game chuẩn nhất 2020 - Cấu hình chuẩn
+											nhất</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{laptop-choi-game-229}"
+											title="Cách chọn Laptop chơi game chuẩn nhất 2020 - Cấu hình chuẩn nhất">
+											<img src="../public/logo/loi-bai-hat.gif" width="220"
+											height="140"
+											alt="Cách chọn Laptop chơi game chuẩn nhất 2020 - Cấu hình chuẩn nhất">
+										</a>
+									</div>
+									<P></P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{keo-tan-nhiet-cpu-441}"
+											title="Mua keo tản nhiệt laptop / máy tính / CPU loại nào tốt nhất?">
+											Mua keo tản nhiệt laptop / máy tính / CPU loại nào tốt nhất?</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{keo-tan-nhiet-cpu-441}"
+											title="Mua keo tản nhiệt laptop / máy tính / CPU loại nào tốt nhất?">
+											<img
+											src="../upload/product_post/images/2020/08/31/441/top-keo-tan-nhiet-tot-nhat-325x260px.jpg"
+											width="220" height="140"
+											alt="Mua keo tản nhiệt laptop / máy tính / CPU loại nào tốt nhất?">
+										</a>
+									</div>
+									<P>Nếu thấy máy tính của mình nóng hơn so với bình thường
+										thì khả năng keo tản nhiệt đã hết&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-htc-u20-5g-421}"
+											title="Đánh giá HTC U20 5G: Thiết kế đẹp nhưng có thể chỉ ra mắt tại Đài Loan">
+											Đánh giá HTC U20 5G: Thiết kế đẹp nhưng có thể chỉ ra mắt tại
+											Đài Loan</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-htc-u20-5g-421}"
+											title="Đánh giá HTC U20 5G: Thiết kế đẹp nhưng có thể chỉ ra mắt tại Đài Loan">
+											<img
+											src="../upload/product_post/images/2020/08/03/421/danh-gia-htc-u20-5g.jpg"
+											width="220" height="140"
+											alt="Đánh giá HTC U20 5G: Thiết kế đẹp nhưng có thể chỉ ra mắt tại Đài Loan">
+										</a>
+									</div>
+									<P>Sau hai năm vắng bóng, HTC bất ngờ quay lại thị trường
+										smartphone với bộ đôi HTC U20 5G và&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-asus-chromebook-flip-c434-411}"
+											title="Đánh giá Asus Chromebook Flip C434: Chỉ dành cho dân văn phòng làm việc nhẹ">
+											Đánh giá Asus Chromebook Flip C434: Chỉ dành cho dân văn
+											phòng làm việc nhẹ</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-asus-chromebook-flip-c434-411}"
+											title="Đánh giá Asus Chromebook Flip C434: Chỉ dành cho dân văn phòng làm việc nhẹ">
+											<img
+											src="../upload/product_post/images/2020/05/30/411/danh-gia-asus-chromebook-flip-c434.jpg"
+											width="220" height="140"
+											alt="Đánh giá Asus Chromebook Flip C434: Chỉ dành cho dân văn phòng làm việc nhẹ">
+										</a>
+									</div>
+									<P>Đây là một chiếc laptop 2 trong 1 với thiết kế cao cấp,
+										hiệu suất ổn định và thời lượng&#8230;</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-apple-macbook-pro-touch-bar-2019-410}"
+											title="Đánh giá Apple Macbook Pro Touch Bar 2019: Sang trọng và tinh tế">
+											Đánh giá Apple Macbook Pro Touch Bar 2019: Sang trọng và tinh
+											tế</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-apple-macbook-pro-touch-bar-2019-410}"
+											title="Đánh giá Apple Macbook Pro Touch Bar 2019: Sang trọng và tinh tế">
+											<img
+											src="../upload/product_post/images/2020/05/29/410/danh-gia-apple-macbook-pro-touch-bar-2019.jpg"
+											width="220" height="140"
+											alt="Đánh giá Apple Macbook Pro Touch Bar 2019: Sang trọng và tinh tế">
+										</a>
+									</div>
+									<P>Đây là chiếc laptop giúp người dùng tiếp cận với một
+										phương thức hoàn toàn mới ..</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-macbook-air-2017-mqd32-409}"
+											title="Đánh giá Macbook Air 2017 MQD32: Giá tại Việt Nam rẻ hơn quốc tế">
+											Đánh giá Macbook Air 2017 MQD32: Giá tại Việt Nam rẻ hơn quốc
+											tế</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-macbook-air-2017-mqd32-409}"
+											title="Đánh giá Macbook Air 2017 MQD32: Giá tại Việt Nam rẻ hơn quốc tế">
+											<img
+											src="../upload/product_post/images/2020/05/29/409/danh-gia-macbook-air-2017-mqd32.jpg"
+											width="220" height="140"
+											alt="Đánh giá Macbook Air 2017 MQD32: Giá tại Việt Nam rẻ hơn quốc tế">
+										</a>
+									</div>
+									<P>Bằng chứng là sản phẩm này luôn lọt top danh sách những
+										Macbook ...</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-apple-macbook-pro-2020-13-inch-408}"
+											title="Đánh giá Apple Macbook Pro 2020 13 inch - giá từ 30 - 50 triệu">
+											Đánh giá Apple Macbook Pro 2020 13 inch - giá từ 30 - 50
+											triệu</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-apple-macbook-pro-2020-13-inch-408}"
+											title="Đánh giá Apple Macbook Pro 2020 13 inch - giá từ 30 - 50 triệu">
+											<img
+											src="../upload/product_post/images/2020/05/29/408/danh-gia-apple-macbook-pro-2020-13-inch.jpg"
+											width="220" height="140"
+											alt="Đánh giá Apple Macbook Pro 2020 13 inch - giá từ 30 - 50 triệu">
+										</a>
+									</div>
+									<P>Apple vừa chính thức cho lên kệ MacBook Pro 2020 13 inch
+										..</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div
+							class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+							<div class="bp-entry">
+								<div class="bp-head">
+									<h2>
+										<a th:href="@{danh-gia-macbook-air-2019-406}"
+											title="Đánh giá Macbook Air 2019 -  Chiếc laptop Apple bán chạy nhất 2020">
+											Đánh giá Macbook Air 2019 - Chiếc laptop Apple bán chạy nhất
+											2020</a>
+									</h2>
+
+								</div>
+								<div class="bp-details">
+									<div class="post-img">
+										<a th:href="@{danh-gia-macbook-air-2019-406}"
+											title="Đánh giá Macbook Air 2019 -  Chiếc laptop Apple bán chạy nhất 2020">
+											<img
+											src="../upload/product_post/images/2020/05/27/406/apple-macbook-air-2019-van-ban-chay-nhat-2020.jpg"
+											width="220" height="140"
+											alt="Đánh giá Macbook Air 2019 -  Chiếc laptop Apple bán chạy nhất 2020">
+										</a>
+									</div>
+									<P>Mặc dù đã ra mắt từ năm ngoái nhưng cho đến nay Macbook
+										Air 2019 vẫn ...</P>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="pagination">
+							<ul>
+								<li><span>1</span></li>
+								<li><a th:href="@{may-tinh/page/2}" title="2">2</a></li>
+								<li><a th:href="@{may-tinh/page/3}" title="3">3</a></li>
+								<li><a th:href="@{may-tinh/page/2}" title="2">&gt;</a></li>
+								<li><a th:href="@{may-tinh/page/3}" title="3">&gt;&gt;</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="sidebar main-sidebar" id="right_sidebar"
+					style="position: relative">
+					<div class="widget">
+						<div class="mom-posts-widget">
+							<script type="text/javascript"
+								src="../../js.genieessp.com/t/488/394/a1488394.js"></script>
+						</div>
+					</div>
+					<div class="weather-widget blog widget weather-categories ">
+						<div class="widget-head">
+							<h3 class="widget-title">
+								<span>THỦ THUẬT</span>
+							</h3>
+						</div>
+						<div class="next-days" style="margin-bottom: 5px">
+							<ol>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/sua-loi-webcam-bi-nguoc-tren-may-tinh-105t}"
+												title="Sửa lỗi webcam bị ngược trên máy tính">Sửa lỗi
+												webcam bị ngược trên máy tính</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/cac-cach-giup-don-dep-dung-luong-o-cung-tren-may-tinh-221t}"
+												title="Các cách giúp dọn dẹp dung lượng ổ cứng trên máy tính">Các
+												cách giúp dọn dẹp dung lượng ổ cứng trên máy tính</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/cac-tinh-nang-huu-ich-tren-laptop-222t}"
+												title="Các tính năng hữu ích trên laptop bạn có thể chưa biết">Các
+												tính năng hữu ích trên laptop bạn có thể chưa biết</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/5-dau-hieu-cho-thay-cpu-cua-ban-sap-hong-224t}"
+												title="5 dấu hiệu cho thấy CPU của bạn sắp hỏng">5 dấu
+												hiệu cho thấy CPU của bạn sắp hỏng</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/cach-an-trinh-duyet-microsoft-edge-tren-windows-10-292t}"
+												title="Cách ẩn trình duyệt Microsoft Edge trên Windows 10">Cách
+												ẩn trình duyệt Microsoft Edge trên Windows 10</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/cach-su-dung-camera-tren-windows-10-297t}"
+												title="Cách sử dụng Camera trên Windows 10 full">Cách sử
+												dụng Camera trên Windows 10 full</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/6-cach-tang-toc-do-mang-cho-windows-10-299t}"
+												title="6 cách tăng tốc độ mạng cho Windows 10">6 cách
+												tăng tốc độ mạng cho Windows 10</a>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="day-summary">
+										<div class="d-decs" style="padding-left: 10px">
+											<a style="margin-left: 0px"
+												th:href="@{../thu-thuat/thay-resize-anh-hang-loat-tren-windows-10-301t}"
+												title="Thay resize ảnh hàng loạt trên Windows 10">Thay
+												resize ảnh hàng loạt trên Windows 10</a>
+										</div>
+									</div>
+								</li>
+								<li style="text-align: center"><a th:href="@{../thu-thuat}"
+									title="Thủ thuật hay">Xem thêm</a></li>
+							</ol>
+						</div>
+					</div>
+					<div id="f_right_sidebar">
+
+
+						<div class="widget " style="border: none">
+							<div class="mom-posts-widget" style="padding: 0px">
+								<table style="margin-bottom: 0px">
+									<tr>
+										<td colspan="3"
+											style="background: #2f6e91; color: #fff; text-align: center; font-weight: bold; font-size: 14px; padding: 2px 10px">MÃ
+											GIẢM GIÁ</td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>Unica</td>
+										<td>50%</td>
+										<td><a
+											href="://unica.vn/?aff=2560&amp;src=ft.sidebar.coupon"
+											class="coupon" rel="nofollow" title="freetuts50"
+											style="margin-bottom: 0px; border-radius: 20px;"
+											target="_blank">Lấy Mã</a></td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>TinoHost</td>
+										<td>30%</td>
+										<td><a href="://tinohost.com/?php=213" class="coupon"
+											rel="nofollow" title="TINO30_2020"
+											style="margin-bottom: 0px; border-radius: 20px;"
+											target="_blank">Lấy Mã</a></td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>INET</td>
+										<td>30%</td>
+										<td><a href="://inet.vn/?aff=158288" class="coupon"
+											rel="nofollow" title="INET30UP"
+											style="margin-bottom: 0px; border-radius: 20px;">Lấy Mã</a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<div class="widget momizat-reviews">
+							<div class="mom-posts-widget">
+
+
+								<!-- freetuts_fixed_sidebar  -->
+								<ins class="adsbygoogle"
+									style="display: inline-block; width: 300px; height: 600px"
+									data-ad-client="ca-pub-7868243767329230"
+									data-ad-slot="2428876116"></ins>
+								<script>
+									(adsbygoogle = window.adsbygoogle || [])
+											.push({});
+								</script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+
+</html>

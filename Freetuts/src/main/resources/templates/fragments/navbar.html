@@ -1,0 +1,130 @@
+<nav id="navigation" itemtype="http://schema.org/SiteNavigationElement"
+	itemscope="itemscope" role="navigation"
+	class="dd-effect-slide navigation" xmlns:th="http://www.thymeleaf.org">
+	<div class="navigation-inner">
+		<div class="inner">
+			<ul id="menu-main-menu" class=" main-menu mom_visibility_desktop">
+				<li id="menu-item-87"
+					class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home mom_default_menu_item menu-item-iconsOnly menu-item-depth-0">
+					<a th:href="@{/}" title="no title"><i
+						class="icon_only momizat-icon-home"></i><span
+						class="icon_only_label"></span></a>
+				</li>
+
+				<th:block th:each="nav, iter:${NAV_LIST}">
+					<!-- If navigation less than 10 nav and it not Programing -->
+					<li th:if="${iter.index < 9 And nav.NavID != '02' And nav.NavID != '04' And nav.NavID != '07'}"
+						class="menu-item menu-item-has-children menu-parent-item menu-item-depth-0 mom_default_menu_item">
+						<a th:href="@{#}" rel="nofollow" th:title="${nav.title}">[[${nav.title}]]</a>
+						<ul class="sub-menu">
+							<th:block th:each="cate : ${CATE_LIST}">
+								<li th:if="${cate.navID == nav.navID}"
+									class="menu-item menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a th:href="@{/template(id=${cate.cateID})}" th:title="${cate.title}" th:text="${cate.title}"></a>
+								</li>
+							</th:block>
+						</ul>
+						<i class="responsive-caret"></i>
+					</li>
+
+					<!-- If nav is programming -->
+					<li th:if="${nav.NavID  == '02'}"
+						class="menu-item menu-item-type-custom menu-item-has-children menu-parent-item mom_mega menu-item-depth-0">
+
+						<a href="#" title="Tutorials">[[${nav.title}]]</a>
+						<ul class="sub-menu mom_mega_wrap mom_mega_col_5">
+							<th:block th:each="categorize : ${CATEGORIZE_LIST}">
+								<li class="menu-item menu-item-type-custom menu-item-has-children menu-parent-item mega_column mega_col_title menu-item-depth-1">
+									<a th:if="${categorize.linkType != '/cong-cu'}" th:style="${categorize.title == 'Database'} ? 'margin-top: 33px':'' "
+									th:href="@{/template(id=${categorize.categorizeid})}" th:title="${categorize.title}">[[${categorize.title}]]</a>
+									<a th:if="${categorize.linkType == '/cong-cu'}" th:style="${categorize.linkContent == '/cong-cu'} ? 'margin-top: -136px':'' "
+									th:href="@{/template(id=${categorize.categorizeid})}" th:title="${categorize.title}">[[${categorize.title}]]</a>
+									<ul>
+										<th:block th:each="cate : ${CATE_LIST}" th:if="${cate.categorizeid != null}">
+											<li th:if="${cate.categorizeid == categorize.categorizeid}"
+												class="menu-item mom_default_menu_item menu-item-depth-2">
+												<a th:href="@{/template(id=${cate.cateID})}" th:title="${cate.title}" th:text="${cate.title}"></a>
+											</li>
+										</th:block>
+									</ul>
+									<i class="responsive-caret"></i>
+								</li>
+							</th:block>
+						</ul>
+						<i class="responsive-caret"></i>
+					</li>
+
+					<li th:if="${nav.NavID == '04'}"
+						class="menu-item menu-item-has-children menu-parent-item menu-item-depth-0 mom_default_menu_item">
+						<a th:href="@{#}" rel="nofollow" th:title="${nav.title}">[[${nav.title}]]</a>
+						<ul class="sub-menu">
+							<li class="menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-1">
+								<a th:href="@{#}" title="Nên dùng"><i class="fa-icon-hand-right"></i>Nên dùng</a>
+								<ul class="sub-menu ">
+									<th:block th:each="cate : ${CATE_LIST}">
+										<li th:if="${cate.navID == '4.1'}" class="menu-item mom_default_menu_item menu-item-depth-2">
+											<a th:href="@{/template(id=${cate.cateID})}" th:title="${cate.title}" th:text="${cate.title}"></a>
+										</li>
+									</th:block>
+								</ul>
+								<i class="responsive-caret"></i>
+							</li>
+							<th:block th:each="cate : ${CATE_LIST}">
+								<li th:if="${cate.navID == nav.navID}"
+									class="menu-item menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a th:href="@{/template(id=${cate.cateID})}" th:title="${cate.title}" th:text="${cate.title}"></a>
+								</li>
+							</th:block>
+						</ul> <i class="responsive-caret"></i>
+					</li>
+
+					<li th:if="${nav.NavID == '07'}"
+						class="menu-item menu-item-has-children menu-parent-item menu-item-depth-0 mom_default_menu_item">
+						<a th:href="@{#}" rel="nofollow" th:title="${nav.title}">[[${nav.title}]]</a>
+						<ul class="sub-menu">
+							<li class="menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-1">
+								<a th:href="@{/thu-thuat/cuu-ho-may-tinh}" title="Cứu hộ máy tính"> Cứu hộ máy tính</a>
+								<ul class="sub-menu ">
+									<th:block th:each="cate : ${CATE_LIST}">
+										<li th:if="${cate.navID == '7.1'}" class="menu-item mom_default_menu_item menu-item-depth-2">
+											<a th:href="@{/template(id=${cate.cateID})}" th:title="${cate.title}" th:text="${cate.title}"></a>
+										</li>
+									</th:block>
+								</ul>
+								<i class="responsive-caret"></i>
+							</li>
+							<th:block th:each="cate : ${CATE_LIST}">
+								<li th:if="${cate.navID == nav.navID}"
+									class="menu-item menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a th:href="@{/template(id=${cate.cateID})}" th:title="${cate.title}" th:text="${cate.title}"></a>
+								</li>
+							</th:block>
+						</ul> <i class="responsive-caret"></i>
+					</li>
+				</th:block>
+
+				<li class="more menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-0">
+					<a th:href="@{#}" title="more"><span class="menu-more"></span><span
+						class="menu-text">More</span></a>
+					<ul class="sub-menu ">
+						<th:block th:each="cate : ${CATE_LIST}">
+							<li th:if="${cate.navID == '10'}" class="menu-item menu-parent-item mom_default_menu_item menu-item-depth-1">
+								<a th:href="@{/template(id=${cate.cateID})}" th:title="${cate.title}" th:text="${cate.title}"></a>
+							</li>
+						</th:block>
+					</ul>
+					<i class='responsive-caret'></i>
+				</li>
+				</th:block>
+			</ul>
+
+			<div class="device-menu-wrap mom_visibility_device">
+				<div id="menu-holder" class="device-menu-holder">
+					<i class="fa-icon-align-justify mh-icon"></i>
+					<span class="the_menu_holder_area"><i class="dmh-icon"></i>Menu</span><i class="mh-caret"></i>
+				</div>
+				<ul class="device-menu mom_visibility_device" id="main_menu_mobile"></ul>
+			</div>
+		</div>
+	</div>
+</nav>

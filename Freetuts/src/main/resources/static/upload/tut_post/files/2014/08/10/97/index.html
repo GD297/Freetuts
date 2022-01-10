@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2014/08/10/97/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 07:44:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="javascript" src="../../../../../../../../code.jquery.com/jquery-2.0.0.min.js"></script>
+    </head>
+    <body>
+        <div id="result1">TEXT</div>
+        <div id="result2">JSON</div>
+        <div id="result3">XML</div>
+        <br/>
+        <input type="button" name="clickme" id="text-click" value="Get List By Text"/>
+        <input type="button" name="clickme" id="json-click" value="Get List By Json"/>
+        <input type="button" name="clickme" id="xml-click" value="Get List By XML"/>
+        <script language="javascript">
+            $('#json-click').click(function()
+            {
+                $.ajax({
+                    url : 'json.php',
+                    type : 'get',
+                    dataType : 'json',
+                    success : function (result){
+                        
+                        var html = '';
+                        html += '<table border="1" cellspacing="0" cellpadding="10">';
+                        html += '<tr>';
+                           html += '<td>';
+                                html += 'Username';
+                                html += '</td>';
+                                html += '<td>';
+                                html += 'Email';
+                           html += '</td>';
+                        html += '<tr>';
+                        
+                        // Kết quả là một object json
+                        // Nên ta sẽ loop result
+                        $.each (result, function (key, item){
+                            html +=  '<tr>';
+                                html +=  '<td>';
+                                    html +=  item['username'];
+                                html +=  '</td>';
+                                html +=  '<td>';
+                                    html +=  item['email'];
+                                html +=  '</td>';
+                            html +=  '<tr>';
+                        });
+                        
+                        html +=  '</table>';
+                        
+                        $('#result2').html(html);
+                    }
+                });
+            });
+        </script>
+        
+    </body>
+
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2014/08/10/97/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 07:44:40 GMT -->
+</html>

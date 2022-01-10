@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Skills</title>
+</head>
+<body>
+	<th:block th:each = "skill : ${skills}">
+		<li th:text = "${skill.skills.skills}"></li>
+		<li th:text = "${skill.skills.skillsPercent}"></li>
+	</th:block>
+	
+	<h1>[[${#request.userPrincipal.principal.listSkill}]]</h1>
+	
+</body>
+</html>

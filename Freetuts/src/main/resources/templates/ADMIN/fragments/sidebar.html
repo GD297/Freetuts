@@ -1,0 +1,62 @@
+<div class="main-sidebar sidebar-style-2"
+	xmlns:th="http://www.thymeleaf.org">
+	<aside id="sidebar-wrapper">
+		<div class="sidebar-brand">
+			<a th:href="@{/dashboard}"> <!--  <img alt="image" src="assets/img/logo.png" class="header-logo" /> -->
+				<span class="logo-name" style="color: red;">FREETUTS</span>
+			</a>
+		</div>
+		<div class="sidebar-user">
+			<div class="sidebar-user-picture">
+				<img alt="image" th:src="@{'/upload/'+${#request.userPrincipal.principal.image}}">
+			</div>
+			<br />
+			<div class="sidebar-user-details">
+				<div class="username">
+					<span style="font-size: 20px"
+						th:utext="${#request.userPrincipal.principal.username}"></span>
+				</div>
+
+				 <div class="user-role" th:utext="${#request.userPrincipal.principal.role}"></div> 
+				<!-- <div class="content">
+					<div class="content__container">
+						<p class="content__container__text">Hello</p>
+
+						<ul class="content__container__list">
+							<li class="content__container__list__item">[[${#request.userPrincipal.name}]] !</li>
+							<li class="content__container__list__item">[[${#request.userPrincipal.authorities}]]</li>
+							<li class="content__container__list__item">[[${#request.userPrincipal.name}]] !</li>
+							<li class="content__container__list__item">[[${#request.userPrincipal.authorities}]]</li>
+						</ul>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		<ul class="sidebar-menu">
+			<li class="menu-header">Main</li>
+			<li class="dropdown active"><a href="#"
+				class="menu-toggle nav-link has-dropdown"><i
+					data-feather="airplay"></i><span>Dashboard</span></a>
+				<ul class="dropdown-menu">
+					<li class="active"><a class="nav-link" th:href="@{/dashboard}">Dashboard</a></li>
+				</ul></li>
+			
+			<li class="dropdown"><a href="#"
+				class="menu-toggle nav-link has-dropdown"><i
+					data-feather="command"></i><span>Navigation Bar</span></a>
+				<ul class="dropdown-menu">
+					<li><a class="nav-link" th:href="@{/navigation}">Navigation	</a></li>
+					<li><a class="nav-link" th:href="@{/category}">Category</a></li>
+					<li><a class="nav-link" th:href="@{/subCategory}">Sub-Category</a></li>
+				</ul></li>
+				<li class="dropdown"><a href="#"
+				class="menu-toggle nav-link has-dropdown"><i data-feather="box"></i><span>Blog</span></a>
+				<ul class="dropdown-menu">
+					<li><a class="nav-link" th:href="@{/totalblog}">Total Blog</a></li>
+					<li><a class="nav-link" th:href="@{/login/editblog}">Edit Blog</a></li>
+					<li><a class="nav-link" th:href="@{/login/newblog}">Create Blog</a></li>
+					<li><a class="nav-link" th:href="@{/login/deleteblog}">Delete Blog</a></li>
+				</ul></li>
+		</ul>
+	</aside>
+</div>

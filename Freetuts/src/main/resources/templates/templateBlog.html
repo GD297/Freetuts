@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default"
+	xmlns:layoutBlog="http://www.ultraq.net.nz/thymeleaf/layout"
+	layoutBlog:decorator="ADMIN">
+
+<head>
+	<title th:text="${BLOG_DETAILS.title}"></title>
+</head>
+
+<body id="page"
+	class=" page page-template-default right-sidebar singular fade-imgs-in-appear time_in_twelve_format one-side-wide both-sidebars wpb-js-composer js-comp-ver-4.9 vc_responsive no-js"
+	itemtype="http://schema.org/WebPage">
+	<!-- CONTENT -->
+	<div class="boxed-content-wrapper clearfix" layout:fragment="content">
+		<div class="inner">
+			<div class=""
+				style="line-height: 30px; margin-bottom: 10px; font-size: 15px">
+				<div itemscope="" itemtype="https://schema.org/BreadcrumbList">
+
+					<span itemprop="itemListElement" itemscope=""
+						itemtype="https://schema.org/ListItem"> <a itemprop="item"
+						th:href="@{/}" title="Trang chá»§"> <span itemprop="name">Home</span>
+							<meta itemprop="position" content="1">
+					</a>
+					</span> &gt; <span itemprop="itemListElement" itemscope=""
+						itemtype="https://schema.org/ListItem"> <a itemprop="item"
+						th:href="@{/template(id=${BLOG_DETAILS.subcate.cate.cateID})}"
+						th:title="${BLOG_DETAILS.subcate.cate.title}"> <span
+							itemprop="name" th:text="${BLOG_DETAILS.subcate.cate.title}"></span>
+
+							<meta itemprop="position" content="2">
+					</a>
+					</span> &gt; <span itemprop="itemListElement" itemscope=""
+						itemtype="https://schema.org/ListItem"> <a itemprop="item"
+						th:href="@{/template(id=${BLOG_DETAILS.subcate.subCateID})}"
+						th:title="${BLOG_DETAILS.subcate.title}"><span
+							itemprop="name" th:text="${BLOG_DETAILS.subcate.title}"></span>
+
+							<meta itemprop="position" content="3">
+					</a>
+					</span> &gt; <span itemprop="name" th:text="${BLOG_DETAILS.title}"></span>
+
+				</div>
+			</div>
+		</div>
+		<div class="inner" style="margin-top: 20px;">
+			<div class="main_container">
+				<div class="main-col" id="main_container">
+					<div class="base-box" itemscope=""
+						itemtype="http://schema.org/Article" style="margin-bottom: 0px">
+
+						<h1 id="main_title" class="post-tile entry-title"
+							itemprop="headline" th:text="${BLOG_DETAILS.title}"></h1>
+						<span id="element_action" data-id="9"
+							data-uri="https://freetuts.net/ajax/view/page"></span>
+						<div class="mom-post-meta single-post-meta">
+							<span class="author vcard" th:text="${'Đăng bởi: ' + BLOG_DETAILS.author}"></span>
+							<span th:if="${BLOG_DETAILS.createDate != null}"> | Vào ngày: <time th:datetime="${BLOG_DETAILS.createDate}"
+									itemprop="datePublished" class="updated"
+									th:text="${#strings.substring(BLOG_DETAILS.createDate,0,10)}"></time>
+							</span>
+						</div>
+
+						<div class="entry-content" th:utext="${BLOG_DETAILS.content}">
+							<!-- Content -->
+						</div>
+					</div>
+					
+					<!-- COMMENT -->
+					<div th:replace="/fragments/comment"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<div class="sidebar main-sidebar" id="right_sidebar"
+				style="position: relative">
+				<div id="sidebar_right_tut_series_post">
+
+					<div
+						class="widget widget_categories cate_post_list weather-categories"
+						style="border-color: green">
+						<div class="widget-head" style="background: green">
+							<h3 class="widget-title">
+								<span style="background: green">DANH SÁCH BÀI HỌC</span>
+							</h3>
+						</div>
+						<div id="scroll-post">
+							<ul class="cate-more-wapper">
+								<!--<li class="cat-item ">
+                    <a href="https://freetuts.net/hoc-java/bai-tap-java" title="Giá»›i thiá»‡u" >Giá»›i thiá»‡u</a>
+                </li> -->
+								<th:block th:each="blog: ${BLOG_DETAILS.subcate.blogs}">
+									<li class="cat-item  "><a
+										style="text-transform: initial !important"
+										th:href="@{${blog.linkContent}}" th:title="${blog.title}">[[${blog.title}]]</a></li>
+								</th:block>
+						</div>
+						<ul class="cate-more-wapper" style="background: #f7f7f7">
+							<li class="cate-more current"><span
+								style="text-transform: uppercase; padding-left: 5px;">Danh sách chủ đề</span></li>
+							<li style="padding: 0px;" id="series_list_wrapper">
+								<ul style="border-top: 1px solid #eaeaea">
+									<th:block
+										th:each="subcate : ${BLOG_DETAILS.subcate.cate.subcates}">
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a th:href="@{/template(id=${subcate.subCateID})}"
+											th:title="${subcate.title}">[[${subcate.title}]]</a></li>
+									</th:block>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>

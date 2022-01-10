@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2014/08/12/104/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 07:44:42 GMT -->
+<head>
+        <title>Quản lý tiến trình khi gửi ajax</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="javascript" src="../../../../../../../../code.jquery.com/jquery-2.0.0.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="content"></div>
+        <div id="loadding" style="display: none; color:red;">Loadding ...</div>
+        <button id="clickmetoload" >Load Content</button>
+        <script language="javascript">
+            
+            // Biến kiểm tra
+            var ajax_sendding = false;
+                
+            $('#clickmetoload').click(function()
+            {   
+                // Xóa nội dung trong thẻ div content
+                // dùng cho trường hợp click lần thứ 2 trở đi
+                $('#content').html('');
+                
+                // kiểm tra trạng thái có đang gửi ajax không
+                // Nếu đang gửi thì dừng
+                if (ajax_sendding == true){
+                    alert('Dang Load Ajax');
+                    return false;
+                }
+                
+                // Ngược lại thì bắt đầu gửi ajax
+                // Nhưng trước hết gán biến ajax_sendding = true để khi người dùng click tiếp 
+                // se không có tác dụng
+                ajax_sendding = true;
+                
+                // Bật span loaddding lên
+                $('#loadding').show();
+                
+                // Gửi ajax
+                $.ajax({
+                    url : 'data.php',
+                    type : 'post',
+                    dataType : 'json',
+                    success : function (result)
+                    {
+                        // Tạo HTML
+                        var html = '<table border="1" cellspacing="0" cellpadding="1">';
+                        // Vì kết quả trả về dạng JSON nên ta lặp để lấy kết quả
+                        $.each(result, function (key, item){
+                            html += '<tr>';
+                            html += '<td>'+item['username']+'</td>';
+                            html += '<td>'+item['email']+'</td>';
+                            html += '</tr>';
+                        });
+                        html += '</table>';
+                        
+                        // Gán nội dung html vào thẻ content
+                        $('#content').html(html);
+                    }
+                }).always(function(){
+                    ajax_sendding = false;
+                    $('#loadding').hide();
+                });
+                
+                // Hàm always có ý nghĩa rằng dù ajax có thành công hay không thì đều chạy hàm này, 
+                // mà trong bài này ta muốn sau khi ajax thực hiện xong thì cho phép click load lại được
+                // và chữ loadding sẽ biến mất nên ta sẽ dùng nó để thực hiện
+            });
+        </script>
+    </body>
+
+<!-- Mirrored from freetuts.net/upload/tut_post/files/2014/08/12/104/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 07:44:42 GMT -->
+</html>

@@ -1,0 +1,1562 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="vi-VN" 
+xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorator="layout/default">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+<title>Bài 02: Design pattern PHP - Adapter Pattern - Freetuts</title>
+</head>
+<body id="tut_detail"
+	class=" page page-template-default right-sidebar singular fade-imgs-in-appear time_in_twelve_format one-side-wide both-sidebars wpb-js-composer js-comp-ver-4.9 vc_responsive no-js"
+	itemtype="http://schema.org/WebPage">
+	<div class="boxed-wrap clearfix">
+		<div id="header-wrapper">
+			<div class="topbar">
+				<div class="inner">
+					<div class="top-left-content">
+						<ul id="menu-top-menu" class="top-nav mom_visibility_desktop">
+
+							<li class="menu-item "><a
+								href="https://tinohost.com/cloud-hosting/?php=213"
+								title="HOSTING TỪ 9K/THÁNG" target="_blank"
+								rel="noopener noreferrer nofollow external">Hosting từ
+									9k/tháng</a></li>
+
+							<li class="menu-item "><a
+								href="https://tinohost.com/servers/cloud-vps/?php=213"
+								title="VPS TỪ 139K/THÁNG" target="_blank"
+								rel="noopener noreferrer nofollow external">VPS từ
+									139k/tháng</a></li>
+
+						</ul>
+						<div class="mom_visibility_device device-top-menu-wrap">
+							<div class="top-menu-holder">
+								<i class="fa-icon-reorder mh-icon"></i>
+							</div>
+							<ul id="menu-top-menu-1" class="device-top-nav">
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<header class="header">
+				<div class="inner">
+					<div class="logo">
+						<a href="index.html" title="freetuts"> <img
+							src="public/logo/logodeb6.png?rand=5" alt="freetuts"
+							style="max-width: 160px; margin-top: -10px" />
+						</a>
+					</div>
+					<div class="header-right ">
+						<div class="mom-e3lanat-wrap">
+							<div class="mom-e3lanat">
+								<div class="mom-e3lanat-inner">
+									<div class="mom-e3lan">
+										<div class="e3lan-code">
+											<div class="social-header">
+												<ul class="mom-social-icons">
+													<li class="facebook"><a class="vector_icon"
+														href="https://www.facebook.com/freetuts/" target="_blank"
+														rel="noopener noreferrer nofollow external"
+														title="no title"><i class="fa-icon-facebook "></i></a></li>
+													<li class="youtube"><a class="vector_icon"
+														href="https://www.youtube.com/channel/UC0jGwW2AfbsGbuY_Z3jtkAg"
+														target="_blank"
+														rel="noopener noreferrer nofollow external"
+														title="UC0jGwW2AfbsGbuY Z3jtkAg"><i
+															class="fa-icon-youtube"></i></a></li>
+													<li class="twitter"><a class="vector_icon"
+														href="https://twitter.com/freetuts_net" target="_blank"
+														rel="noopener noreferrer nofollow external"
+														title="freetuts net"><i class="fa-icon-twitter"></i></a></li>
+													<li class="skype"><a target="_blank"
+														class="vector_icon" href="skype:thehalfheart?call"
+														title="skype thehalfheart call"><i
+															class="fa-icon-skype"></i></a></li>
+
+												</ul>
+											</div>
+
+											<div class="search-form default-search-form ">
+												<form method="get" action="https://www.google.com.vn/search"
+													target="_blank"
+													onsubmit="jQuery('#q1').val('site:freetuts.net ' + jQuery('#q_tmp').val())">
+													<input class="sf" type="text" placeholder="Search ..."
+														value="" onkeypress="" autocomplete="off" id="q_tmp">
+													<input type="hidden" name="q" id="q1" value="" />
+													<button class="button" type="submit">
+														<i class="fa-icon-search"></i>
+													</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+
+				</div>
+
+			</header>
+		</div>
+		<nav id="navigation"
+			itemtype="http://schema.org/SiteNavigationElement"
+			itemscope="itemscope" role="navigation"
+			class="dd-effect-slide navigation">
+			<div class="navigation-inner">
+				<div class="inner">
+					<ul id="menu-main-menu" class=" main-menu mom_visibility_desktop">
+						<li id="menu-item-87"
+							class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home mom_default_menu_item menu-item-iconsOnly menu-item-depth-0"><a
+							href="index.html" title="no title"><i
+								class="icon_only momizat-icon-home"></i><span
+								class="icon_only_label"></span></a></li>
+						<li
+							class="menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-0">
+
+							<a href="#" rel="nofollow" title="Bắt đầu"> Bắt đầu </a>
+							<ul class="sub-menu ">
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="hoc-pascal.html" title="Học Pascal"> Học Pascal</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="hoc-c.html" title="Học C / C++"> Học C / C++</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="giai-thuat.html" title="Giải thuật"> Giải thuật</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="hoc-sql-server.html" title="Học SQL Server"> Học
+										SQL Server</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="hoc-java.html" title="Học Java"> Học Java</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="hoc-php.html" title="Học PHP"> Học PHP</a>
+
+								</li>
+							</ul> <i class='responsive-caret'></i>
+						</li>
+						<li
+							class="menu-item menu-item-type-custom  menu-item-has-children menu-parent-item mom_mega menu-item-depth-0">
+							<a href="#" title="Tutorials">Lập trình</a>
+							<ul class="sub-menu mom_mega_wrap mom_mega_col_5">
+								<li
+									class="menu-item menu-item-type-custom  menu-item-has-children menu-parent-item mega_column mega_col_title menu-item-depth-1">
+									<a href="programming.html" title="Programming">Programming</a>
+									<ul>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-python.html" title="Python">Python</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-java.html" title="Java">Java</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-pascal.html" title="Pascal">Pascal</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-csharp.html" title="Học C#">Học C#</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-ruby.html" title="Học Ruby">Học Ruby</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-swift.html" title="Học Swift">Học Swift</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-c.html" title="C / C++">C / C++</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="kotlin.html" title="Kotlin">Kotlin</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="golang.html" title="Golang">Golang</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="giai-thuat.html" title="Giải thuật">Giải thuật</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="visual-basic.html" title="Visual Basic">Visual
+												Basic</a></li>
+									</ul> <i class="responsive-caret"></i>
+								</li>
+								<li
+									class="menu-item menu-item-type-custom  menu-item-has-children menu-parent-item mega_column mega_col_title menu-item-depth-1">
+									<a href="web-frontend.html" title="Web Frontend">Web
+										Frontend</a>
+									<ul>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-javascript.html" title="Javascript">Javascript</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-angularjs.html" title="AngularJS">AngularJS</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-jquery.html" title="jQuery">jQuery</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-jquery-mobile.html" title="jQuery Mobile">jQuery
+												Mobile</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-html-css.html" title="HTML & CSS">HTML & CSS</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-bootstrap.html" title="Bootstrap">Bootstrap</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-typescript.html" title="TypeScript">TypeScript</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-sass-css.html" title="SASS CSS">SASS CSS</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-vuejs.html" title="VueJS">VueJS</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-nestjs.html" title="NestJS">NestJS</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="reactjs.html" title="Học ReactJS">Học ReactJS</a></li>
+									</ul> <i class="responsive-caret"></i>
+								</li>
+								<li
+									class="menu-item menu-item-type-custom  menu-item-has-children menu-parent-item mega_column mega_col_title menu-item-depth-1">
+									<a href="web-backend.html" title="Web Backend">Web Backend</a>
+									<ul>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-php.html" title="PHP">PHP</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-codeigniter.html" title="Codeigniter">Codeigniter</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-laravel.html" title="Laravel">Laravel</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-phalcon.html" title="Phalcon">Phalcon</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-opencart.html" title="OpenCart">OpenCart</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-nodejs.html" title="NodeJS">NodeJS</a></li>
+									</ul> <i class="responsive-caret"></i>
+								</li>
+								<li
+									class="menu-item menu-item-type-custom  menu-item-has-children menu-parent-item mega_column mega_col_title menu-item-depth-1">
+									<a href="mobile-development.html" title="Web Frontend">Mobile
+										Dev</a>
+									<ul>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="react-native.html" title="React Native">React
+												Native</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="ios.html" title="Học iOS">Học iOS</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="android.html" title="Android">Android</a></li>
+									</ul> <a style="margin-top: 33px" href="database.html"
+									title="Database">Database</a>
+									<ul>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="csdl-can-ban.html" title="CSDL căn bản">CSDL căn
+												bản</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-sqlite.html" title="Học SQLite">Học SQLite</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-mysql.html" title="Học MySQL">Học MySQL</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-sql-server.html" title="Học SQL Server">Học SQL
+												Server</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-oracle.html" title="Học Oracle">Học Oracle</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-mongodb.html" title="Học MongoDB">Học MongoDB</a></li>
+									</ul> <i class="responsive-caret"></i>
+								</li>
+								<li
+									class="menu-item menu-item-type-custom  menu-item-has-children menu-parent-item mega_column mega_col_title menu-item-depth-1">
+
+									<a href="cong-cu.html" title="Công cụ">Công cụ</a>
+									<ul>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="hoc-git.html" title="Học Git">Học Git</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="testing.html" title="Testing">Testing</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="dev-tool.html" title="Dev Tool">Dev Tool</a></li>
+										<li class="menu-item mom_default_menu_item menu-item-depth-2"><a
+											href="control-panel.html" title="Control Panel">Control
+												Panel</a></li>
+									</ul> <i class="responsive-caret"></i>
+								</li>
+							</ul> <i class="responsive-caret"></i>
+						</li>
+						<li
+							class="menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-0">
+
+							<a href="khoa-hoc.html" title="Khóa học"> Khóa học </a>
+							<ul class="sub-menu ">
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="khoa-hoc/ngon-ngu-lap-trinh.html"
+									title="Khóa học lập trình"> Khóa học lập trình</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="khoa-hoc/tin-hoc-may-tinh.html"
+									title="Khóa học tin học VP"> Khóa học tin học VP</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="khoa-hoc/design.html" title="Khóa học thiết kế">
+										Khóa học thiết kế</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="khoa-hoc/khoa-hoc-khac.html" title="Khóa học khác">
+										Khóa học khác</a>
+
+								</li>
+							</ul> <i class='responsive-caret'></i>
+						</li>
+						<li
+							class="menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-0">
+
+							<a href="webmaster.html" title="Website"> Website </a>
+							<ul class="sub-menu ">
+								<li
+									class="menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="#" title="Nên dùng"> <i class="fa-icon-hand-right"></i>Nên
+										dùng
+								</a>
+
+									<ul class="sub-menu ">
+										<li class="menu-item  mom_default_menu_item menu-item-depth-2">
+											<a href="hosting-tot-nhat-2547.html" title="Hosting tốt nhất">Hosting
+												tốt nhất</a>
+										</li>
+										<li class="menu-item  mom_default_menu_item menu-item-depth-2">
+											<a href="vps-tot-nhat-2568.html" title="VPS tốt nhất">VPS
+												tốt nhất</a>
+										</li>
+										<li class="menu-item  mom_default_menu_item menu-item-depth-2">
+											<a href="nhung-noi-ban-domain-uy-tin-2881.html"
+											title="Mua domain ở đâu">Mua domain ở đâu</a>
+										</li>
+									</ul> <i class="responsive-caret"></i>
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="kien-thuc-domain.html" title="Kiên thức Domain">
+										Kiên thức Domain</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="thu-thuat-hosting.html" title="Thủ thuật Hosting">
+										Thủ thuật Hosting</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="hoc-wordpress.html" title="Học WordPress"> Học
+										WordPress</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="hoc-linux.html" title="Quản trị Linux"> Quản trị
+										Linux</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="quan-tri-windows.html" title="Quản trị Windows">
+										Quản trị Windows</a>
+
+								</li>
+							</ul> <i class='responsive-caret'></i>
+						</li>
+						<li
+							class="menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-0">
+
+							<a href="giam-gia.html" title="Mã giảm giá"> Mã giảm giá </a>
+							<ul class="sub-menu ">
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="giam-gia/ma-giam-gia-tinohost.html" title="Tinohost">
+										Tinohost</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="giam-gia/ma-giam-gia-azdigi.html" title="Azdigi">
+										Azdigi</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="giam-gia/ma-giam-gia-vultr.html" title="Vultr">
+										Vultr</a>
+
+								</li>
+							</ul> <i class='responsive-caret'></i>
+						</li>
+						<li
+							class="menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-0">
+
+							<a href="tin-hoc.html" title="Tin học"> Tin học </a>
+							<ul class="sub-menu ">
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="hoc-word.html" title="Word"> Word</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="hoc-excel.html" title="Excel"> Excel</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="hoc-powerpoint.html" title="PowerPoint">
+										PowerPoint</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="hoc-access.html" title="Access"> Access</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="hoc-photoshop.html" title="Photoshop"> Photoshop</a>
+
+								</li>
+							</ul> <i class='responsive-caret'></i>
+						</li>
+						<li
+							class="menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-0">
+
+							<a href="thu-thuat.html" title="Thủ thuật"> Thủ thuật </a>
+							<ul class="sub-menu ">
+								<li
+									class="menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="thu-thuat/cuu-ho-may-tinh.html"
+									title="Cứu hộ máy tính"> Cứu hộ máy tính</a>
+
+									<ul class="sub-menu ">
+										<li class="menu-item  mom_default_menu_item menu-item-depth-2">
+											<a href="thu-thuat/cuu-ho-may-tinh/ghost-win.html"
+											title="Cách ghost Win">Cách ghost Win</a>
+										</li>
+										<li class="menu-item  mom_default_menu_item menu-item-depth-2">
+											<a href="thu-thuat/cuu-ho-may-tinh/cai-win.html"
+											title="Cách cài Win">Cách cài Win</a>
+										</li>
+										<li class="menu-item  mom_default_menu_item menu-item-depth-2">
+											<a href="thu-thuat/cuu-ho-may-tinh/tao-usb-boot.html"
+											title="Tạo USB Boot">Tạo USB Boot</a>
+										</li>
+										<li class="menu-item  mom_default_menu_item menu-item-depth-2">
+											<a href="thu-thuat/cuu-ho-may-tinh/phuc-hoi-du-lieu.html"
+											title="Phục hồi dữ liệu">Phục hồi dữ liệu</a>
+										</li>
+										<li class="menu-item  mom_default_menu_item menu-item-depth-2">
+											<a href="thu-thuat/cuu-ho-may-tinh/loi-win.html"
+											title="Fix lỗi win">Fix lỗi win</a>
+										</li>
+									</ul> <i class="responsive-caret"></i>
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="thu-thuat/dien-thoai.html" title="Điện Thoại">
+										Điện Thoại</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="thu-thuat/may-tinh.html" title="Máy tính"> Máy
+										tính</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="thu-thuat/game.html" title="Game"> Game</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="thu-thuat/ky-thuat-so.html" title="Kỹ Thuật Số">
+										Kỹ Thuật Số</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="thu-thuat/ung-dung.html" title="Ứng dụng"> Ứng
+										dụng</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="review.html" title="Review"> Review</a>
+
+								</li>
+							</ul> <i class='responsive-caret'></i>
+						</li>
+						<li
+							class="menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-0">
+
+							<a href="mon-hoc.html" title="Download"> Download </a>
+							<ul class="sub-menu ">
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="download-windows.html" title="Phần mềm"> Phần mềm</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="tai-lieu.html" title="Tài liệu"> Tài liệu</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="font-chu.html" title="Font chữ"> Font chữ</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="driver.html" title="Driver"> Driver</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="anh-dep.html" title="Ảnh đẹp"> Ảnh đẹp</a>
+
+								</li>
+							</ul> <i class='responsive-caret'></i>
+						</li>
+						<li
+							class="menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-0">
+
+							<a href="tai-ve.html" title="Môn học"> Môn học </a>
+							<ul class="sub-menu ">
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="toan.html" title="Toán"> Toán</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="tieng-anh.html" title="Tiếng Anh"> Tiếng Anh</a>
+
+								</li>
+								<li
+									class="menu-item  menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="van-hoc.html" title="Văn học"> Văn học</a>
+
+								</li>
+							</ul> <i class='responsive-caret'></i>
+						</li>
+						<li
+							class="more menu-item menu-item-has-children menu-parent-item mom_default_menu_item menu-item-depth-0">
+
+							<a href="#" title="more"> <span class="menu-more"></span> <span
+								class="menu-text">More</span>
+						</a>
+							<ul class="sub-menu ">
+
+								<li
+									class="menu-item menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="marketing.html" title="Marketing">Marketing</a>
+								</li>
+
+								<li
+									class="menu-item menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="glossary.html" title="Thuật ngữ">Thuật ngữ</a>
+								</li>
+								<li
+									class="menu-item menu-parent-item mom_default_menu_item menu-item-depth-1">
+									<a href="kham-pha.html" title="Khám phá">Khám phá</a>
+								</li>
+							</ul> <i class='responsive-caret'></i>
+						</li>
+					</ul>
+
+					<div class="device-menu-wrap mom_visibility_device">
+						<div id="menu-holder" class="device-menu-holder">
+							<i class="fa-icon-align-justify mh-icon"></i> <span
+								class="the_menu_holder_area"><i class="dmh-icon"></i>Menu</span><i
+								class="mh-caret"></i>
+						</div>
+						<ul class="device-menu mom_visibility_device"
+							id="main_menu_mobile">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="boxed-content-wrapper clearfix" layout:fragment="Blog">
+			<div class="inner" style="margin-bottom: 20px">
+				<ins class="adsbygoogle" style="display: block"
+					data-ad-client="ca-pub-7868243767329230" data-ad-slot="9574521357"
+					data-ad-format="auto" data-full-width-responsive="true"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+
+			<div class="inner">
+
+
+				<div class=""
+					style="line-height: 30px; margin-bottom: 10px; font-size: 15px">
+					<div itemscope itemtype="https://schema.org/BreadcrumbList">
+
+						<span itemprop="itemListElement" itemscope
+							itemtype="https://schema.org/ListItem"> <a itemprop="item"
+							href="index.html" title="Trang chủ"> <span itemprop="name">Home</span>
+								<meta itemprop="position" content="1" />
+						</a>
+						</span> > <span itemprop="itemListElement" itemscope
+							itemtype="https://schema.org/ListItem"> <a itemprop="item"
+							href="hoc-php.html" title="PHP"> <span itemprop="name">PHP</span>
+
+								<meta itemprop="position" content="2" />
+						</a>
+						</span> > <span itemprop="itemListElement" itemscope
+							itemtype="https://schema.org/ListItem"> <a itemprop="item"
+							href="hoc-php/design-pattern-php.html" title="Design Pattern">
+								<span itemprop="name">Design Pattern</span>
+
+								<meta itemprop="position" content="3" />
+						</a>
+						</span> > <span itemprop="name">Bài 02: Design pattern PHP -
+							Adapter Pattern</span>
+
+					</div>
+				</div>
+
+
+			</div>
+			<div class="inner" style="margin-top: 20px;">
+
+				<div class="main_container">
+					<div class="main-col" id="main_container">
+
+						<div class="base-box hasgoto" itemtype="http://schema.org/Article">
+							<h1 id="main_title" class="post-tile entry-title"
+								itemprop="headline">Bài 02: Design pattern PHP - Adapter
+								Pattern</h1>
+							<span id="element_action" data-id="337"
+								data-uri="ajax/view/tut_post.html"></span>
+							<!--<div style="margin-bottom: 20px">
+<div class="sharethis-inline-share-buttons"></div>
+</div>-->
+							<div class="mom-post-meta single-post-meta">
+
+								<span class="author vcard">Đăng bởi: TheHalfHeart </span> <span>
+									- Vào ngày: <time datetime="2015-03-20T17:22:30+07:00"
+										itemprop="datePublished" class="updated">20-03-2015</time>
+								</span>
+
+							</div>
+							<div class="entry-content">
+								<div style="margin-top: 20px">
+
+
+
+									<p class="ads_displayed">
+										Tiếp tục serie Design pattern PHP thì trong bài này chúng ta
+										tìm hiểu về Adapter Pattern. Loại pattern đặc biệt này khi
+										chương trình phần mềm hoặc ứng dụng website của bạn có phụ
+										thuộc vào các API từ bên ngoài hoặc là sử dụng một số lớp khác
+										có sự thay đổi thường xuyên về tên hàm, tên lớp, ... Đây là
+										một loại pattern thuộc nhóm mô hình cấu trúc (<strong>Structural
+											patterns</strong>) bởi vì nó cho chúng ta cách code mở rộng và dễ quản
+										lý code hơn.
+									</p>
+
+									<h2>1. Tại sao cần&nbsp;sử dụng Adapter pattern</h2>
+
+									<p class="ads_displayed">Khi các bạn làm việc nhóm thì việc
+										đặt ra quy tắc code là điều nên làm vì sẽ thống nhất hơn. Tuy
+										nhiên trong thực tế đôi lúc sẽ có những thay đổi đột xuất và
+										bạn sẽ mất cả khối thời gian để xử lý thay đổi đó, điều này
+										thật nhàm chán. Để rõ hơn thì ta có một ví dụ dưới đây.</p>
+									<ins class="adsbygoogle" style="display: block"
+										data-ad-client="ca-pub-7868243767329230"
+										data-ad-slot="4130622986" data-ad-format="auto"
+										data-full-width-responsive="true"></ins>
+									<script>
+										(adsbygoogle = window.adsbygoogle || [])
+												.push({});
+									</script>
+
+									<p class="ads_displayed">Giả sử xếp giao cho bạn một lớp
+										dùng để xử lý thanh toán online Bảo Kim&nbsp;như sau:</p>
+
+									<p>
+									<div>
+										<pre class="brush:php;">class Baokim {
+
+    public function __construct() {
+        // Hàm khởi tạo
+    }
+
+    public function sendPayment($amount){
+        // Code xử lý gửi thanh toán tại đây
+    }
+}</pre>
+									</div>
+									</p>
+
+									<p class="ads_displayed">Cách sử dụng lớp này cũng tương
+										đối đơn giản bạn chỉ cần tạo mới và sử dụng như sau:</p>
+
+									<p>
+									<div>
+										<pre class="brush:php;">$baokim = new Baokim();
+$baokim-&gt;sendPayment(1234);</pre>
+									</div>
+									</p>
+
+									<p class="ads_displayed">
+										Có một điều chắc chắn rằng trong ứng dụng của bạn sẽ phải sử
+										dụng <strong>nhiều&nbsp;hơn một lần</strong> lớp này, như vậy
+										ban sẽ phải tạo mới và gọi đến phương thức&nbsp;
+										<code>sendPayment()</code>
+										&nbsp;nhiều lần.
+									</p>
+
+									<p class="ads_displayed">
+										Bây giờ ta có tính huống như sau, sau khoảng thời gian 1 tuần,
+										khi mà bạn đã gần như làm xong dự án và xếp bảo là lớp
+										<code>Baokim</code>
+										đã được chỉnh sửa lại tên của phương thức
+										<code>sendPayment()</code>
+										sang
+										<code>doPayment()</code>
+										. Ôi trời ơi, lúc này bạn sẽ phải quay lại code và sửa tất các
+										các vị trí mà bạn đã sử dụng&nbsp;<img alt="cheeky"
+											height="20"
+											src="public/ckeditor/plugins/smiley/images/tongue_smile.gif"
+											title="cheeky" width="20" />
+									</p>
+
+									<p class="ads_displayed">
+										Để giải quyết vấn đề này thì ta sử dụng kiểu <strong>Adapter
+											Pattern</strong>. Ý tưởng của nó là khi có sự thay đổi của lớp
+										khác&nbsp;(API) &nbsp;đang sử dụng thì ta chỉ sửa đúng 1 chỗ
+										thôi thay vì phải đi vào từng file để sửa. Và đây là các bước
+										làm:
+									</p>
+
+									<ul>
+										<li>Coi lớp <code>Baokim </code>là một class gốc bên xếp
+											gửi sang
+										</li>
+										<li>Tạo ra một interface paymentAdapter</li>
+										<li>Tạo ra lớp baokimAdapter&nbsp;implements&nbsp;<span
+											style="line-height: 20.7999992370605px;">payment</span><span
+											style="line-height: 20.7999992370605px;">Adapter</span></li>
+									</ul>
+
+									<p>
+									<div>
+										<pre class="brush:php;">// Lớp gốc
+class Baokim {
+
+    public function __construct() {
+        // Hàm khởi tạo
+    }
+
+    public function sendPayment($amount){
+        // Code xử lý gửi thanh toán tại đây
+        echo $amount;
+    }
+}
+
+// Tạo một interface để các adapter không có quyền đổi tên hàm 
+interface paymentAdapter{
+    public function pay($amount);
+}
+
+// Lớp adapter sử dụng
+class baokimAdapter implements paymentAdapter{
+    private $__baokim;
+    public function __construct(Baokim $baokim) {
+        $this-&gt;__baokim = $baokim;
+    }
+    
+    public function pay($amount){
+        $this-&gt;__baokim-&gt;sendPayment($amount);
+    }
+}
+
+// Cách dùng
+$baokimAdapter = new baokimAdapter(new Baokim());
+$baokimAdapter-&gt;pay(1234);</pre>
+									</div>
+									</p>
+
+									<p class="ads_displayed">
+										Như vậy mỗi khi sử dụng thì thay vì sử dụng lớp
+										<code>Baokim</code>
+										&nbsp;thì ta sử dụng
+										<code>baokimAdapter</code>
+										. Riêng
+										<code>paymentAdapter</code>
+										là một interface tạo ra nhằm mục đích không cho ta sửa tên hàm
+										<code>pay()</code>
+										&nbsp;(đọc bài <a href="template-interface-trong-php-38.html"
+											title="template interface php" target="_blank">template
+											interface php</a>).
+									</p>
+									<!-- detail_1 -->
+									<ins class="adsbygoogle" style="display: block"
+										data-ad-client="ca-pub-7868243767329230"
+										data-ad-slot="8242625364" data-ad-format="auto"
+										data-full-width-responsive="true"></ins>
+									<script>
+										(adsbygoogle = window.adsbygoogle || [])
+												.push({});
+									</script>
+
+									<p class="ads_displayed">
+										Bây giờ xếp bảo lớp
+										<code>Baokim</code>
+										thay đổi phương thức&nbsp;
+										<code>sendPayment</code>
+										thành
+										<code>doPayment</code>
+										thì&nbsp;thay vì vào từng dòng code sửa thì ta chỉ cần sửa nó
+										ở hàm
+										<code>pay()</code>
+										trong lớp
+										<code>baokimAdapter</code>
+										.
+									</p>
+
+									<p>
+									<div>
+										<pre class="brush:php;">class baokimAdapter implements paymentAdapter{
+    private $__baokim;
+    public function __construct(Baokim $baokim) {
+        $this-&gt;__baokim = $baokim;
+    }
+    
+    public function pay($amount){
+        $this-&gt;__baokim-&gt;doPayment($amount);
+    }
+}</pre>
+									</div>
+									</p>
+
+									<h2>2. Thêm một adapter khác</h2>
+
+									<p class="ads_displayed">Giả sử ta có thêm một chức năng
+										gửi tiền đặt phòng, xếp sẽ gửi qua một lớp như sau:</p>
+
+									<p>
+									<div>
+										<pre class="brush:php;">class Booker {
+
+    public function __construct() {
+        // Hàm khởi tạo
+    }
+
+    public function paymentRoom($amount){
+        // Code xử lý gửi thanh toán tại đây
+        echo $amount;
+    }
+}</pre>
+									</div>
+									</p>
+
+									<p class="ads_displayed">Ok, ta tiếp tục làm như ví dụ trên
+										như sau:</p>
+
+									<p>
+									<div>
+										<pre class="brush:php;">// Lớp gốc
+class Booker {
+
+    public function __construct() {
+        // Hàm khởi tạo
+    }
+
+    public function paymentRoom($amount){
+        // Code xử lý gửi thanh toán tại đây
+        echo $amount;
+    }
+}
+
+// Tạo một interface để các adapter không có quyền đổi tên hàm 
+interface paymentAdapter{
+    public function pay($amount);
+}
+
+// Lớp adapter sử dụng
+class bookerAdapter implements paymentAdapter{
+    private $__booker;
+    public function __construct(Booker $booker) {
+        $this-&gt;__booker = $booker;
+    }
+    
+    public function pay($amount){
+        $this-&gt;__booker-&gt;paymentRoom($amount);
+    }
+}
+
+// Cách dùng
+$bookerAdapter = new bookerAdapter(new Booker());
+$bookerAdapter-&gt;pay(1234);</pre>
+									</div>
+									</p>
+
+									<p class="ads_displayed">Như vậy ta sử dụng chung interface
+										paymentAdapter cho cả hai trường hợp trên.</p>
+
+									<h2>3. Lời kết</h2>
+
+									<p class="ads_displayed">
+										<strong>Adapter Design pattern</strong> thực sự rất hữu ích
+										khi bạn code với ứng dụng lớn có sử dụng nhiều API từ bên
+										ngoài, nó giúp bạn giảm thiểu tối đa nhưng thay đổi từ nhà
+										cung cấp API. Nhìn thì thực sự nó hơi phức tạp vì phải tạo ra
+										nhiều lớp và interface khác nhau nhưng nếu hệ thống lớn thì nó
+										lại có rất nhiều hữu ích.
+									</p>
+									<script type="text/javascript"
+										src="public/syntaxhighlighter/scripts/shCore.js"></script>
+									<link type="text/css" rel="stylesheet"
+										href="public/syntaxhighlighter/styles/shCoreDefault.css" />
+									<script type="text/javascript"
+										src="public/syntaxhighlighter/scripts/shBrushPhp.js"></script>
+									<script type="text/javascript">
+										SyntaxHighlighter.config.stripBrs = false; /*SyntaxHighlighter.config.tagName = "pre";*/
+										SyntaxHighlighter.defaults["gutter"] = true;
+										SyntaxHighlighter.all();
+									</script>
+
+
+
+									<div style="overflow: hidden">
+
+										<a style="float: left" class="call-to-action"
+											href="design-pattern-la-gi-103.html"
+											title="Bài 01: Design Pattern là gì?"><i
+											class="momizat-icon-previous"></i>Bài sau</a> <a
+											style="float: right; background: #ddd !important; cursor: text"
+											onclick="return false" class="call-to-action" href="#"
+											rel="nofollow" target="_blank" title=" "><i
+											class="momizat-icon-next"></i>Bài tiếp</a>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+
+
+
+						<script type='text/javascript'>
+							(function() {
+								var s1 = document.createElement('script'), s0 = document
+										.getElementsByTagName('script')[0];
+								s1.async = true;
+								s1.src = '../tr.topdevvn.com/js/follow.html';
+								s1.charset = 'UTF-8';
+								s1.setAttribute('crossorigin', '*');
+								s0.parentNode.insertBefore(s1, s0);
+							})();
+						</script>
+						<div class='ml-rcm' rc-type='job' rc-layout='bjobs' rc-li='3'
+							rc-for='url' rc-title='Những việc làm hấp dẫn'
+							token-site='QpoRzXsUUp6TxscrR2hBkKmQoNs7ZMOOMge9hjaxF6ijLK4ncw3FWhyw9RKnruqbA1S6D3ZKpc2LlI%2BMHNv7yQ%3D%3D'
+							animate="off"></div>
+						<div style="margin-top: 10px; margin-bottom: 20px">
+							<div id="comments" class="comments-area">
+								<ol class="comments_list">
+									<div id="main_comment_wrapper"></div>
+									<div id="main_comment_list"></div>
+									<div style="text-align: center; display: none;"
+										id="load_more_comment_wrapper">
+										<span class="mom_button_wrap" id="load_more_comment_btn"><a
+											class="button mom_button blue_bt big_bt" href="#"
+											style="margin: 0px;" title=" ">Tải Thêm Comment</a></span>
+									</div>
+								</ol>
+							</div>
+							<input type="hidden" id="add_comment" name="add_comment"
+								value="cb3aae6dc5bdc8be7ef6fe0b2c34b83a" /><input type="hidden"
+								id="load_comment" name="load_comment"
+								value="85f2e859a94c4a1b56fc42a22a45d852" /><input type="hidden"
+								id="push_comment" name="push_comment"
+								value="195ce0b5104b0b3b12a169651f1ac608" />
+							<script src="public/ckeditor/ckeditor.js"></script>
+							<script src="public/theme/js/commentscea9.js?v=415"></script>
+							<script language="javascript">
+								comments.comment_ref_id = '337';
+								comments.comment_type = 'tut_post';
+								comments.base_url = 'index.html';
+								comments.avatar = 'public/logo/main-logo.png';
+							</script>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="sidebar main-sidebar" id="right_sidebar"
+					style="position: relative">
+					<div class="widget">
+						<div class="mom-posts-widget">
+							<script type="text/javascript"
+								src="../js.genieessp.com/t/488/394/a1488394.js"></script>
+						</div>
+					</div>
+					<div id="sidebar_right_tut_series_post">
+
+						<div
+							class="widget widget_categories cate_post_list weather-categories"
+							style="border-color: green">
+							<div class="widget-head" style="background: green">
+								<h3 class="widget-title">
+									<span style="background: green">DANH SÁCH BÀI HỌC</span>
+								</h3>
+							</div>
+							<div id="scroll-post">
+								<ul class='cate-more-wapper'>
+									<!--<li class="cat-item ">
+                    <a href="https://freetuts.net/hoc-php/design-pattern-php" title="Giới thiệu" >Giới thiệu</a>
+                </li> -->
+
+									<li class="cat-item  "><a
+										style="text-transform: initial !important"
+										href="design-pattern-la-gi-103.html"
+										title="Bài 01: Design Pattern là gì?">Bài 01: Design
+											Pattern là gì?</a></li>
+									<li class="cat-item last-element active"><a
+										style="text-transform: initial !important"
+										href="design-pattern-php-adapter-pattern-337.html"
+										title="Bài 02: Design pattern PHP - Adapter Pattern">Bài
+											02: Design pattern PHP - Adapter Pattern</a></li>
+
+								</ul>
+							</div>
+							<ul class='cate-more-wapper' style="background: #f7f7f7">
+								<li class="cate-more current"><span
+									style="text-transform: uppercase; padding-left: 5px;">Danh
+										sách chủ đề</span></li>
+								<li style="padding: 0px;" id="series_list_wrapper">
+									<ul style="border-top: 1px solid #eaeaea">
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/hoc-lap-trinh-php-can-ban.html"
+											title="Học lập trình PHP căn bản">PHP căn bản</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/hoc-lap-trinh-php-nang-cao.html"
+											title="Học lập trình PHP nâng cao">PHP nâng cao</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/ung-dung-note-va-chat-voi-php.html"
+											title="Ứng dụng Note và Chat với PHP">Note và Chat với
+												PHP</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/tu-hoc-php7.html" title="Tự học PHP7">PHP
+												7</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/php-8.html" title="PHP 8">PHP 8</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/php-va-mysql.html" title="PHP và MySQL">PHP
+												và MySQL</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/php-mvc-can-ban.html"
+											title="PHP MVC căn bản">PHP MVC căn bản</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/web-tin-tuc-php-can-ban.html"
+											title="Web tin tức PHP căn bản">Web tin tức PHP căn bản</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/hoc-mvc-php-nang-cao.html"
+											title="Học MVC PHP nâng cao">MVC PHP nâng cao</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/hoc-ajax.html"
+											title="Học Ajax - PHP Ajax - jQuery Ajax">PHP Ajax</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/hoc-regular-expression-php.html"
+											title="Học Regular Expression PHP">Regular Expression PHP</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/hoc-curl-php.html" title="Học CURL PHP">PHP
+												CURL</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/file-htaccess.html" title="File htaccess">Học
+												Htaccess</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/bao-mat-website-php.html"
+											title="Bảo mật website PHP">Bảo mật website</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/design-pattern-php.html"
+											title="Design Pattern PHP">Design Pattern</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="hoc-php/php-tutorials.html" title="PHP tutorials">PHP
+												tutorials</a></li>
+										<li><i style="color: green" class="fa-icon-hand-right"></i>
+											<a href="php-function.html" title="PHP Function">PHP
+												Function</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="f_right_sidebar">
+
+
+						<div class="widget " style="border: none">
+							<div class="mom-posts-widget" style="padding: 0px">
+								<table style="margin-bottom: 0px">
+									<tr>
+										<td colspan="3"
+											style="background: #2f6e91; color: #fff; text-align: center; font-weight: bold; font-size: 14px; padding: 2px 10px">MÃ
+											GIẢM GIÁ</td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>Unica</td>
+										<td>50%</td>
+										<td><a
+											href="https://unica.vn/?aff=2560&amp;src=ft.sidebar.coupon"
+											class="coupon" rel="nofollow" title="freetuts50"
+											style="margin-bottom: 0px; border-radius: 20px;"
+											target="_blank">Lấy Mã</a></td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>TinoHost</td>
+										<td>30%</td>
+										<td><a href="https://tinohost.com/?php=213"
+											class="coupon" rel="nofollow" title="TINO30_2020"
+											style="margin-bottom: 0px; border-radius: 20px;"
+											target="_blank">Lấy Mã</a></td>
+									</tr>
+									<tr style="font-size: 14px !important">
+										<td>INET</td>
+										<td>30%</td>
+										<td><a href="https://inet.vn/?aff=158288" class="coupon"
+											rel="nofollow" title="INET30UP"
+											style="margin-bottom: 0px; border-radius: 20px;">Lấy Mã</a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<div class="widget momizat-reviews">
+							<div class="mom-posts-widget">
+
+
+								<!-- freetuts_fixed_sidebar  -->
+								<ins class="adsbygoogle"
+									style="display: inline-block; width: 300px; height: 600px"
+									data-ad-client="ca-pub-7868243767329230"
+									data-ad-slot="2428876116"></ins>
+								<script>
+									(adsbygoogle = window.adsbygoogle || [])
+											.push({});
+								</script>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+
+		<div id="footer_wrapper">
+			<footer id="footer">
+				<div class="inner">
+					<div class="one_fourth">
+						<div class="widget momizat-posts">
+							<div class="widget-head">
+								<h3 class="widget-title">
+									<span style="font-weight: normal"> Liên hệ </span>
+								</h3>
+							</div>
+							<div class="mom-posts-widget">
+								<ul>
+									<li><a href="gioi-thieu.html" title="giới thiệu">Giới
+											thiệu</a></li>
+									<li><a href="chinh-sach-bao-mat.html"
+										title="Chính sách bảo mật">Chính sách</a></li>
+									<li><a href="dieu-khoan-su-dung.html"
+										title="Điều khoản sử dụng">Điều khoản</a></li>
+									<li><a href="lien-he.html" title="liên hệ">Liên hệ</a></li>
+									<li><a href="bang-bao-gia-dat-banner-va-text-link.html"
+										title="Guest Post">Guest Post</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="one_fourth">
+						<div class="widget widget_categories">
+							<div class="widget-head">
+								<h3 class="widget-title">
+									<span style="font-weight: normal">Mã giảm giá</span>
+								</h3>
+							</div>
+							<div class="mom-posts-widget">
+								<ul>
+									<li><a href="giam-gia/ma-giam-gia-tinohost.html"
+										title="Mã giảm giá TinoHost">TinoHost</a></li>
+									<li><a href="giam-gia/ma-giam-gia-azdigi.html"
+										title="Mã giảm giá Azdigi">Azdigi</a></li>
+									<li><a href="giam-gia/ma-giam-gia-vultr.html"
+										title="mã giảm giá Vultr">Vultr</a></li>
+									<li><a href="giam-gia/ma-giam-gia-hawkhost.html"
+										title="mã giảm giá hawkhost">Hawkhost</a></li>
+									<li><a href="giam-gia/ma-giam-gia-stablehost.html"
+										title="mã giảm giá stablehost">Stablehost</a></li>
+
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<div class="one_fourth">
+						<div class="widget momizat-posts">
+							<div class="widget-head">
+								<h3 class="widget-title">
+									<span style="font-weight: normal">Khóa học</span>
+								</h3>
+							</div>
+							<div class="mom-posts-widget">
+								<ul>
+									<li><a href="khoa-hoc/khoa-hoc-javascript-tu-dau-8.html"
+										target="_blank" title="khoa hoc javascript tu dau 8 html"><span
+											style="color: pink">Javascript</span></a></li>
+									<li><a
+										href="khoa-hoc/combo-khoa-hoc-lap-trinh-frontend-67.html"
+										target="_blank"
+										title="combo khoa hoc lap trinh frontend 67 html"> <span
+											style="color: pink">Front-end</span></a></li>
+									<li><a
+										href="khoa-hoc/nodejs-ket-hop-mongodb-mongoose-va-postgresql-13.html"
+										target="_blank"
+										title="nodejs ket hop mongodb mongoose va postgresql 13 html">
+											<span style="color: pink">NodeJS</span>
+									</a></li>
+									<li><a
+										href="khoa-hoc/react-js-va-redux-tao-ung-dung-fullstack-voi-node-js-%2b-react-js-14.html"
+										target="_blank"
+										title="react js va redux tao ung dung fullstack voi node js   react js 14 html">
+											<span style="color: pink">React JS</span>
+									</a></li>
+									<li><a
+										href="khoa-hoc/combo-khoa-hoc-tung-buoc-tro-thanh-fullstack-developer-68.html"
+										target="_blank"
+										title="combo khoa hoc tung buoc tro thanh fullstack developer 68 html"><span
+											style="color: pink">Fullstack</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="one_fourth last">
+						<div class="widget momizat-posts">
+							<div class="widget-head">
+								<h3 class="widget-title">
+									<span style="font-weight: normal">Giới thiệu</span>
+								</h3>
+							</div>
+							<div class="mom-posts-widget">
+								<p>
+									Admin <strong style="color: pink">Cường</strong>, quản lý chính
+									của website.
+								</p>
+
+								<ul>
+									<li style="font-size: 15px">Email: thehalfheart@gmail.com</li>
+									<li style="font-size: 15px">Phone/Zalo: 0979306603</li>
+									<li style="font-size: 15px">Skype: thehalfheart</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</footer>
+			<div class="copyrights-area">
+				<div class="inner">
+					<p class="copyrights-text" style="text-align: center">
+
+						<span> @2020 - Freetuts.net. All Right Reserved </span> <br />
+						Theme <strong>GoodNews</strong>, nền tảng <strong>Codeigniter</strong>,
+						VPS mua tại <a href="https://my.tino.org/aff.php?aff=213"
+							target="_blank" rel="noopener noreferrer nofollow external"
+							title="tinohost">Tinohost</a> <br /> <a
+							href="http://www.dmca.com/Protection/Status.aspx?ID=4495f67a-93e3-4127-a6fe-eb89933037aa&amp;refurl=https://freetuts.net/design-pattern-php-adapter-pattern-337.html"
+							title="DMCA.com Protection Status" class="dmca-badge"
+							target="_blank" rel="nofollow"> <img style="margin-top: 10px"
+							src="public/dmca-protected.png" alt="DMCA.com Protection Status">
+						</a>
+
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="sticky_ads"></div>
+		<script language="javascript">
+			var stickyAd = [];
+		</script>
+
+		<script language="javascript">
+			
+		</script>
+
+
+		<style type="text/css">
+#closeAds::after {
+	content: 'x';
+	color: #000;
+	font-size: 25px;
+	font-weight: 300;
+	font-family: Arial, sans-serif;
+	bottom: 90px;
+	position: fixed;
+	left: calc(( 100% - 1510px)/2+ 1000px);
+	z-index: 1000001;
+	cursor: pointer;
+	color: red;
+	border: solid 1px red;
+	padding: 5px;
+	text-align: center;
+	width: 10px;
+	height: 10px;
+	line-height: 10px;
+	border-radius: 50%;
+	font-size: 16px;
+}
+
+#awrapper {
+	display: none;
+}
+</style>
+		<!--<div id="awrapper">
+    <a class="adsbygoogle" id="closeAds" onclick="jQuery('.fixed-all-page').hide(); jQuery(this).hide()" title="no title"></a>
+    
+
+        <ins class="adsbygoogle hide-mobile fixed-all-page"
+                                 style="display:inline-block;width:728px;background-color:rgb(128 128 128 / 31%); height:90px;position:fixed;bottom:0;z-index:1000000;left:calc((100% - 948px)/2);"
+                                 data-ad-client="ca-pub-7868243767329230"
+                                 data-ad-slot="4622922475"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+
+    
+</div> 
+
+<script>
+    setTimeout(function(){
+        jQuery('#awrapper').show();
+    }, 10000)
+
+</script>
+
+
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> -->
+
+		<div class="tool" id="tool">
+			<div class="tcontent">
+				<div class="function">
+
+					<div class="func-item" id="news-data">
+						<p
+							style="padding: 10px 10px 0px 10px; font-weight: bold; font-size: 13px;">BÀI
+							VIẾT</p>
+
+					</div>
+
+					<div class="func-item" id="share-data">
+						<div style="padding: 15px 20px 0px 20px;">
+							<div class="mobile-menu" id="hotlink_content">
+								<form id="error-contact"
+									action="https://freetuts.net/ajax/contact" method="post"
+									class="wpcf7-form">
+									<div style="display: none;">
+										<input type="hidden" name="ci_csrf_token" value="" /> <input
+											type="hidden" id="add_contact_error" name="add_contact_error"
+											value="4b7f25de7d840731db1bc777eb2efeb1" />
+									</div>
+									<p>
+										Nếu bạn phát hiện lỗi sai link, nội dung sai, hay một lỗi bất
+										kì nào đó <strong>trên trang này</strong> thì hãy cho mình
+										biết nhé. Cám ơn bạn!
+									</p>
+									<p id="error_remove">
+										<textarea id="error_question" cols="40" rows="5"
+											placeholder="Nhập nội dung lỗi tại đây"></textarea>
+									</p>
+									<p>
+										<input style="margin-left: 20px" type="submit"
+											value="Gửi báo lỗi" id="send_message_error">
+									</p>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<a href="#" rel="nofollow" class="menu-click" id="news" title=" ">
+					<img src="public/tool/notice.png" alt="notice png" /> <span>LIST</span>
+				</a> <a href="index.html" title="no title"> <img
+					src="public/tool/home.png" alt="home png" /> <span>HOME</span>
+				</a> <a href="#" class="menu-click" id="share" rel="nofollow"
+					target="_blank" title=" "> <img src="public/tool/hot.gif"
+					alt="hot gif" /> <span>BÁO <br />LỖI
+				</span>
+				</a> <a href="#" rel="nofollow" id="totop" title=" "> <img
+					src="public/tool/top.png" alt="top png" /> <span>TOP</span>
+				</a>
+				<div style="clear: both"></div>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+	<!--Boxed wrap-->
+
+
+	<![endif]-->
+
+	<script data-ad-client="ca-pub-7868243767329230" async
+		src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+
+	<script type='text/javascript' src='public/theme/js/libcea9.js?v=415'></script>
+
+	<script type='text/javascript' src='public/theme/js/adscea9.js?v=415'></script>
+
+	<script type='text/javascript' src='public/theme/js/allcea9.js?v=415'></script>
+
+
+
+	<script type="text/javascript">
+		var config = {
+
+			base_url : 'https://freetuts.net/'
+
+		};
+	</script>
+
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async
+		src="https://www.googletagmanager.com/gtag/js?id=UA-55135271-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-55135271-1');
+	</script>
+
+
+	<!--[if lt IE 9]><script src="https://freetuts.net/public/theme/js/html5.js"></script><script src="https://freetuts.net/public/theme/js/IE9.js"></script><![endif]-->
+
+
+
+
+
+
+
+
+
+	<!-- inpage_300x600 -->
+	<script>
+		jQuery(document)
+				.ready(
+						function() {
+							jQuery(document)
+									.ready(
+											function() {
+												jQuery(window)
+														.on(
+																'scroll',
+																function() {
+																	if (document
+																			.getElementById("content-ad") != null) {
+																		var top = jQuery(
+																				'#content-ad')
+																				.offset().top
+																				- jQuery(
+																						window)
+																						.scrollTop()
+																				- 80;
+																		var bot = top > 0 ? 600
+																				: 600 + top;
+
+																		if (jQuery(
+																				window)
+																				.width() <= 768) {
+																			jQuery(
+																					'#ad')
+																					.css(
+																							{
+																								display : `block`,
+																								clip : `rect(`
+																										+ top
+																										+ `px, 300px, `
+																										+ bot
+																										+ `px, 0px)`,
+																								left : ((jQuery(
+																										window)
+																										.width() - 300) / 2)
+																										+ `px`
+																							})
+																		}
+																	}
+																});
+											});
+
+							var count = 0;
+							var links = jQuery('.entry-content').find('p');
+							if (links.length <= 4)
+								midpoint = 1;
+							else
+								midpoint = Math.floor(links.length / 2);
+							for (var i = 0; i < links.length; i++) {
+								count++;
+								if (count == midpoint) {
+									var ele = links[i];
+
+									function insertAfter(referenceNode, newNode) {
+										referenceNode.parentNode.insertBefore(
+												newNode,
+												referenceNode.nextSibling);
+									}
+
+									var el = document.createElement("div");
+									el.setAttribute('id', 'netlink');
+									var div = links[i];
+									insertAfter(div, el);
+								}
+							}
+							var html = '<div id="content-ad" style="overflow: hidden; position: relative; z-index: 2; width: 100%; height: 600px;">';
+							html += '<div id="ad" style="position: fixed;z-index: 10000;top: 70px;display:none;">';
+							html += '<ins class="adsbygoogle"'+
+                                                 'style="display:inline-block;width:300px;height:600px;"'+
+                                                 'data-ad-client="ca-pub-7868243767329230"'+
+                                                 'data-ad-slot="3009113004">'
+									+ '</ins>';
+							html += '</div>';
+							html += '</div>';
+							jQuery('#netlink').append(html).addClass(
+									'hide-desktop');
+						});
+	</script>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+
+</body>
+
+<!-- Mirrored from freetuts.net/design-pattern-php-adapter-pattern-337.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 06:44:59 GMT -->
+</html>

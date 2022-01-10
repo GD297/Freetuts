@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+
+<head>
+	<title th:text="${CATE.title}"></title>
+</head>
+
+<body id="home"
+	class=" page page-template-default right-sidebar singular fade-imgs-in-appear time_in_twelve_format one-side-wide both-sidebars wpb-js-composer js-comp-ver-4.9 vc_responsive no-js"
+	itemtype="http://schema.org/WebPage">
+	<!-- CONTENT -->
+	<div class="boxed-content-wrapper clearfix" layout:fragment="content">
+		<div class="inner" style="margin-bottom: 20px">
+			<ins class="adsbygoogle" style="display: block"
+				data-ad-client="ca-pub-7868243767329230" data-ad-slot="9555707034"
+				data-ad-format="auto" data-full-width-responsive="true"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+		<div class="inner">
+			<div class=""
+				style="line-height: 30px; margin-bottom: 10px; font-size: 15px">
+				<div itemscope itemtype="https://schema.org/BreadcrumbList">
+					<span itemprop="itemListElement" itemscope
+						itemtype="https://schema.org/ListItem"> <a itemprop="item"
+						href="/" title="Trang chá»§"> <span itemprop="name">Home</span>
+							<meta itemprop="position" content="1" />
+					</a>
+					</span> >
+					<!-- <span th:if="${CATEGORIZE != null}" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" th:href="@{${CATEGORIZE.linkContent}}" th:title="${CATEGORIZE.title}">
+                            <span itemprop="name" th:text="${CATEGORIZE.title}"></span>
+                            <meta itemprop="position" content="2" />
+                        </a> >
+                    </span> -->
+					<span th:if="${CATE.categorize != null}" itemprop="itemListElement"
+						itemscope itemtype="https://schema.org/ListItem"> <a
+						itemprop="item" th:href="@{/template(id=${CATE.categorize.categorizeid})}"
+						th:title="${CATE.categorize.title}"> <span itemprop="name"
+							th:text="${CATE.categorize.title}"></span>
+							<meta itemprop="position" content="2" />
+					</a> >
+					</span>
+					<!-- <span th:if="${CATE.nav != null}" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" th:href="@{${CATE.nav.linkContent}}" th:title="${CATE.nav.title}">
+                            <span itemprop="name" th:text="${CATE.nav.title}"></span>
+                            <meta itemprop="position" content="2" />
+                        </a> >
+                    </span> -->
+					<span itemprop="name" th:text="${CATE.title}"></span>
+				</div>
+			</div>
+		</div>
+		<div class="inner" style="margin-top: 20px;">
+			<div class="main_container">
+				<div class="main-col" id="main_container">
+					<div class="base-box" itemtype="http://schema.org/Article">
+						<h1 id="main_title" class="post-tile entry-title"
+							itemprop="headline" th:text="${CATE.title}"></h1>
+						<span id="element_action" data-id="41"
+							data-uri="https://freetuts.net/ajax/view/tut_group"></span>
+						<!-- <div style="margin-bottom: 20px">
+							<div class="sharethis-inline-share-buttons"></div>
+						</div>-->
+						<div class="mom-post-meta single-post-meta">
+							<span class="author vcard"> Đăng bởi: <span class="fn" th:text="${CATE.author}"></span>
+							<span th:if="${CATE.createDate != null}"> | Vào ngày: <time datetime="${CATE.createDate}" itemprop="datePublished" class="updated" th:text="${#strings.substring(CATE.createDate,0,10)}"></time></span>
+						</div>
+						<div class="entry-content">
+							<div  th:utext="${CATE.content}"></div>
+							<div class="review-cate two-column">
+								<th:block th:each="subCate: ${CATE.subcates}">
+									<div class="item">
+										<a th:href="@{/template(id=${subCate.subCateID})}"
+											th:title="${subCate.title}" th:text="${subCate.title}"> 
+										</a>
+									</div>
+								</th:block>
+							</div>
+						</div>
+					</div>
+					<div style="margin: 40px 0px 20px 0px;">
+						<div class="news-box base-box nb-style3 nb-style4"
+							style="margin-bottom: 0px; border-bottom: 0px">
+							<header class="nb-header" style="border-bottom: 0px">
+								<p class="nb-title"><span>Xem thêm</span></p>
+							</header>
+						</div>
+					</div>
+					<th:block th:each="subcate: ${CATE.subcates}">
+						<th:block th:each="blog, iter: ${subcate.blogs}">
+							<div th:if="${iter.index < 3}"
+								class="base-box blog-post default-blog-post bp-horizontal-share post type-post status-publish format-standard has-post-thumbnail category-money tag-momizat tag-ordpress tag-templates tag-themes tag-tutorial">
+								<div class="bp-entry">
+									<div class="bp-head">
+										<h2>
+											<a th:href="@{'/blogdetails/' + ${blog.linkContent}}"
+												th:title="${blog.title}">[[${blog.title}]]</a>
+										</h2>
+									</div>
+									<div class="bp-details">
+										<div class="post-img">
+											<a th:href="@{'/blogdetails/' + ${blog.linkContent}}"
+												th:title="${blog.title}"> <img
+												th:src="${blog.linkImage}" width="220" height="140"
+												alt="Xử lý văn bản trong Pandas">
+											</a>
+										</div>
+
+										<div class="clear"></div>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</th:block>
+					</th:block>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<div class="sidebar main-sidebar" id="right_sidebar"
+				style="position: relative">
+				<div id="f_right_sidebar">
+
+					<div class="widget " style="border: none;">
+						<div class="mom-posts-widget" style="padding: 0px">
+							<table style="margin-bottom: 0px">
+								<tr>
+									<td colspan="3"
+										style="background: #2f6e91; color:#fff; text-align: center; font-weight: bold; font-size: 14px; padding: 2px 10px">
+										MÃ GIẢM GIÁ</td>
+								</tr>
+								<tr style="font-size: 14px !important">
+									<td>Unica</td>
+									<td>50%</td>
+
+									<td><a href="https://unica.vn/?aff=2560&src=ft.sidebar.coupon" class="coupon"
+											rel="nofollow" title="freetuts50"
+											style="margin-bottom: 0px; border-radius: 20px;" target="_blank">LẤY MÃ</a>
+									</td>
+								</tr>
+								<tr style="font-size: 14px !important">
+									<td>TinoHost</td>
+									<td>30%</td>
+									<td><a href="https://tinohost.com/?php=213" class="coupon" rel="nofollow"
+											title="TINO30_2020" style="margin-bottom: 0px; border-radius: 20px;"
+											target="_blank">LẤY MÃ</a></td>
+
+								</tr>
+								<tr style="font-size: 14px !important">
+									<td>INET</td>
+									<td>30%</td>
+									<td><a href="https://freetuts.net/recommended/inet" class="coupon" rel="nofollow"
+											title="INET30UP" style="margin-bottom: 0px; border-radius: 20px;">LẤY MÃ</a>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="widget momizat-reviews">
+						<div class="mom-posts-widget">
+							<!-- freetuts_fixed_sidebar  -->
+							<ins class="adsbygoogle" style="display: block"
+								data-ad-client="ca-pub-7868243767329230"
+								data-ad-slot="2428876116" data-ad-format="auto"></ins>
+							<script>
+								(adsbygoogle = window.adsbygoogle || [])
+										.push({});
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>
